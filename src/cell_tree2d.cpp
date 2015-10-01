@@ -10,14 +10,14 @@ using namespace std;
 
 class CellTree2D::node {
 public:
-    node(int32_t pt, int32_t sz, int32_t d):
+    node(int pt, int sz, int d):
         child(-1), Lmax(-1), Rmin(-1), ptr(pt), size(sz), dim(d){};
     ~node(){};
-    int32_t child;          //index of left child...right child is child+1
+    int child;          //index of left child...right child is child+1
     double Lmax;
     double Rmin;
-    int32_t ptr;            //index int32_to the bounding box index array
-    int32_t size;           //number of bbs in this node
+    int ptr;            //index into the bounding box index array
+    int size;           //number of bbs in this node
     bool dim;           //false = 0 = x, true = 1 = y;
 };
 
@@ -29,8 +29,8 @@ public:
     //range of the bounding boxes inside the bucket
     double Rmin;
     double Lmax;
-    int32_t index;          //point32_ter int32_to the bounding box index array
-    int32_t size;           //number of bbs in this bucket
+    int index;          //pointer into the bounding box index array
+    int size;           //number of bbs in this bucket
 };
 
 //tests whether the centroid of the bounding box in the selected dimension falls within this bucket
@@ -42,14 +42,14 @@ public:
 
         centroid_test( unsigned int _d, vector<vector<double> >& _ds, bucket _b ) : dim(_d), ds(_ds), b(_b) {}
 
-        bool operator()( const int32_t bb ){ //format is xmin,xmax,ymin,ymax
+        bool operator()( const int bb ){ //format is xmin,xmax,ymin,ymax
             vector<double>& box = ds.at(bb);
-            double point32_t = (box.at(2*dim+1) - box.at(2*dim)) / 2  + box.at(2*dim);
-            return point32_t >= b.min && point32_t < b.max;
+            double point = (box.at(2*dim+1) - box.at(2*dim)) / 2  + box.at(2*dim);
+            return point >= b.min && point < b.max;
         }
     };
 
-CellTree2D::CellTree2D(double* vertices, int32_t v_len, int32_t* faces, int32_t f_len, int32_t poly, int32_t n_buckets, int32_t bb_per_leaf) {
+CellTree2D::CellTree2D(double* vertices, int v_len, int* faces, int f_len, int poly, int n_buckets, int bb_per_leaf) {
     //in comes the bounding box vector...this is the underlying data store
     //tree is built on top of it
     num_buckets = n_buckets;
@@ -58,7 +58,7 @@ CellTree2D::CellTree2D(double* vertices, int32_t v_len, int32_t* faces, int32_t 
     this->vertices[0] = vertices;
     for (int i = 1; i < v_len; i++)
         this->vertices[i] = this->vertices[i-1] + 2; //points always have 2 coordinates
-    this->faces = new int32_t*[f_len];
+    this->faces = new int*[f_len];
     this->faces[0] = faces;
     for (int i = 1; i < f_len; i++)
         this->faces[i] = this->faces[i-1] + poly; //you can have n vertices in your polygon
@@ -74,9 +74,9 @@ CellTree2D::CellTree2D(double* vertices, int32_t v_len, int32_t* faces, int32_t 
     return;
 }
 
-CellTree2D::~CellTree2D() {}
+CellTree2D::~CellTree2D() {delete[] faces; delete[] vertices;}
 
-//finds the bounding box of each triangle and inserts it int32_to the dataset and adds it's index to bb_indices
+//finds the bounding box of each triangle and inserts it into the dataset and adds it's index to bb_indices
 void CellTree2D::build_BB_vector() {
     bb_indices.resize(f_len);
     dataset.resize(f_len);
@@ -85,7 +85,7 @@ void CellTree2D::build_BB_vector() {
     case 3:
     {
         for (int i = 0; i < f_len; i++) {
-            int32_t* f = faces[i];
+            int* f = faces[i];
             double* a = vertices[f[0]];
             double* b = vertices[f[1]];
             double* c = vertices[f[2]];
@@ -101,7 +101,7 @@ void CellTree2D::build_BB_vector() {
     case 4:
     {
         for (int i = 0; i < f_len; i++) {
-            int32_t* f = faces[i];
+            int* f = faces[i];
             double* a = vertices[f[0]];
             double* b = vertices[f[1]];
             double* c = vertices[f[2]];
@@ -119,11 +119,11 @@ void CellTree2D::build_BB_vector() {
 }
 
 //Finds the range of the bounding boxes contained by a bucket in dimension d
-void CellTree2D::get_bounds(bucket& buk, int32_t d) {
+void CellTree2D::get_bounds(bucket& buk, int d) {
     buk.Rmin = std::numeric_limits<double>::max();
     buk.Lmax = -std::numeric_limits<double>::max();
-    for (int32_t i = buk.index; i < (buk.index + buk.size); i++) {
-        int32_t data_index = bb_indices.at(i);
+    for (int i = buk.index; i < (buk.index + buk.size); i++) {
+        int data_index = bb_indices.at(i);
         if (dataset.at(data_index).at(2*d) < buk.Rmin) {
             buk.Rmin = dataset.at(data_index).at(2*d);
         }
@@ -135,18 +135,18 @@ void CellTree2D::get_bounds(bucket& buk, int32_t d) {
 
 
 
-//Sorts all the bounding boxes specified by node int32_to the buckets. Does alter order of bb_indices!
-//This should partition all the bounding boxes within the current node int32_to the buckets.
+//Sorts all the bounding boxes specified by node into the buckets. Does alter order of bb_indices!
+//This should partition all the bounding boxes within the current node into the buckets.
 //The idea is that when you split the node, the bb_indices are already arranged
-//and you can retrieve them with an int32_teger+size rather than a vector
-void CellTree2D::sort_bbs(vector<bucket>& buks, node& node, int32_t dim) {
-    vector<int32_t>::iterator current = bb_indices.begin() + node.ptr;
-    vector<int32_t>::iterator end = bb_indices.begin() + node.ptr + node.size;
+//and you can retrieve them with an integer+size rather than a vector
+void CellTree2D::sort_bbs(vector<bucket>& buks, node& node, int dim) {
+    vector<int>::iterator current = bb_indices.begin() + node.ptr;
+    vector<int>::iterator end = bb_indices.begin() + node.ptr + node.size;
     buks.at(0).index = node.ptr;
     for (unsigned int i = 1; current != end; i++) {
         bucket& b = buks.at(i-1);
         current = std::stable_partition(current,end,centroid_test(dim,dataset,b));
-        vector<int32_t>::iterator start = bb_indices.begin()+b.index;
+        vector<int>::iterator start = bb_indices.begin()+b.index;
         buks.at(i-1).size = current - start;
         if(i < buks.size()){
             buks.at(i).index = buks.at(i-1).index + buks.at(i-1).size;
@@ -155,8 +155,8 @@ void CellTree2D::sort_bbs(vector<bucket>& buks, node& node, int32_t dim) {
     }
 }
 
-void CellTree2D::build(int32_t root_ind, int32_t dim) {
-    int32_t dim_flag = dim;
+void CellTree2D::build(int root_ind, int dim) {
+    int dim_flag = dim;
         if (dim < 0)
             dim+=2;
     node& root = nodes.at(root_ind);
@@ -174,16 +174,16 @@ void CellTree2D::build(int32_t root_ind, int32_t dim) {
     vector<bucket> buks;
     double bucket_len = (range.Lmax - range.Rmin) / num_buckets;
     //create buckets and specify their ranges
-    for (int32_t b_ind=0;b_ind < num_buckets; b_ind++) {
+    for (int b_ind=0;b_ind < num_buckets; b_ind++) {
         bucket b = {(b_ind+1)*bucket_len + range.Rmin, b_ind*bucket_len + range.Rmin};
         buks.push_back(b);
     }
 
-    //Now that bucket ranges are setup, sort bounding boxes contained in node int32_to buckets in the dimension specified.
+    //Now that bucket ranges are setup, sort bounding boxes contained in node into buckets in the dimension specified.
     sort_bbs(buks, root, dim);
 
     //Determine Lmax & Rmin for each bucket
-    for (int32_t b_ind=0;b_ind < num_buckets; b_ind++) {
+    for (int b_ind=0;b_ind < num_buckets; b_ind++) {
         get_bounds(buks.at(b_ind),dim);
     }
 
@@ -218,7 +218,7 @@ void CellTree2D::build(int32_t root_ind, int32_t dim) {
         }
     }
     //CHECK....are all the triangles in one bucket? If so, restart and switch dimension
-    for(int32_t b_ind = 0; b_ind < buks.size(); b_ind++) {
+    for(int b_ind = 0; b_ind < buks.size(); b_ind++) {
         if (buks.at(b_ind).size == root.size){
             if (dim_flag >= 0) { //dim_flag will be negative after one switch
                 dim_flag = !dim - 2;
@@ -236,12 +236,12 @@ void CellTree2D::build(int32_t root_ind, int32_t dim) {
     //plane is the separation line to split on...0 [bucket0] 1 [bucket1] 2 [bucket2] 3 [bucket3] 4
     double plane_cost;
     double plane_min_cost = std::numeric_limits<double>::max();
-    int32_t plane = std::numeric_limits<int32_t>::max();
+    int plane = std::numeric_limits<int>::max();
 
     //if we split here, lmax is from bucket 0, and rmin is from bucket 1
     //after computing those, we can compute the cost to split here, and if this is the minimum, we split here.
-    int32_t bbs_in_left = 0;
-    int32_t bbs_in_right = 0;
+    int bbs_in_left = 0;
+    int bbs_in_right = 0;
     for (unsigned int b = 1;b < buks.size(); b++) {
         bucket& cur_buk = buks.at(b-1);
         bucket& next_buk = buks.at(b);
@@ -259,16 +259,16 @@ void CellTree2D::build(int32_t root_ind, int32_t dim) {
     //we've found the plane, now simply split by creating the children nodes
     //by assigning the appropriate buckets. The underlying information is already
     //rearranged.
-    int32_t right_index = buks.at(plane).index;
-    int32_t right_size = root.ptr + root.size - right_index;
-    int32_t left_index = root.ptr;
-    int32_t left_size = root.size - right_size;
+    int right_index = buks.at(plane).index;
+    int right_size = root.ptr + root.size - right_index;
+    int left_index = root.ptr;
+    int left_size = root.size - right_size;
     root.Lmax = buks.at(plane-1).Lmax;
     root.Rmin = buks.at(plane).Rmin;
     node left_child(left_index, left_size, !dim);
     node right_child(right_index, right_size, !dim);
     root.child = nodes.size();
-    int32_t child_ind = root.child;
+    int child_ind = root.child;
     nodes.push_back(left_child);
     nodes.push_back(right_child);
     build(child_ind, left_child.dim);
@@ -276,10 +276,10 @@ void CellTree2D::build(int32_t root_ind, int32_t dim) {
 }
 
 //returns true if test node is within the polygon
-//checking the point32_t immediately is important....potentially saves a lot of traversal if found.
-bool CellTree2D::point_in_poly (int32_t bb, double* test){
-    int32_t* f = faces[bb];
-    int32_t i, j = 0;
+//checking the point immediately is important....potentially saves a lot of traversal if found.
+bool CellTree2D::point_in_poly (int bb, double* test){
+    int* f = faces[bb];
+    int i, j = 0;
     bool c = 0; /*really need a bool here...*/
     for (i = 0, j = poly-1; i < poly; j = i++) {
         double* v1 = vertices[f[i]];
@@ -291,22 +291,22 @@ bool CellTree2D::point_in_poly (int32_t bb, double* test){
     return c;
 }
 
-int32_t CellTree2D::FindBoxLeafHelper(double* point, int32_t node) {
-    //where does point32_t lie in this node's dimension?
+int CellTree2D::FindBoxLeafHelper(double* point, int node) {
+    //where does point lie in this node's dimension?
     //if l && r, go both, otherwise go one or the other, or leave results empty
     CellTree2D::node& current = nodes[node];
     if (current.size <= boxes_per_leaf || current.Lmax == -1) {
-        for (int32_t i = current.ptr; i < current.ptr + current.size; i++) {
+        for (int i = current.ptr; i < current.ptr + current.size; i++) {
             if (point_in_poly(bb_indices[i],point)){
                 return bb_indices[i];
             }
         }
         return -1;
     }
-    int32_t d = current.dim ? 1 : 0;
+    int d = current.dim ? 1 : 0;
     bool l = point[d] <= current.Lmax;
     bool r = point[d] >= current.Rmin;
-    int32_t ret = -1;
+    int ret = -1;
     if (l && r) {
         if( current.Lmax-point[d] < point[d]-current.Rmin ){
             // go left first
@@ -328,10 +328,10 @@ int32_t CellTree2D::FindBoxLeafHelper(double* point, int32_t node) {
 }
 
 // returns the index of the triangle that contains pt
-int32_t CellTree2D::FindBoxLeaf(double* pt) {
+int CellTree2D::FindBoxLeaf(double* pt) {
     return FindBoxLeafHelper(pt, 0);
 }
 
-int32_t CellTree2D::size() {
+int CellTree2D::size() {
     return nodes.size();
 }

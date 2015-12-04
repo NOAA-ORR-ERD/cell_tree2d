@@ -81,15 +81,27 @@ cdef class CellTree:
         :param point: Coordinates of the point of interest
         :type point: 2x1 numpy array of float64, or something that can be turned into one
         """
+        cdef int[1] result
         cdef cnp.ndarray[double,ndim=1, mode="c"] point_arr
 
-        point = np.asarray(point, dtype=np.float64)
 
-        if len(point.shape) <> 1 or point.shape[0] <> 2:
+        point_arr = np.array(point)
+        if point_arr.shape[0] <> 2:
             raise ValueError("point must be convertible to a 2x1 numpy array of float64")
 
-        point_arr = point
+        self.c_find_poly(&point_arr[0], &result[0])
+        return result[0]
 
-        return self.thisptr.FindBoxLeaf(&point_arr[0])
+    cdef c_find_poly(self, double[2] point, int* result):
+        result[0] = self.thisptr.FindBoxLeaf(point)
 
+    @cython.boundscheck(False)
+    def multi_locate(self, double[:,:] points, int[:] locations):
+        cdef int i
+        cdef int size
+        i = 0
+        size = points.shape[0]
+        while i < size:
+            self.c_find_poly(&points[i][0], &locations[i])
+            i+=1
 

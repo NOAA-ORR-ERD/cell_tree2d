@@ -284,7 +284,7 @@ bool CellTree2D::point_in_poly (int bb, double* test){
     for (i = 0, j = poly-1; i < poly; j = i++) {
         double* v1 = vertices[f[i]];
         double* v2 = vertices[f[j]];
-        if ( ((v1[1]/*y*/>test[1]) != (v2[1]>test[1])) &&
+        if ( ((v1[1]>test[1]) != (v2[1]>test[1])) &&
                 (test[0] < (v2[0]-v1[0]) * (test[1]-v1[1]) / (v2[1]-v1[1]) + v1[0]) )
             c = !c;
     }

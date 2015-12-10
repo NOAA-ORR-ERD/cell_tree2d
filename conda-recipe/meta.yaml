@@ -1,0 +1,41 @@
+# Conda recipe example.
+package:
+    name: cell_tree2d
+    version: "0.1.0"
+
+source:
+    git_url: https://github.com/NOAA-ORR-ERD/cell_tree2d
+    git_tag: v0.1.0
+
+build:
+    number: 0
+
+requirements:
+  build:
+    - python
+    - cython
+    - numpy
+
+  run:
+    - python
+    - numpy
+
+test:
+  # Python imports
+  imports:
+    - cell_tree2d
+#  commands:
+    # need to figure out how to run the pytests...
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+#  requires:
+#    - pytest
+
+about:
+  home: https://github.com/NOAA-ORR-ERD/cell_tree2d
+  license: Public Domain
+  summary: 'Data structure for rapid resolution of the "which polygon is this point in" question on unstructured grids'

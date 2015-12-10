@@ -96,12 +96,17 @@ cdef class CellTree:
         result[0] = self.thisptr.FindBoxLeaf(point)
 
     @cython.boundscheck(False)
-    def multi_locate(self, double[:,:] points, int[:] locations):
+    def multi_locate(self, double[:,:] points):
         cdef int i
         cdef int size
+        cdef cnp.ndarray[int,ndim=1,mode="c"] locations
         i = 0
         size = points.shape[0]
+        locations = np.zeros((size),dtype=int)
+
         while i < size:
             self.c_find_poly(&points[i][0], &locations[i])
             i+=1
+
+        return locations
 

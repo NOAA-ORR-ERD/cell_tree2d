@@ -4,14 +4,13 @@
 {
     "distutils": {
         "depends": [
-            "C:\\Users\\Jay.Hennen\\AppData\\Local\\Continuum\\Anaconda\\lib\\site-packages\\numpy\\core\\include\\numpy\\arrayobject.h", 
-            "C:\\Users\\Jay.Hennen\\AppData\\Local\\Continuum\\Anaconda\\lib\\site-packages\\numpy\\core\\include\\numpy\\ufuncobject.h", 
-            "src\\cell_tree2d.h"
+            "/Users/chris.barker/miniconda2/lib/python2.7/site-packages/numpy/core/include/numpy/arrayobject.h", 
+            "/Users/chris.barker/miniconda2/lib/python2.7/site-packages/numpy/core/include/numpy/ufuncobject.h", 
+            "src/cell_tree2d.h"
         ], 
         "include_dirs": [
-            "C:\\Users\\Jay.Hennen\\AppData\\Local\\Continuum\\Anaconda\\lib\\site-packages\\numpy\\core\\include", 
-            ".\\src", 
-            ".\\src\\win_headers"
+            "/Users/chris.barker/miniconda2/lib/python2.7/site-packages/numpy/core/include", 
+            "./src"
         ], 
         "language": "c++"
     }
@@ -504,7 +503,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "cell_tree2d\\cell_tree2d.pyx",
+  "cell_tree2d/cell_tree2d.pyx",
   "__init__.pxd",
   "stringsource",
   "type.pxd",
@@ -602,7 +601,7 @@ typedef volatile __pyx_atomic_int_type __pyx_atomic_int;
 #endif
 
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":725
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":725
  * # in Cython to enable them only on the right systems.
  * 
  * ctypedef npy_int8       int8_t             # <<<<<<<<<<<<<<
@@ -611,7 +610,7 @@ typedef volatile __pyx_atomic_int_type __pyx_atomic_int;
  */
 typedef npy_int8 __pyx_t_5numpy_int8_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":726
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":726
  * 
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t             # <<<<<<<<<<<<<<
@@ -620,7 +619,7 @@ typedef npy_int8 __pyx_t_5numpy_int8_t;
  */
 typedef npy_int16 __pyx_t_5numpy_int16_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":727
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":727
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t             # <<<<<<<<<<<<<<
@@ -629,7 +628,7 @@ typedef npy_int16 __pyx_t_5numpy_int16_t;
  */
 typedef npy_int32 __pyx_t_5numpy_int32_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":728
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":728
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t
  * ctypedef npy_int64      int64_t             # <<<<<<<<<<<<<<
@@ -638,7 +637,7 @@ typedef npy_int32 __pyx_t_5numpy_int32_t;
  */
 typedef npy_int64 __pyx_t_5numpy_int64_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":732
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":732
  * #ctypedef npy_int128     int128_t
  * 
  * ctypedef npy_uint8      uint8_t             # <<<<<<<<<<<<<<
@@ -647,7 +646,7 @@ typedef npy_int64 __pyx_t_5numpy_int64_t;
  */
 typedef npy_uint8 __pyx_t_5numpy_uint8_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":733
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":733
  * 
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t             # <<<<<<<<<<<<<<
@@ -656,7 +655,7 @@ typedef npy_uint8 __pyx_t_5numpy_uint8_t;
  */
 typedef npy_uint16 __pyx_t_5numpy_uint16_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":734
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":734
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t             # <<<<<<<<<<<<<<
@@ -665,7 +664,7 @@ typedef npy_uint16 __pyx_t_5numpy_uint16_t;
  */
 typedef npy_uint32 __pyx_t_5numpy_uint32_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":735
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":735
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t
  * ctypedef npy_uint64     uint64_t             # <<<<<<<<<<<<<<
@@ -674,7 +673,7 @@ typedef npy_uint32 __pyx_t_5numpy_uint32_t;
  */
 typedef npy_uint64 __pyx_t_5numpy_uint64_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":739
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":739
  * #ctypedef npy_uint128    uint128_t
  * 
  * ctypedef npy_float32    float32_t             # <<<<<<<<<<<<<<
@@ -683,7 +682,7 @@ typedef npy_uint64 __pyx_t_5numpy_uint64_t;
  */
 typedef npy_float32 __pyx_t_5numpy_float32_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":740
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":740
  * 
  * ctypedef npy_float32    float32_t
  * ctypedef npy_float64    float64_t             # <<<<<<<<<<<<<<
@@ -692,7 +691,7 @@ typedef npy_float32 __pyx_t_5numpy_float32_t;
  */
 typedef npy_float64 __pyx_t_5numpy_float64_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":749
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":749
  * # The int types are mapped a bit surprising --
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t             # <<<<<<<<<<<<<<
@@ -701,7 +700,7 @@ typedef npy_float64 __pyx_t_5numpy_float64_t;
  */
 typedef npy_long __pyx_t_5numpy_int_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":750
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":750
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t             # <<<<<<<<<<<<<<
@@ -710,7 +709,7 @@ typedef npy_long __pyx_t_5numpy_int_t;
  */
 typedef npy_longlong __pyx_t_5numpy_long_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":751
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":751
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t
  * ctypedef npy_longlong   longlong_t             # <<<<<<<<<<<<<<
@@ -719,7 +718,7 @@ typedef npy_longlong __pyx_t_5numpy_long_t;
  */
 typedef npy_longlong __pyx_t_5numpy_longlong_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":753
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":753
  * ctypedef npy_longlong   longlong_t
  * 
  * ctypedef npy_ulong      uint_t             # <<<<<<<<<<<<<<
@@ -728,7 +727,7 @@ typedef npy_longlong __pyx_t_5numpy_longlong_t;
  */
 typedef npy_ulong __pyx_t_5numpy_uint_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":754
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":754
  * 
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t             # <<<<<<<<<<<<<<
@@ -737,7 +736,7 @@ typedef npy_ulong __pyx_t_5numpy_uint_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":755
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":755
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t
  * ctypedef npy_ulonglong  ulonglong_t             # <<<<<<<<<<<<<<
@@ -746,7 +745,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":757
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":757
  * ctypedef npy_ulonglong  ulonglong_t
  * 
  * ctypedef npy_intp       intp_t             # <<<<<<<<<<<<<<
@@ -755,7 +754,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
  */
 typedef npy_intp __pyx_t_5numpy_intp_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":758
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":758
  * 
  * ctypedef npy_intp       intp_t
  * ctypedef npy_uintp      uintp_t             # <<<<<<<<<<<<<<
@@ -764,7 +763,7 @@ typedef npy_intp __pyx_t_5numpy_intp_t;
  */
 typedef npy_uintp __pyx_t_5numpy_uintp_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":760
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":760
  * ctypedef npy_uintp      uintp_t
  * 
  * ctypedef npy_double     float_t             # <<<<<<<<<<<<<<
@@ -773,7 +772,7 @@ typedef npy_uintp __pyx_t_5numpy_uintp_t;
  */
 typedef npy_double __pyx_t_5numpy_float_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":761
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":761
  * 
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t             # <<<<<<<<<<<<<<
@@ -782,7 +781,7 @@ typedef npy_double __pyx_t_5numpy_float_t;
  */
 typedef npy_double __pyx_t_5numpy_double_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":762
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":762
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t
  * ctypedef npy_longdouble longdouble_t             # <<<<<<<<<<<<<<
@@ -818,7 +817,7 @@ struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":764
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":764
  * ctypedef npy_longdouble longdouble_t
  * 
  * ctypedef npy_cfloat      cfloat_t             # <<<<<<<<<<<<<<
@@ -827,7 +826,7 @@ struct __pyx_memoryviewslice_obj;
  */
 typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":765
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":765
  * 
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t             # <<<<<<<<<<<<<<
@@ -836,7 +835,7 @@ typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":766
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":766
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t
  * ctypedef npy_clongdouble clongdouble_t             # <<<<<<<<<<<<<<
@@ -845,7 +844,7 @@ typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
  */
 typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":768
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":768
  * ctypedef npy_clongdouble clongdouble_t
  * 
  * ctypedef npy_cdouble     complex_t             # <<<<<<<<<<<<<<
@@ -854,7 +853,7 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
 
-/* "cell_tree2d\cell_tree2d.pyx":10
+/* "cell_tree2d/cell_tree2d.pyx":10
  *         int FindBoxLeaf(double* point)
  * 
  * cdef class CellTree:             # <<<<<<<<<<<<<<
@@ -945,7 +944,7 @@ struct __pyx_memoryviewslice_obj {
 
 
 
-/* "cell_tree2d\cell_tree2d.pyx":10
+/* "cell_tree2d/cell_tree2d.pyx":10
  *         int FindBoxLeaf(double* point)
  * 
  * cdef class CellTree:             # <<<<<<<<<<<<<<
@@ -1914,7 +1913,7 @@ static PyObject *__pyx_tuple__27;
 static PyObject *__pyx_tuple__28;
 static PyObject *__pyx_tuple__29;
 
-/* "cell_tree2d\cell_tree2d.pyx":14
+/* "cell_tree2d/cell_tree2d.pyx":14
  *     cdef CellTree2D* thisptr
  * 
  *     def __cinit__(self,             # <<<<<<<<<<<<<<
@@ -2056,7 +2055,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __pyx_pybuffernd_faces_arr.data = NULL;
   __pyx_pybuffernd_faces_arr.rcbuffer = &__pyx_pybuffer_faces_arr;
 
-  /* "cell_tree2d\cell_tree2d.pyx":46
+  /* "cell_tree2d/cell_tree2d.pyx":46
  * 
  *         # convert to numpy arrays:
  *         verts = np.asarray(verts, dtype=np.float64)             # <<<<<<<<<<<<<<
@@ -2090,7 +2089,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __Pyx_DECREF_SET(__pyx_v_verts, __pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "cell_tree2d\cell_tree2d.pyx":47
+  /* "cell_tree2d/cell_tree2d.pyx":47
  *         # convert to numpy arrays:
  *         verts = np.asarray(verts, dtype=np.float64)
  *         if len(verts.shape) <> 2 or verts.shape[1] <> 2:             # <<<<<<<<<<<<<<
@@ -2120,7 +2119,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_6) {
 
-    /* "cell_tree2d\cell_tree2d.pyx":48
+    /* "cell_tree2d/cell_tree2d.pyx":48
  *         verts = np.asarray(verts, dtype=np.float64)
  *         if len(verts.shape) <> 2 or verts.shape[1] <> 2:
  *             raise ValueError("verts must be convertible to a Nx2 numpy array of float64")             # <<<<<<<<<<<<<<
@@ -2133,7 +2132,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     {__pyx_filename = __pyx_f[0]; __pyx_lineno = 48; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-    /* "cell_tree2d\cell_tree2d.pyx":47
+    /* "cell_tree2d/cell_tree2d.pyx":47
  *         # convert to numpy arrays:
  *         verts = np.asarray(verts, dtype=np.float64)
  *         if len(verts.shape) <> 2 or verts.shape[1] <> 2:             # <<<<<<<<<<<<<<
@@ -2142,7 +2141,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
  */
   }
 
-  /* "cell_tree2d\cell_tree2d.pyx":49
+  /* "cell_tree2d/cell_tree2d.pyx":49
  *         if len(verts.shape) <> 2 or verts.shape[1] <> 2:
  *             raise ValueError("verts must be convertible to a Nx2 numpy array of float64")
  *         verts_arr = verts             # <<<<<<<<<<<<<<
@@ -2171,7 +2170,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __pyx_v_verts_arr = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "cell_tree2d\cell_tree2d.pyx":51
+  /* "cell_tree2d/cell_tree2d.pyx":51
  *         verts_arr = verts
  * 
  *         faces = np.asarray(faces, dtype=np.intc)             # <<<<<<<<<<<<<<
@@ -2205,7 +2204,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __Pyx_DECREF_SET(__pyx_v_faces, __pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "cell_tree2d\cell_tree2d.pyx":52
+  /* "cell_tree2d/cell_tree2d.pyx":52
  * 
  *         faces = np.asarray(faces, dtype=np.intc)
  *         if  len(faces.shape)<>2 or not (faces.shape[1] == 3 or faces.shape[1] == 4):             # <<<<<<<<<<<<<<
@@ -2254,7 +2253,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __pyx_L7_bool_binop_done:;
   if (__pyx_t_6) {
 
-    /* "cell_tree2d\cell_tree2d.pyx":53
+    /* "cell_tree2d/cell_tree2d.pyx":53
  *         faces = np.asarray(faces, dtype=np.intc)
  *         if  len(faces.shape)<>2 or not (faces.shape[1] == 3 or faces.shape[1] == 4):
  *             raise ValueError("faces must be convertible to a Nx3 (for triangles)"             # <<<<<<<<<<<<<<
@@ -2267,7 +2266,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     {__pyx_filename = __pyx_f[0]; __pyx_lineno = 53; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-    /* "cell_tree2d\cell_tree2d.pyx":52
+    /* "cell_tree2d/cell_tree2d.pyx":52
  * 
  *         faces = np.asarray(faces, dtype=np.intc)
  *         if  len(faces.shape)<>2 or not (faces.shape[1] == 3 or faces.shape[1] == 4):             # <<<<<<<<<<<<<<
@@ -2276,7 +2275,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
  */
   }
 
-  /* "cell_tree2d\cell_tree2d.pyx":55
+  /* "cell_tree2d/cell_tree2d.pyx":55
  *             raise ValueError("faces must be convertible to a Nx3 (for triangles)"
  *                              "or Nx4 (for quads) numpy array of integers")
  *         faces_arr = faces             # <<<<<<<<<<<<<<
@@ -2305,7 +2304,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __pyx_v_faces_arr = ((PyArrayObject *)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "cell_tree2d\cell_tree2d.pyx":58
+  /* "cell_tree2d/cell_tree2d.pyx":58
  * 
  *         ## a bit more error checking:
  *         if num_buckets < 2:             # <<<<<<<<<<<<<<
@@ -2315,7 +2314,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __pyx_t_6 = ((__pyx_v_num_buckets < 2) != 0);
   if (__pyx_t_6) {
 
-    /* "cell_tree2d\cell_tree2d.pyx":59
+    /* "cell_tree2d/cell_tree2d.pyx":59
  *         ## a bit more error checking:
  *         if num_buckets < 2:
  *             raise ValueError("num_buckets must be an integer greater than 2")             # <<<<<<<<<<<<<<
@@ -2328,7 +2327,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-    /* "cell_tree2d\cell_tree2d.pyx":58
+    /* "cell_tree2d/cell_tree2d.pyx":58
  * 
  *         ## a bit more error checking:
  *         if num_buckets < 2:             # <<<<<<<<<<<<<<
@@ -2337,7 +2336,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
  */
   }
 
-  /* "cell_tree2d\cell_tree2d.pyx":60
+  /* "cell_tree2d/cell_tree2d.pyx":60
  *         if num_buckets < 2:
  *             raise ValueError("num_buckets must be an integer greater than 2")
  *         if cells_per_leaf < 1:             # <<<<<<<<<<<<<<
@@ -2347,7 +2346,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __pyx_t_6 = ((__pyx_v_cells_per_leaf < 1) != 0);
   if (__pyx_t_6) {
 
-    /* "cell_tree2d\cell_tree2d.pyx":61
+    /* "cell_tree2d/cell_tree2d.pyx":61
  *             raise ValueError("num_buckets must be an integer greater than 2")
  *         if cells_per_leaf < 1:
  *             raise ValueError("cells_per_leaf must be >= 1")             # <<<<<<<<<<<<<<
@@ -2360,7 +2359,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-    /* "cell_tree2d\cell_tree2d.pyx":60
+    /* "cell_tree2d/cell_tree2d.pyx":60
  *         if num_buckets < 2:
  *             raise ValueError("num_buckets must be an integer greater than 2")
  *         if cells_per_leaf < 1:             # <<<<<<<<<<<<<<
@@ -2369,7 +2368,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
  */
   }
 
-  /* "cell_tree2d\cell_tree2d.pyx":63
+  /* "cell_tree2d/cell_tree2d.pyx":63
  *             raise ValueError("cells_per_leaf must be >= 1")
  * 
  *         num_verts = verts.shape[0]             # <<<<<<<<<<<<<<
@@ -2385,7 +2384,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_num_verts = __pyx_t_9;
 
-  /* "cell_tree2d\cell_tree2d.pyx":64
+  /* "cell_tree2d/cell_tree2d.pyx":64
  * 
  *         num_verts = verts.shape[0]
  *         num_faces = faces.shape[0]             # <<<<<<<<<<<<<<
@@ -2401,7 +2400,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_num_faces = __pyx_t_9;
 
-  /* "cell_tree2d\cell_tree2d.pyx":65
+  /* "cell_tree2d/cell_tree2d.pyx":65
  *         num_verts = verts.shape[0]
  *         num_faces = faces.shape[0]
  *         num_poly_vert = faces.shape[1]             # <<<<<<<<<<<<<<
@@ -2417,7 +2416,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_num_poly_vert = __pyx_t_9;
 
-  /* "cell_tree2d\cell_tree2d.pyx":66
+  /* "cell_tree2d/cell_tree2d.pyx":66
  *         num_faces = faces.shape[0]
  *         num_poly_vert = faces.shape[1]
  *         self.thisptr = new CellTree2D(&verts_arr[0,0],             # <<<<<<<<<<<<<<
@@ -2440,7 +2439,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
     {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
 
-  /* "cell_tree2d\cell_tree2d.pyx":68
+  /* "cell_tree2d/cell_tree2d.pyx":68
  *         self.thisptr = new CellTree2D(&verts_arr[0,0],
  *                                       num_verts,
  *                                       &faces_arr[0,0],             # <<<<<<<<<<<<<<
@@ -2463,7 +2462,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
     {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
 
-  /* "cell_tree2d\cell_tree2d.pyx":66
+  /* "cell_tree2d/cell_tree2d.pyx":66
  *         num_faces = faces.shape[0]
  *         num_poly_vert = faces.shape[1]
  *         self.thisptr = new CellTree2D(&verts_arr[0,0],             # <<<<<<<<<<<<<<
@@ -2478,7 +2477,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   }
   __pyx_v_self->thisptr = __pyx_t_18;
 
-  /* "cell_tree2d\cell_tree2d.pyx":14
+  /* "cell_tree2d/cell_tree2d.pyx":14
  *     cdef CellTree2D* thisptr
  * 
  *     def __cinit__(self,             # <<<<<<<<<<<<<<
@@ -2515,7 +2514,7 @@ static int __pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree___cinit__(struct __pyx
   return __pyx_r;
 }
 
-/* "cell_tree2d\cell_tree2d.pyx":74
+/* "cell_tree2d/cell_tree2d.pyx":74
  *                                       cells_per_leaf)
  * 
  *     def __del__(self):             # <<<<<<<<<<<<<<
@@ -2541,7 +2540,7 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_2__del__(struct 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__del__", 0);
 
-  /* "cell_tree2d\cell_tree2d.pyx":75
+  /* "cell_tree2d/cell_tree2d.pyx":75
  * 
  *     def __del__(self):
  *         del self.thisptr             # <<<<<<<<<<<<<<
@@ -2550,7 +2549,7 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_2__del__(struct 
  */
   delete __pyx_v_self->thisptr;
 
-  /* "cell_tree2d\cell_tree2d.pyx":74
+  /* "cell_tree2d/cell_tree2d.pyx":74
  *                                       cells_per_leaf)
  * 
  *     def __del__(self):             # <<<<<<<<<<<<<<
@@ -2565,7 +2564,7 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_2__del__(struct 
   return __pyx_r;
 }
 
-/* "cell_tree2d\cell_tree2d.pyx":77
+/* "cell_tree2d/cell_tree2d.pyx":77
  *         del self.thisptr
  * 
  *     def find_poly(self, point):             # <<<<<<<<<<<<<<
@@ -2614,7 +2613,7 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_4find_poly(struc
   __pyx_pybuffernd_point_arr.data = NULL;
   __pyx_pybuffernd_point_arr.rcbuffer = &__pyx_pybuffer_point_arr;
 
-  /* "cell_tree2d\cell_tree2d.pyx":88
+  /* "cell_tree2d/cell_tree2d.pyx":88
  * 
  * 
  *         point_arr = np.array(point)             # <<<<<<<<<<<<<<
@@ -2673,7 +2672,7 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_4find_poly(struc
   __pyx_v_point_arr = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cell_tree2d\cell_tree2d.pyx":89
+  /* "cell_tree2d/cell_tree2d.pyx":89
  * 
  *         point_arr = np.array(point)
  *         if point_arr.shape[0] <> 2:             # <<<<<<<<<<<<<<
@@ -2683,7 +2682,7 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_4find_poly(struc
   __pyx_t_10 = (((__pyx_v_point_arr->dimensions[0]) != 2) != 0);
   if (__pyx_t_10) {
 
-    /* "cell_tree2d\cell_tree2d.pyx":90
+    /* "cell_tree2d/cell_tree2d.pyx":90
  *         point_arr = np.array(point)
  *         if point_arr.shape[0] <> 2:
  *             raise ValueError("point must be convertible to a 2x1 numpy array of float64")             # <<<<<<<<<<<<<<
@@ -2696,7 +2695,7 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_4find_poly(struc
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-    /* "cell_tree2d\cell_tree2d.pyx":89
+    /* "cell_tree2d/cell_tree2d.pyx":89
  * 
  *         point_arr = np.array(point)
  *         if point_arr.shape[0] <> 2:             # <<<<<<<<<<<<<<
@@ -2705,7 +2704,7 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_4find_poly(struc
  */
   }
 
-  /* "cell_tree2d\cell_tree2d.pyx":92
+  /* "cell_tree2d/cell_tree2d.pyx":92
  *             raise ValueError("point must be convertible to a 2x1 numpy array of float64")
  * 
  *         self.c_find_poly(&point_arr[0], &result[0])             # <<<<<<<<<<<<<<
@@ -2726,7 +2725,7 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_4find_poly(struc
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cell_tree2d\cell_tree2d.pyx":93
+  /* "cell_tree2d/cell_tree2d.pyx":93
  * 
  *         self.c_find_poly(&point_arr[0], &result[0])
  *         return result[0]             # <<<<<<<<<<<<<<
@@ -2740,7 +2739,7 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_4find_poly(struc
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cell_tree2d\cell_tree2d.pyx":77
+  /* "cell_tree2d/cell_tree2d.pyx":77
  *         del self.thisptr
  * 
  *     def find_poly(self, point):             # <<<<<<<<<<<<<<
@@ -2770,7 +2769,7 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_4find_poly(struc
   return __pyx_r;
 }
 
-/* "cell_tree2d\cell_tree2d.pyx":95
+/* "cell_tree2d/cell_tree2d.pyx":95
  *         return result[0]
  * 
  *     cdef c_find_poly(self, double[2] point, int* result):             # <<<<<<<<<<<<<<
@@ -2783,7 +2782,7 @@ static PyObject *__pyx_f_11cell_tree2d_11cell_tree2d_8CellTree_c_find_poly(struc
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("c_find_poly", 0);
 
-  /* "cell_tree2d\cell_tree2d.pyx":96
+  /* "cell_tree2d/cell_tree2d.pyx":96
  * 
  *     cdef c_find_poly(self, double[2] point, int* result):
  *         result[0] = self.thisptr.FindBoxLeaf(point)             # <<<<<<<<<<<<<<
@@ -2792,7 +2791,7 @@ static PyObject *__pyx_f_11cell_tree2d_11cell_tree2d_8CellTree_c_find_poly(struc
  */
   (__pyx_v_result[0]) = __pyx_v_self->thisptr->FindBoxLeaf(__pyx_v_point);
 
-  /* "cell_tree2d\cell_tree2d.pyx":95
+  /* "cell_tree2d/cell_tree2d.pyx":95
  *         return result[0]
  * 
  *     cdef c_find_poly(self, double[2] point, int* result):             # <<<<<<<<<<<<<<
@@ -2807,11 +2806,11 @@ static PyObject *__pyx_f_11cell_tree2d_11cell_tree2d_8CellTree_c_find_poly(struc
   return __pyx_r;
 }
 
-/* "cell_tree2d\cell_tree2d.pyx":99
+/* "cell_tree2d/cell_tree2d.pyx":99
  * 
  *     @cython.boundscheck(False)
  *     def multi_locate(self, double[:,:] points):             # <<<<<<<<<<<<<<
- *         cdef int i
+ *         cdef int i = 0
  *         cdef int size
  */
 
@@ -2853,15 +2852,16 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_6multi_locate(st
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  PyArrayObject *__pyx_t_5 = NULL;
-  int __pyx_t_6;
-  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyArrayObject *__pyx_t_6 = NULL;
+  int __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
   PyObject *__pyx_t_9 = NULL;
-  int __pyx_t_10;
-  __Pyx_memviewslice __pyx_t_11 = { 0, 0, { 0 }, { 0 }, { 0 } };
-  Py_ssize_t __pyx_t_12;
+  PyObject *__pyx_t_10 = NULL;
+  int __pyx_t_11;
+  __Pyx_memviewslice __pyx_t_12 = { 0, 0, { 0 }, { 0 }, { 0 } };
   Py_ssize_t __pyx_t_13;
+  Py_ssize_t __pyx_t_14;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -2871,94 +2871,105 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_6multi_locate(st
   __pyx_pybuffernd_locations.data = NULL;
   __pyx_pybuffernd_locations.rcbuffer = &__pyx_pybuffer_locations;
 
-  /* "cell_tree2d\cell_tree2d.pyx":103
+  /* "cell_tree2d/cell_tree2d.pyx":100
+ *     @cython.boundscheck(False)
+ *     def multi_locate(self, double[:,:] points):
+ *         cdef int i = 0             # <<<<<<<<<<<<<<
  *         cdef int size
- *         cdef cnp.ndarray[int,ndim=1,mode="c"] locations
- *         i = 0             # <<<<<<<<<<<<<<
- *         size = points.shape[0]
- *         locations = np.zeros((size),dtype=int)
+ *         cdef cnp.ndarray[int, ndim=1, mode="c"] locations
  */
   __pyx_v_i = 0;
 
-  /* "cell_tree2d\cell_tree2d.pyx":104
- *         cdef cnp.ndarray[int,ndim=1,mode="c"] locations
- *         i = 0
+  /* "cell_tree2d/cell_tree2d.pyx":103
+ *         cdef int size
+ *         cdef cnp.ndarray[int, ndim=1, mode="c"] locations
  *         size = points.shape[0]             # <<<<<<<<<<<<<<
- *         locations = np.zeros((size),dtype=int)
+ *         locations = np.zeros((size,), dtype=np.intc)
  * 
  */
   __pyx_v_size = (__pyx_v_points.shape[0]);
 
-  /* "cell_tree2d\cell_tree2d.pyx":105
- *         i = 0
+  /* "cell_tree2d/cell_tree2d.pyx":104
+ *         cdef cnp.ndarray[int, ndim=1, mode="c"] locations
  *         size = points.shape[0]
- *         locations = np.zeros((size),dtype=int)             # <<<<<<<<<<<<<<
+ *         locations = np.zeros((size,), dtype=np.intc)             # <<<<<<<<<<<<<<
  * 
  *         while i < size:
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_size); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_size); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, ((PyObject *)(&PyInt_Type))) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GIVEREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3);
+  __pyx_t_3 = 0;
+  __pyx_t_3 = PyDict_New(); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_intc); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_5) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_t_5 = ((PyArrayObject *)__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (!(likely(((__pyx_t_5) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_5, __pyx_ptype_5numpy_ndarray))))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_6 = ((PyArrayObject *)__pyx_t_5);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_locations.rcbuffer->pybuffer);
-    __pyx_t_6 = __Pyx_GetBufferAndValidate(&__pyx_pybuffernd_locations.rcbuffer->pybuffer, (PyObject*)__pyx_t_5, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack);
-    if (unlikely(__pyx_t_6 < 0)) {
-      PyErr_Fetch(&__pyx_t_7, &__pyx_t_8, &__pyx_t_9);
+    __pyx_t_7 = __Pyx_GetBufferAndValidate(&__pyx_pybuffernd_locations.rcbuffer->pybuffer, (PyObject*)__pyx_t_6, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack);
+    if (unlikely(__pyx_t_7 < 0)) {
+      PyErr_Fetch(&__pyx_t_8, &__pyx_t_9, &__pyx_t_10);
       if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_locations.rcbuffer->pybuffer, (PyObject*)__pyx_v_locations, &__Pyx_TypeInfo_int, PyBUF_FORMAT| PyBUF_C_CONTIGUOUS, 1, 0, __pyx_stack) == -1)) {
-        Py_XDECREF(__pyx_t_7); Py_XDECREF(__pyx_t_8); Py_XDECREF(__pyx_t_9);
+        Py_XDECREF(__pyx_t_8); Py_XDECREF(__pyx_t_9); Py_XDECREF(__pyx_t_10);
         __Pyx_RaiseBufferFallbackError();
       } else {
-        PyErr_Restore(__pyx_t_7, __pyx_t_8, __pyx_t_9);
+        PyErr_Restore(__pyx_t_8, __pyx_t_9, __pyx_t_10);
       }
     }
     __pyx_pybuffernd_locations.diminfo[0].strides = __pyx_pybuffernd_locations.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_locations.diminfo[0].shape = __pyx_pybuffernd_locations.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_6 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (unlikely(__pyx_t_7 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
+  __pyx_t_6 = 0;
+  __pyx_v_locations = ((PyArrayObject *)__pyx_t_5);
   __pyx_t_5 = 0;
-  __pyx_v_locations = ((PyArrayObject *)__pyx_t_4);
-  __pyx_t_4 = 0;
 
-  /* "cell_tree2d\cell_tree2d.pyx":107
- *         locations = np.zeros((size),dtype=int)
+  /* "cell_tree2d/cell_tree2d.pyx":106
+ *         locations = np.zeros((size,), dtype=np.intc)
  * 
  *         while i < size:             # <<<<<<<<<<<<<<
  *             self.c_find_poly(&points[i][0], &locations[i])
  *             i+=1
  */
   while (1) {
-    __pyx_t_10 = ((__pyx_v_i < __pyx_v_size) != 0);
-    if (!__pyx_t_10) break;
+    __pyx_t_11 = ((__pyx_v_i < __pyx_v_size) != 0);
+    if (!__pyx_t_11) break;
 
-    /* "cell_tree2d\cell_tree2d.pyx":108
+    /* "cell_tree2d/cell_tree2d.pyx":107
  * 
  *         while i < size:
  *             self.c_find_poly(&points[i][0], &locations[i])             # <<<<<<<<<<<<<<
  *             i+=1
  * 
  */
-    __pyx_t_11.data = __pyx_v_points.data;
-    __pyx_t_11.memview = __pyx_v_points.memview;
-    __PYX_INC_MEMVIEW(&__pyx_t_11, 0);
+    __pyx_t_12.data = __pyx_v_points.data;
+    __pyx_t_12.memview = __pyx_v_points.memview;
+    __PYX_INC_MEMVIEW(&__pyx_t_12, 0);
     {
     Py_ssize_t __pyx_tmp_idx = __pyx_v_i;
     Py_ssize_t __pyx_tmp_shape = __pyx_v_points.shape[0];
@@ -2967,25 +2978,25 @@ static PyObject *__pyx_pf_11cell_tree2d_11cell_tree2d_8CellTree_6multi_locate(st
         __pyx_tmp_idx += __pyx_tmp_shape;
     if (0 && (__pyx_tmp_idx < 0 || __pyx_tmp_idx >= __pyx_tmp_shape)) {
         PyErr_SetString(PyExc_IndexError, "Index out of bounds (axis 0)");
-        {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
-        __pyx_t_11.data += __pyx_tmp_idx * __pyx_tmp_stride;
+        __pyx_t_12.data += __pyx_tmp_idx * __pyx_tmp_stride;
 }
 
-__pyx_t_11.shape[0] = __pyx_v_points.shape[1];
-__pyx_t_11.strides[0] = __pyx_v_points.strides[1];
-    __pyx_t_11.suboffsets[0] = -1;
+__pyx_t_12.shape[0] = __pyx_v_points.shape[1];
+__pyx_t_12.strides[0] = __pyx_v_points.strides[1];
+    __pyx_t_12.suboffsets[0] = -1;
 
-__pyx_t_12 = 0;
-    if (__pyx_t_12 < 0) __pyx_t_12 += __pyx_t_11.shape[0];
-    __pyx_t_13 = __pyx_v_i;
-    if (__pyx_t_13 < 0) __pyx_t_13 += __pyx_pybuffernd_locations.diminfo[0].shape;
-    __pyx_t_4 = ((struct __pyx_vtabstruct_11cell_tree2d_11cell_tree2d_CellTree *)__pyx_v_self->__pyx_vtab)->c_find_poly(__pyx_v_self, (&(*((double *) ( /* dim=0 */ (__pyx_t_11.data + __pyx_t_12 * __pyx_t_11.strides[0]) )))), (&(*__Pyx_BufPtrCContig1d(int *, __pyx_pybuffernd_locations.rcbuffer->pybuffer.buf, __pyx_t_13, __pyx_pybuffernd_locations.diminfo[0].strides)))); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __PYX_XDEC_MEMVIEW(&__pyx_t_11, 1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+__pyx_t_13 = 0;
+    if (__pyx_t_13 < 0) __pyx_t_13 += __pyx_t_12.shape[0];
+    __pyx_t_14 = __pyx_v_i;
+    if (__pyx_t_14 < 0) __pyx_t_14 += __pyx_pybuffernd_locations.diminfo[0].shape;
+    __pyx_t_5 = ((struct __pyx_vtabstruct_11cell_tree2d_11cell_tree2d_CellTree *)__pyx_v_self->__pyx_vtab)->c_find_poly(__pyx_v_self, (&(*((double *) ( /* dim=0 */ (__pyx_t_12.data + __pyx_t_13 * __pyx_t_12.strides[0]) )))), (&(*__Pyx_BufPtrCContig1d(int *, __pyx_pybuffernd_locations.rcbuffer->pybuffer.buf, __pyx_t_14, __pyx_pybuffernd_locations.diminfo[0].strides)))); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_5);
+    __PYX_XDEC_MEMVIEW(&__pyx_t_12, 1);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "cell_tree2d\cell_tree2d.pyx":109
+    /* "cell_tree2d/cell_tree2d.pyx":108
  *         while i < size:
  *             self.c_find_poly(&points[i][0], &locations[i])
  *             i+=1             # <<<<<<<<<<<<<<
@@ -2995,7 +3006,7 @@ __pyx_t_12 = 0;
     __pyx_v_i = (__pyx_v_i + 1);
   }
 
-  /* "cell_tree2d\cell_tree2d.pyx":111
+  /* "cell_tree2d/cell_tree2d.pyx":110
  *             i+=1
  * 
  *         return locations             # <<<<<<<<<<<<<<
@@ -3006,11 +3017,11 @@ __pyx_t_12 = 0;
   __pyx_r = ((PyObject *)__pyx_v_locations);
   goto __pyx_L0;
 
-  /* "cell_tree2d\cell_tree2d.pyx":99
+  /* "cell_tree2d/cell_tree2d.pyx":99
  * 
  *     @cython.boundscheck(False)
  *     def multi_locate(self, double[:,:] points):             # <<<<<<<<<<<<<<
- *         cdef int i
+ *         cdef int i = 0
  *         cdef int size
  */
 
@@ -3020,7 +3031,8 @@ __pyx_t_12 = 0;
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __PYX_XDEC_MEMVIEW(&__pyx_t_11, 1);
+  __Pyx_XDECREF(__pyx_t_5);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_12, 1);
   { PyObject *__pyx_type, *__pyx_value, *__pyx_tb;
     __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_locations.rcbuffer->pybuffer);
@@ -3038,7 +3050,7 @@ __pyx_t_12 = 0;
   return __pyx_r;
 }
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":197
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":197
  *         # experimental exception made for __getbuffer__ and __releasebuffer__
  *         # -- the details of this may change.
  *         def __getbuffer__(ndarray self, Py_buffer* info, int flags):             # <<<<<<<<<<<<<<
@@ -3088,7 +3100,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __Pyx_GIVEREF(__pyx_v_info->obj);
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":203
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":203
  *             # of flags
  * 
  *             if info == NULL: return             # <<<<<<<<<<<<<<
@@ -3101,7 +3113,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L0;
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":206
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":206
  * 
  *             cdef int copy_shape, i, ndim
  *             cdef int endian_detector = 1             # <<<<<<<<<<<<<<
@@ -3110,7 +3122,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_endian_detector = 1;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":207
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":207
  *             cdef int copy_shape, i, ndim
  *             cdef int endian_detector = 1
  *             cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)             # <<<<<<<<<<<<<<
@@ -3119,7 +3131,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_little_endian = ((((char *)(&__pyx_v_endian_detector))[0]) != 0);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":209
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":209
  *             cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)
  * 
  *             ndim = PyArray_NDIM(self)             # <<<<<<<<<<<<<<
@@ -3128,7 +3140,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_ndim = PyArray_NDIM(__pyx_v_self);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":211
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":211
  *             ndim = PyArray_NDIM(self)
  * 
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -3138,7 +3150,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = (((sizeof(npy_intp)) != (sizeof(Py_ssize_t))) != 0);
   if (__pyx_t_1) {
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":212
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":212
  * 
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):
  *                 copy_shape = 1             # <<<<<<<<<<<<<<
@@ -3147,7 +3159,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_copy_shape = 1;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":211
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":211
  *             ndim = PyArray_NDIM(self)
  * 
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -3157,7 +3169,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L4;
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":214
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":214
  *                 copy_shape = 1
  *             else:
  *                 copy_shape = 0             # <<<<<<<<<<<<<<
@@ -3169,7 +3181,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   __pyx_L4:;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":216
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":216
  *                 copy_shape = 0
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -3183,7 +3195,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L6_bool_binop_done;
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":217
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":217
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_C_CONTIGUOUS)):             # <<<<<<<<<<<<<<
@@ -3194,7 +3206,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = __pyx_t_2;
   __pyx_L6_bool_binop_done:;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":216
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":216
  *                 copy_shape = 0
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -3203,7 +3215,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   if (__pyx_t_1) {
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":218
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":218
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_C_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not C contiguous")             # <<<<<<<<<<<<<<
@@ -3216,7 +3228,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     {__pyx_filename = __pyx_f[1]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":216
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":216
  *                 copy_shape = 0
  * 
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -3225,7 +3237,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":220
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":220
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -3239,7 +3251,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L9_bool_binop_done;
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":221
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":221
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_F_CONTIGUOUS)):             # <<<<<<<<<<<<<<
@@ -3250,7 +3262,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = __pyx_t_2;
   __pyx_L9_bool_binop_done:;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":220
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":220
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -3259,7 +3271,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   if (__pyx_t_1) {
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":222
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":222
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_F_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not Fortran contiguous")             # <<<<<<<<<<<<<<
@@ -3272,7 +3284,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     {__pyx_filename = __pyx_f[1]; __pyx_lineno = 222; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":220
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":220
  *                 raise ValueError(u"ndarray is not C contiguous")
  * 
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)             # <<<<<<<<<<<<<<
@@ -3281,7 +3293,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":224
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":224
  *                 raise ValueError(u"ndarray is not Fortran contiguous")
  * 
  *             info.buf = PyArray_DATA(self)             # <<<<<<<<<<<<<<
@@ -3290,7 +3302,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->buf = PyArray_DATA(__pyx_v_self);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":225
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":225
  * 
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim             # <<<<<<<<<<<<<<
@@ -3299,7 +3311,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->ndim = __pyx_v_ndim;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":226
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":226
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim
  *             if copy_shape:             # <<<<<<<<<<<<<<
@@ -3309,7 +3321,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = (__pyx_v_copy_shape != 0);
   if (__pyx_t_1) {
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":229
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":229
  *                 # Allocate new buffer for strides and shape info.
  *                 # This is allocated as one block, strides first.
  *                 info.strides = <Py_ssize_t*>stdlib.malloc(sizeof(Py_ssize_t) * <size_t>ndim * 2)             # <<<<<<<<<<<<<<
@@ -3318,7 +3330,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->strides = ((Py_ssize_t *)malloc((((sizeof(Py_ssize_t)) * ((size_t)__pyx_v_ndim)) * 2)));
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":230
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":230
  *                 # This is allocated as one block, strides first.
  *                 info.strides = <Py_ssize_t*>stdlib.malloc(sizeof(Py_ssize_t) * <size_t>ndim * 2)
  *                 info.shape = info.strides + ndim             # <<<<<<<<<<<<<<
@@ -3327,7 +3339,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->shape = (__pyx_v_info->strides + __pyx_v_ndim);
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":231
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":231
  *                 info.strides = <Py_ssize_t*>stdlib.malloc(sizeof(Py_ssize_t) * <size_t>ndim * 2)
  *                 info.shape = info.strides + ndim
  *                 for i in range(ndim):             # <<<<<<<<<<<<<<
@@ -3338,7 +3350,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_4; __pyx_t_5+=1) {
       __pyx_v_i = __pyx_t_5;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":232
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":232
  *                 info.shape = info.strides + ndim
  *                 for i in range(ndim):
  *                     info.strides[i] = PyArray_STRIDES(self)[i]             # <<<<<<<<<<<<<<
@@ -3347,7 +3359,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
       (__pyx_v_info->strides[__pyx_v_i]) = (PyArray_STRIDES(__pyx_v_self)[__pyx_v_i]);
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":233
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":233
  *                 for i in range(ndim):
  *                     info.strides[i] = PyArray_STRIDES(self)[i]
  *                     info.shape[i] = PyArray_DIMS(self)[i]             # <<<<<<<<<<<<<<
@@ -3357,7 +3369,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       (__pyx_v_info->shape[__pyx_v_i]) = (PyArray_DIMS(__pyx_v_self)[__pyx_v_i]);
     }
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":226
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":226
  *             info.buf = PyArray_DATA(self)
  *             info.ndim = ndim
  *             if copy_shape:             # <<<<<<<<<<<<<<
@@ -3367,7 +3379,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L11;
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":235
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":235
  *                     info.shape[i] = PyArray_DIMS(self)[i]
  *             else:
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)             # <<<<<<<<<<<<<<
@@ -3377,7 +3389,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   /*else*/ {
     __pyx_v_info->strides = ((Py_ssize_t *)PyArray_STRIDES(__pyx_v_self));
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":236
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":236
  *             else:
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)             # <<<<<<<<<<<<<<
@@ -3388,7 +3400,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   __pyx_L11:;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":237
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":237
  *                 info.strides = <Py_ssize_t*>PyArray_STRIDES(self)
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)
  *             info.suboffsets = NULL             # <<<<<<<<<<<<<<
@@ -3397,7 +3409,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->suboffsets = NULL;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":238
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":238
  *                 info.shape = <Py_ssize_t*>PyArray_DIMS(self)
  *             info.suboffsets = NULL
  *             info.itemsize = PyArray_ITEMSIZE(self)             # <<<<<<<<<<<<<<
@@ -3406,7 +3418,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->itemsize = PyArray_ITEMSIZE(__pyx_v_self);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":239
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":239
  *             info.suboffsets = NULL
  *             info.itemsize = PyArray_ITEMSIZE(self)
  *             info.readonly = not PyArray_ISWRITEABLE(self)             # <<<<<<<<<<<<<<
@@ -3415,7 +3427,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_info->readonly = (!(PyArray_ISWRITEABLE(__pyx_v_self) != 0));
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":242
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":242
  * 
  *             cdef int t
  *             cdef char* f = NULL             # <<<<<<<<<<<<<<
@@ -3424,7 +3436,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_f = NULL;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":243
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":243
  *             cdef int t
  *             cdef char* f = NULL
  *             cdef dtype descr = self.descr             # <<<<<<<<<<<<<<
@@ -3436,7 +3448,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_v_descr = ((PyArray_Descr *)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":246
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":246
  *             cdef int offset
  * 
  *             cdef bint hasfields = PyDataType_HASFIELDS(descr)             # <<<<<<<<<<<<<<
@@ -3445,7 +3457,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   __pyx_v_hasfields = PyDataType_HASFIELDS(__pyx_v_descr);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":248
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":248
  *             cdef bint hasfields = PyDataType_HASFIELDS(descr)
  * 
  *             if not hasfields and not copy_shape:             # <<<<<<<<<<<<<<
@@ -3463,7 +3475,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_L15_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":250
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":250
  *             if not hasfields and not copy_shape:
  *                 # do not call releasebuffer
  *                 info.obj = None             # <<<<<<<<<<<<<<
@@ -3476,7 +3488,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __Pyx_DECREF(__pyx_v_info->obj);
     __pyx_v_info->obj = Py_None;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":248
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":248
  *             cdef bint hasfields = PyDataType_HASFIELDS(descr)
  * 
  *             if not hasfields and not copy_shape:             # <<<<<<<<<<<<<<
@@ -3486,7 +3498,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     goto __pyx_L14;
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":253
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":253
  *             else:
  *                 # need to call releasebuffer
  *                 info.obj = self             # <<<<<<<<<<<<<<
@@ -3502,7 +3514,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   }
   __pyx_L14:;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":255
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":255
  *                 info.obj = self
  * 
  *             if not hasfields:             # <<<<<<<<<<<<<<
@@ -3512,7 +3524,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   __pyx_t_1 = ((!(__pyx_v_hasfields != 0)) != 0);
   if (__pyx_t_1) {
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":256
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":256
  * 
  *             if not hasfields:
  *                 t = descr.type_num             # <<<<<<<<<<<<<<
@@ -3522,7 +3534,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_4 = __pyx_v_descr->type_num;
     __pyx_v_t = __pyx_t_4;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":257
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":257
  *             if not hasfields:
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -3542,7 +3554,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     }
     __pyx_L20_next_or:;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":258
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":258
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):             # <<<<<<<<<<<<<<
@@ -3559,7 +3571,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_1 = __pyx_t_2;
     __pyx_L19_bool_binop_done:;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":257
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":257
  *             if not hasfields:
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -3568,7 +3580,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     if (__pyx_t_1) {
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":259
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":259
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
@@ -3581,7 +3593,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       {__pyx_filename = __pyx_f[1]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":257
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":257
  *             if not hasfields:
  *                 t = descr.type_num
  *                 if ((descr.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -3590,7 +3602,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     }
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":260
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":260
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")
  *                 if   t == NPY_BYTE:        f = "b"             # <<<<<<<<<<<<<<
@@ -3602,7 +3614,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_b;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":261
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":261
  *                     raise ValueError(u"Non-native byte order not supported")
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"             # <<<<<<<<<<<<<<
@@ -3613,7 +3625,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_B;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":262
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":262
  *                 if   t == NPY_BYTE:        f = "b"
  *                 elif t == NPY_UBYTE:       f = "B"
  *                 elif t == NPY_SHORT:       f = "h"             # <<<<<<<<<<<<<<
@@ -3624,7 +3636,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_h;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":263
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":263
  *                 elif t == NPY_UBYTE:       f = "B"
  *                 elif t == NPY_SHORT:       f = "h"
  *                 elif t == NPY_USHORT:      f = "H"             # <<<<<<<<<<<<<<
@@ -3635,7 +3647,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_H;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":264
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":264
  *                 elif t == NPY_SHORT:       f = "h"
  *                 elif t == NPY_USHORT:      f = "H"
  *                 elif t == NPY_INT:         f = "i"             # <<<<<<<<<<<<<<
@@ -3646,7 +3658,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_i;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":265
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":265
  *                 elif t == NPY_USHORT:      f = "H"
  *                 elif t == NPY_INT:         f = "i"
  *                 elif t == NPY_UINT:        f = "I"             # <<<<<<<<<<<<<<
@@ -3657,7 +3669,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_I;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":266
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":266
  *                 elif t == NPY_INT:         f = "i"
  *                 elif t == NPY_UINT:        f = "I"
  *                 elif t == NPY_LONG:        f = "l"             # <<<<<<<<<<<<<<
@@ -3668,7 +3680,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_l;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":267
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":267
  *                 elif t == NPY_UINT:        f = "I"
  *                 elif t == NPY_LONG:        f = "l"
  *                 elif t == NPY_ULONG:       f = "L"             # <<<<<<<<<<<<<<
@@ -3679,7 +3691,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_L;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":268
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":268
  *                 elif t == NPY_LONG:        f = "l"
  *                 elif t == NPY_ULONG:       f = "L"
  *                 elif t == NPY_LONGLONG:    f = "q"             # <<<<<<<<<<<<<<
@@ -3690,7 +3702,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_q;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":269
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":269
  *                 elif t == NPY_ULONG:       f = "L"
  *                 elif t == NPY_LONGLONG:    f = "q"
  *                 elif t == NPY_ULONGLONG:   f = "Q"             # <<<<<<<<<<<<<<
@@ -3701,7 +3713,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Q;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":270
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":270
  *                 elif t == NPY_LONGLONG:    f = "q"
  *                 elif t == NPY_ULONGLONG:   f = "Q"
  *                 elif t == NPY_FLOAT:       f = "f"             # <<<<<<<<<<<<<<
@@ -3712,7 +3724,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_f;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":271
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":271
  *                 elif t == NPY_ULONGLONG:   f = "Q"
  *                 elif t == NPY_FLOAT:       f = "f"
  *                 elif t == NPY_DOUBLE:      f = "d"             # <<<<<<<<<<<<<<
@@ -3723,7 +3735,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_d;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":272
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":272
  *                 elif t == NPY_FLOAT:       f = "f"
  *                 elif t == NPY_DOUBLE:      f = "d"
  *                 elif t == NPY_LONGDOUBLE:  f = "g"             # <<<<<<<<<<<<<<
@@ -3734,7 +3746,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_g;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":273
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":273
  *                 elif t == NPY_DOUBLE:      f = "d"
  *                 elif t == NPY_LONGDOUBLE:  f = "g"
  *                 elif t == NPY_CFLOAT:      f = "Zf"             # <<<<<<<<<<<<<<
@@ -3745,7 +3757,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Zf;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":274
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":274
  *                 elif t == NPY_LONGDOUBLE:  f = "g"
  *                 elif t == NPY_CFLOAT:      f = "Zf"
  *                 elif t == NPY_CDOUBLE:     f = "Zd"             # <<<<<<<<<<<<<<
@@ -3756,7 +3768,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Zd;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":275
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":275
  *                 elif t == NPY_CFLOAT:      f = "Zf"
  *                 elif t == NPY_CDOUBLE:     f = "Zd"
  *                 elif t == NPY_CLONGDOUBLE: f = "Zg"             # <<<<<<<<<<<<<<
@@ -3767,7 +3779,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       __pyx_v_f = __pyx_k_Zg;
       break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":276
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":276
  *                 elif t == NPY_CDOUBLE:     f = "Zd"
  *                 elif t == NPY_CLONGDOUBLE: f = "Zg"
  *                 elif t == NPY_OBJECT:      f = "O"             # <<<<<<<<<<<<<<
@@ -3779,7 +3791,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
       default:
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":278
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":278
  *                 elif t == NPY_OBJECT:      f = "O"
  *                 else:
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)             # <<<<<<<<<<<<<<
@@ -3805,7 +3817,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
       break;
     }
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":279
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":279
  *                 else:
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *                 info.format = f             # <<<<<<<<<<<<<<
@@ -3814,7 +3826,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_info->format = __pyx_v_f;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":280
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":280
  *                     raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *                 info.format = f
  *                 return             # <<<<<<<<<<<<<<
@@ -3824,7 +3836,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":255
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":255
  *                 info.obj = self
  * 
  *             if not hasfields:             # <<<<<<<<<<<<<<
@@ -3833,7 +3845,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":282
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":282
  *                 return
  *             else:
  *                 info.format = <char*>stdlib.malloc(_buffer_format_string_len)             # <<<<<<<<<<<<<<
@@ -3843,7 +3855,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   /*else*/ {
     __pyx_v_info->format = ((char *)malloc(0xFF));
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":283
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":283
  *             else:
  *                 info.format = <char*>stdlib.malloc(_buffer_format_string_len)
  *                 info.format[0] = c'^' # Native data types, manual alignment             # <<<<<<<<<<<<<<
@@ -3852,7 +3864,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     (__pyx_v_info->format[0]) = '^';
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":284
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":284
  *                 info.format = <char*>stdlib.malloc(_buffer_format_string_len)
  *                 info.format[0] = c'^' # Native data types, manual alignment
  *                 offset = 0             # <<<<<<<<<<<<<<
@@ -3861,7 +3873,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
  */
     __pyx_v_offset = 0;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":285
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":285
  *                 info.format[0] = c'^' # Native data types, manual alignment
  *                 offset = 0
  *                 f = _util_dtypestring(descr, info.format + 1,             # <<<<<<<<<<<<<<
@@ -3871,7 +3883,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     __pyx_t_7 = __pyx_f_5numpy__util_dtypestring(__pyx_v_descr, (__pyx_v_info->format + 1), (__pyx_v_info->format + 0xFF), (&__pyx_v_offset)); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[1]; __pyx_lineno = 285; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __pyx_v_f = __pyx_t_7;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":288
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":288
  *                                       info.format + _buffer_format_string_len,
  *                                       &offset)
  *                 f[0] = c'\0' # Terminate format string             # <<<<<<<<<<<<<<
@@ -3881,7 +3893,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
     (__pyx_v_f[0]) = '\x00';
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":197
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":197
  *         # experimental exception made for __getbuffer__ and __releasebuffer__
  *         # -- the details of this may change.
  *         def __getbuffer__(ndarray self, Py_buffer* info, int flags):             # <<<<<<<<<<<<<<
@@ -3913,7 +3925,7 @@ static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, P
   return __pyx_r;
 }
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":290
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":290
  *                 f[0] = c'\0' # Terminate format string
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):             # <<<<<<<<<<<<<<
@@ -3937,7 +3949,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__releasebuffer__", 0);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":291
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":291
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):             # <<<<<<<<<<<<<<
@@ -3947,7 +3959,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __pyx_t_1 = (PyArray_HASFIELDS(__pyx_v_self) != 0);
   if (__pyx_t_1) {
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":292
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":292
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):
  *                 stdlib.free(info.format)             # <<<<<<<<<<<<<<
@@ -3956,7 +3968,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
     free(__pyx_v_info->format);
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":291
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":291
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):
  *             if PyArray_HASFIELDS(self):             # <<<<<<<<<<<<<<
@@ -3965,7 +3977,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":293
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":293
  *             if PyArray_HASFIELDS(self):
  *                 stdlib.free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -3975,7 +3987,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __pyx_t_1 = (((sizeof(npy_intp)) != (sizeof(Py_ssize_t))) != 0);
   if (__pyx_t_1) {
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":294
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":294
  *                 stdlib.free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):
  *                 stdlib.free(info.strides)             # <<<<<<<<<<<<<<
@@ -3984,7 +3996,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
     free(__pyx_v_info->strides);
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":293
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":293
  *             if PyArray_HASFIELDS(self):
  *                 stdlib.free(info.format)
  *             if sizeof(npy_intp) != sizeof(Py_ssize_t):             # <<<<<<<<<<<<<<
@@ -3993,7 +4005,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
  */
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":290
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":290
  *                 f[0] = c'\0' # Terminate format string
  * 
  *         def __releasebuffer__(ndarray self, Py_buffer* info):             # <<<<<<<<<<<<<<
@@ -4005,7 +4017,7 @@ static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_s
   __Pyx_RefNannyFinishContext();
 }
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":770
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":770
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -4022,7 +4034,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew1", 0);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":771
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":771
  * 
  * cdef inline object PyArray_MultiIterNew1(a):
  *     return PyArray_MultiIterNew(1, <void*>a)             # <<<<<<<<<<<<<<
@@ -4036,7 +4048,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":770
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":770
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -4055,7 +4067,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   return __pyx_r;
 }
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":773
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":773
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -4072,7 +4084,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew2", 0);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":774
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":774
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)             # <<<<<<<<<<<<<<
@@ -4086,7 +4098,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":773
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":773
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -4105,7 +4117,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   return __pyx_r;
 }
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":776
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":776
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -4122,7 +4134,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew3", 0);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":777
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":777
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)             # <<<<<<<<<<<<<<
@@ -4136,7 +4148,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":776
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":776
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -4155,7 +4167,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   return __pyx_r;
 }
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":779
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":779
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -4172,7 +4184,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew4", 0);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":780
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":780
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)             # <<<<<<<<<<<<<<
@@ -4186,7 +4198,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":779
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":779
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -4205,7 +4217,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   return __pyx_r;
 }
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":782
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":782
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -4222,7 +4234,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew5", 0);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":783
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":783
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)             # <<<<<<<<<<<<<<
@@ -4236,7 +4248,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":782
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":782
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -4255,7 +4267,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   return __pyx_r;
 }
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":785
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":785
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline char* _util_dtypestring(dtype descr, char* f, char* end, int* offset) except NULL:             # <<<<<<<<<<<<<<
@@ -4287,7 +4299,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_util_dtypestring", 0);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":790
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":790
  * 
  *     cdef dtype child
  *     cdef int endian_detector = 1             # <<<<<<<<<<<<<<
@@ -4296,7 +4308,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
   __pyx_v_endian_detector = 1;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":791
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":791
  *     cdef dtype child
  *     cdef int endian_detector = 1
  *     cdef bint little_endian = ((<char*>&endian_detector)[0] != 0)             # <<<<<<<<<<<<<<
@@ -4305,7 +4317,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
   __pyx_v_little_endian = ((((char *)(&__pyx_v_endian_detector))[0]) != 0);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":794
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":794
  *     cdef tuple fields
  * 
  *     for childname in descr.names:             # <<<<<<<<<<<<<<
@@ -4328,7 +4340,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_childname, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":795
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":795
  * 
  *     for childname in descr.names:
  *         fields = descr.fields[childname]             # <<<<<<<<<<<<<<
@@ -4345,7 +4357,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_fields, ((PyObject*)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":796
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":796
  *     for childname in descr.names:
  *         fields = descr.fields[childname]
  *         child, new_offset = fields             # <<<<<<<<<<<<<<
@@ -4384,7 +4396,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __Pyx_XDECREF_SET(__pyx_v_new_offset, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":798
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":798
  *         child, new_offset = fields
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:             # <<<<<<<<<<<<<<
@@ -4401,7 +4413,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = ((((__pyx_v_end - __pyx_v_f) - ((int)__pyx_t_5)) < 15) != 0);
     if (__pyx_t_6) {
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":799
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":799
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")             # <<<<<<<<<<<<<<
@@ -4414,7 +4426,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       {__pyx_filename = __pyx_f[1]; __pyx_lineno = 799; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":798
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":798
  *         child, new_offset = fields
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:             # <<<<<<<<<<<<<<
@@ -4423,7 +4435,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     }
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":801
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":801
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -4443,7 +4455,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     }
     __pyx_L8_next_or:;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":802
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":802
  * 
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):             # <<<<<<<<<<<<<<
@@ -4460,7 +4472,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = __pyx_t_7;
     __pyx_L7_bool_binop_done:;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":801
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":801
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -4469,7 +4481,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     if (__pyx_t_6) {
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":803
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":803
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):
  *             raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
@@ -4482,7 +4494,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       {__pyx_filename = __pyx_f[1]; __pyx_lineno = 803; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":801
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":801
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")
  * 
  *         if ((child.byteorder == c'>' and little_endian) or             # <<<<<<<<<<<<<<
@@ -4491,7 +4503,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
     }
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":813
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":813
  * 
  *         # Output padding bytes
  *         while offset[0] < new_offset:             # <<<<<<<<<<<<<<
@@ -4507,7 +4519,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (!__pyx_t_6) break;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":814
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":814
  *         # Output padding bytes
  *         while offset[0] < new_offset:
  *             f[0] = 120 # "x"; pad byte             # <<<<<<<<<<<<<<
@@ -4516,7 +4528,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       (__pyx_v_f[0]) = 0x78;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":815
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":815
  *         while offset[0] < new_offset:
  *             f[0] = 120 # "x"; pad byte
  *             f += 1             # <<<<<<<<<<<<<<
@@ -4525,7 +4537,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       __pyx_v_f = (__pyx_v_f + 1);
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":816
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":816
  *             f[0] = 120 # "x"; pad byte
  *             f += 1
  *             offset[0] += 1             # <<<<<<<<<<<<<<
@@ -4536,7 +4548,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       (__pyx_v_offset[__pyx_t_8]) = ((__pyx_v_offset[__pyx_t_8]) + 1);
     }
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":818
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":818
  *             offset[0] += 1
  * 
  *         offset[0] += child.itemsize             # <<<<<<<<<<<<<<
@@ -4546,7 +4558,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_8 = 0;
     (__pyx_v_offset[__pyx_t_8]) = ((__pyx_v_offset[__pyx_t_8]) + __pyx_v_child->elsize);
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":820
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":820
  *         offset[0] += child.itemsize
  * 
  *         if not PyDataType_HASFIELDS(child):             # <<<<<<<<<<<<<<
@@ -4556,7 +4568,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     __pyx_t_6 = ((!(PyDataType_HASFIELDS(__pyx_v_child) != 0)) != 0);
     if (__pyx_t_6) {
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":821
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":821
  * 
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num             # <<<<<<<<<<<<<<
@@ -4568,7 +4580,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __Pyx_XDECREF_SET(__pyx_v_t, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":822
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":822
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num
  *             if end - f < 5:             # <<<<<<<<<<<<<<
@@ -4578,7 +4590,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       __pyx_t_6 = (((__pyx_v_end - __pyx_v_f) < 5) != 0);
       if (__pyx_t_6) {
 
-        /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":823
+        /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":823
  *             t = child.type_num
  *             if end - f < 5:
  *                 raise RuntimeError(u"Format string allocated too short.")             # <<<<<<<<<<<<<<
@@ -4591,7 +4603,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         {__pyx_filename = __pyx_f[1]; __pyx_lineno = 823; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-        /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":822
+        /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":822
  *         if not PyDataType_HASFIELDS(child):
  *             t = child.type_num
  *             if end - f < 5:             # <<<<<<<<<<<<<<
@@ -4600,7 +4612,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":826
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":826
  * 
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"             # <<<<<<<<<<<<<<
@@ -4618,7 +4630,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":827
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":827
  *             # Until ticket #99 is fixed, use integers to avoid warnings
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"             # <<<<<<<<<<<<<<
@@ -4636,7 +4648,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":828
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":828
  *             if   t == NPY_BYTE:        f[0] =  98 #"b"
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"             # <<<<<<<<<<<<<<
@@ -4654,7 +4666,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":829
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":829
  *             elif t == NPY_UBYTE:       f[0] =  66 #"B"
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"             # <<<<<<<<<<<<<<
@@ -4672,7 +4684,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":830
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":830
  *             elif t == NPY_SHORT:       f[0] = 104 #"h"
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  *             elif t == NPY_INT:         f[0] = 105 #"i"             # <<<<<<<<<<<<<<
@@ -4690,7 +4702,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":831
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":831
  *             elif t == NPY_USHORT:      f[0] =  72 #"H"
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  *             elif t == NPY_UINT:        f[0] =  73 #"I"             # <<<<<<<<<<<<<<
@@ -4708,7 +4720,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":832
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":832
  *             elif t == NPY_INT:         f[0] = 105 #"i"
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  *             elif t == NPY_LONG:        f[0] = 108 #"l"             # <<<<<<<<<<<<<<
@@ -4726,7 +4738,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":833
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":833
  *             elif t == NPY_UINT:        f[0] =  73 #"I"
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"             # <<<<<<<<<<<<<<
@@ -4744,7 +4756,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":834
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":834
  *             elif t == NPY_LONG:        f[0] = 108 #"l"
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"             # <<<<<<<<<<<<<<
@@ -4762,7 +4774,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":835
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":835
  *             elif t == NPY_ULONG:       f[0] = 76  #"L"
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"             # <<<<<<<<<<<<<<
@@ -4780,7 +4792,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":836
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":836
  *             elif t == NPY_LONGLONG:    f[0] = 113 #"q"
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"             # <<<<<<<<<<<<<<
@@ -4798,7 +4810,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":837
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":837
  *             elif t == NPY_ULONGLONG:   f[0] = 81  #"Q"
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"             # <<<<<<<<<<<<<<
@@ -4816,7 +4828,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":838
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":838
  *             elif t == NPY_FLOAT:       f[0] = 102 #"f"
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"             # <<<<<<<<<<<<<<
@@ -4834,7 +4846,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":839
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":839
  *             elif t == NPY_DOUBLE:      f[0] = 100 #"d"
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf             # <<<<<<<<<<<<<<
@@ -4854,7 +4866,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":840
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":840
  *             elif t == NPY_LONGDOUBLE:  f[0] = 103 #"g"
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd             # <<<<<<<<<<<<<<
@@ -4874,7 +4886,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":841
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":841
  *             elif t == NPY_CFLOAT:      f[0] = 90; f[1] = 102; f += 1 # Zf
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg             # <<<<<<<<<<<<<<
@@ -4894,7 +4906,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":842
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":842
  *             elif t == NPY_CDOUBLE:     f[0] = 90; f[1] = 100; f += 1 # Zd
  *             elif t == NPY_CLONGDOUBLE: f[0] = 90; f[1] = 103; f += 1 # Zg
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"             # <<<<<<<<<<<<<<
@@ -4912,7 +4924,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
         goto __pyx_L15;
       }
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":844
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":844
  *             elif t == NPY_OBJECT:      f[0] = 79 #"O"
  *             else:
  *                 raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)             # <<<<<<<<<<<<<<
@@ -4936,7 +4948,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       }
       __pyx_L15:;
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":845
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":845
  *             else:
  *                 raise ValueError(u"unknown dtype code in numpy.pxd (%d)" % t)
  *             f += 1             # <<<<<<<<<<<<<<
@@ -4945,7 +4957,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
  */
       __pyx_v_f = (__pyx_v_f + 1);
 
-      /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":820
+      /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":820
  *         offset[0] += child.itemsize
  * 
  *         if not PyDataType_HASFIELDS(child):             # <<<<<<<<<<<<<<
@@ -4955,7 +4967,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
       goto __pyx_L13;
     }
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":849
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":849
  *             # Cython ignores struct boundary information ("T{...}"),
  *             # so don't output it
  *             f = _util_dtypestring(child, f, end, offset)             # <<<<<<<<<<<<<<
@@ -4968,7 +4980,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
     }
     __pyx_L13:;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":794
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":794
  *     cdef tuple fields
  * 
  *     for childname in descr.names:             # <<<<<<<<<<<<<<
@@ -4978,7 +4990,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":850
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":850
  *             # so don't output it
  *             f = _util_dtypestring(child, f, end, offset)
  *     return f             # <<<<<<<<<<<<<<
@@ -4988,7 +5000,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   __pyx_r = __pyx_v_f;
   goto __pyx_L0;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":785
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":785
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline char* _util_dtypestring(dtype descr, char* f, char* end, int* offset) except NULL:             # <<<<<<<<<<<<<<
@@ -5013,7 +5025,7 @@ static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx
   return __pyx_r;
 }
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":966
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":966
  * 
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -5028,7 +5040,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   int __pyx_t_2;
   __Pyx_RefNannySetupContext("set_array_base", 0);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":968
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":968
  * cdef inline void set_array_base(ndarray arr, object base):
  *      cdef PyObject* baseptr
  *      if base is None:             # <<<<<<<<<<<<<<
@@ -5039,7 +5051,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":969
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":969
  *      cdef PyObject* baseptr
  *      if base is None:
  *          baseptr = NULL             # <<<<<<<<<<<<<<
@@ -5048,7 +5060,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
     __pyx_v_baseptr = NULL;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":968
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":968
  * cdef inline void set_array_base(ndarray arr, object base):
  *      cdef PyObject* baseptr
  *      if base is None:             # <<<<<<<<<<<<<<
@@ -5058,7 +5070,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
     goto __pyx_L3;
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":971
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":971
  *          baseptr = NULL
  *      else:
  *          Py_INCREF(base) # important to do this before decref below!             # <<<<<<<<<<<<<<
@@ -5068,7 +5080,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   /*else*/ {
     Py_INCREF(__pyx_v_base);
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":972
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":972
  *      else:
  *          Py_INCREF(base) # important to do this before decref below!
  *          baseptr = <PyObject*>base             # <<<<<<<<<<<<<<
@@ -5079,7 +5091,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   }
   __pyx_L3:;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":973
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":973
  *          Py_INCREF(base) # important to do this before decref below!
  *          baseptr = <PyObject*>base
  *      Py_XDECREF(arr.base)             # <<<<<<<<<<<<<<
@@ -5088,7 +5100,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   Py_XDECREF(__pyx_v_arr->base);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":974
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":974
  *          baseptr = <PyObject*>base
  *      Py_XDECREF(arr.base)
  *      arr.base = baseptr             # <<<<<<<<<<<<<<
@@ -5097,7 +5109,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   __pyx_v_arr->base = __pyx_v_baseptr;
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":966
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":966
  * 
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -5109,7 +5121,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyFinishContext();
 }
 
-/* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":976
+/* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":976
  *      arr.base = baseptr
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -5123,7 +5135,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("get_array_base", 0);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":977
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":977
  * 
  * cdef inline object get_array_base(ndarray arr):
  *     if arr.base is NULL:             # <<<<<<<<<<<<<<
@@ -5133,7 +5145,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_t_1 = ((__pyx_v_arr->base == NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":978
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":978
  * cdef inline object get_array_base(ndarray arr):
  *     if arr.base is NULL:
  *         return None             # <<<<<<<<<<<<<<
@@ -5145,7 +5157,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
     __pyx_r = Py_None;
     goto __pyx_L0;
 
-    /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":977
+    /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":977
  * 
  * cdef inline object get_array_base(ndarray arr):
  *     if arr.base is NULL:             # <<<<<<<<<<<<<<
@@ -5154,7 +5166,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":980
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":980
  *         return None
  *     else:
  *         return <object>arr.base             # <<<<<<<<<<<<<<
@@ -5166,7 +5178,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
     goto __pyx_L0;
   }
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":976
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":976
  *      arr.base = baseptr
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -17583,7 +17595,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "cell_tree2d\cell_tree2d.pyx":48
+  /* "cell_tree2d/cell_tree2d.pyx":48
  *         verts = np.asarray(verts, dtype=np.float64)
  *         if len(verts.shape) <> 2 or verts.shape[1] <> 2:
  *             raise ValueError("verts must be convertible to a Nx2 numpy array of float64")             # <<<<<<<<<<<<<<
@@ -17594,7 +17606,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "cell_tree2d\cell_tree2d.pyx":53
+  /* "cell_tree2d/cell_tree2d.pyx":53
  *         faces = np.asarray(faces, dtype=np.intc)
  *         if  len(faces.shape)<>2 or not (faces.shape[1] == 3 or faces.shape[1] == 4):
  *             raise ValueError("faces must be convertible to a Nx3 (for triangles)"             # <<<<<<<<<<<<<<
@@ -17605,7 +17617,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "cell_tree2d\cell_tree2d.pyx":59
+  /* "cell_tree2d/cell_tree2d.pyx":59
  *         ## a bit more error checking:
  *         if num_buckets < 2:
  *             raise ValueError("num_buckets must be an integer greater than 2")             # <<<<<<<<<<<<<<
@@ -17616,7 +17628,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "cell_tree2d\cell_tree2d.pyx":61
+  /* "cell_tree2d/cell_tree2d.pyx":61
  *             raise ValueError("num_buckets must be an integer greater than 2")
  *         if cells_per_leaf < 1:
  *             raise ValueError("cells_per_leaf must be >= 1")             # <<<<<<<<<<<<<<
@@ -17627,7 +17639,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "cell_tree2d\cell_tree2d.pyx":90
+  /* "cell_tree2d/cell_tree2d.pyx":90
  *         point_arr = np.array(point)
  *         if point_arr.shape[0] <> 2:
  *             raise ValueError("point must be convertible to a 2x1 numpy array of float64")             # <<<<<<<<<<<<<<
@@ -17638,7 +17650,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":218
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":218
  *             if ((flags & pybuf.PyBUF_C_CONTIGUOUS == pybuf.PyBUF_C_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_C_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not C contiguous")             # <<<<<<<<<<<<<<
@@ -17649,7 +17661,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":222
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":222
  *             if ((flags & pybuf.PyBUF_F_CONTIGUOUS == pybuf.PyBUF_F_CONTIGUOUS)
  *                 and not PyArray_CHKFLAGS(self, NPY_F_CONTIGUOUS)):
  *                 raise ValueError(u"ndarray is not Fortran contiguous")             # <<<<<<<<<<<<<<
@@ -17660,7 +17672,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":259
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":259
  *                 if ((descr.byteorder == c'>' and little_endian) or
  *                     (descr.byteorder == c'<' and not little_endian)):
  *                     raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
@@ -17671,7 +17683,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":799
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":799
  * 
  *         if (end - f) - <int>(new_offset - offset[0]) < 15:
  *             raise RuntimeError(u"Format string allocated too short, see comment in numpy.pxd")             # <<<<<<<<<<<<<<
@@ -17682,7 +17694,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":803
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":803
  *         if ((child.byteorder == c'>' and little_endian) or
  *             (child.byteorder == c'<' and not little_endian)):
  *             raise ValueError(u"Non-native byte order not supported")             # <<<<<<<<<<<<<<
@@ -17693,7 +17705,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
 
-  /* "..\..\..\AppData\Local\Continuum\Anaconda\lib\site-packages\Cython\Includes\numpy\__init__.pxd":823
+  /* "../../miniconda2/lib/python2.7/site-packages/Cython/Includes/numpy/__init__.pxd":823
  *             t = child.type_num
  *             if end - f < 5:
  *                 raise RuntimeError(u"Format string allocated too short.")             # <<<<<<<<<<<<<<
@@ -18069,7 +18081,7 @@ PyMODINIT_FUNC PyInit_cell_tree2d(void)
   if (__Pyx_patch_abc() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
 
-  /* "cell_tree2d\cell_tree2d.pyx":2
+  /* "cell_tree2d/cell_tree2d.pyx":2
  * import cython
  * import numpy as np             # <<<<<<<<<<<<<<
  * cimport numpy as cnp
@@ -18080,7 +18092,7 @@ PyMODINIT_FUNC PyInit_cell_tree2d(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 2; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cell_tree2d\cell_tree2d.pyx":1
+  /* "cell_tree2d/cell_tree2d.pyx":1
  * import cython             # <<<<<<<<<<<<<<
  * import numpy as np
  * cimport numpy as cnp

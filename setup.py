@@ -27,9 +27,9 @@ ext_modules=[ Extension("cell_tree2d.cell_tree2d",
 
 setup(
     name = "cell_tree2d",
-    version='0.0.1',
+    version='0.1.1',
     description = "python wrappers around Cell-Tree 2D spatial index",
-    #long_description=read('README'),
+    long_description=open('README.md').read(),
     author = "Jay Hennen",
     author_email = "jay.hennen@noaa.gov",
     url="https://github.com/NOAA-ORR-ERD",

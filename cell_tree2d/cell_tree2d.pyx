@@ -4,7 +4,7 @@ cimport numpy as cnp
 
 cdef extern from "cell_tree2d.h" :
     cdef cppclass CellTree2D:
-        CellTree2D(double*,int,int*,int,int,int,int) except +
+        CellTree2D(double*, int, int*, int, int, int, int) except +
         int FindBoxLeaf(double* point)
 
 cdef class CellTree:
@@ -97,12 +97,11 @@ cdef class CellTree:
 
     @cython.boundscheck(False)
     def multi_locate(self, double[:,:] points):
-        cdef int i
+        cdef int i = 0
         cdef int size
-        cdef cnp.ndarray[int,ndim=1,mode="c"] locations
-        i = 0
+        cdef cnp.ndarray[int, ndim=1, mode="c"] locations
         size = points.shape[0]
-        locations = np.zeros((size),dtype=int)
+        locations = np.zeros((size,), dtype=np.intc)
 
         while i < size:
             self.c_find_poly(&points[i][0], &locations[i])

@@ -167,6 +167,7 @@ def test_poly_lookup():
                       [6.0,0.0],
                       [6.0,2.0]
                       ])
+
     faces = np.array([[0, 2, 3, 1],
                       [4, 6, 7, 5],
                      ], dtype = np.intc)
@@ -193,10 +194,27 @@ def test_edge_cases():
     faces1 = np.array([[0,1,3],
                       [1,2,3]], dtype = np.intc)
     faces2 = np.array([[0,1,3],
-                      [1,2,4],
-                      [2,4,3]],dtype = np.intc)
+                       [1,2,4],
+                       [2,4,3]], dtype = np.intc)
     tree1 = CellTree(nodes,faces1)
     tree2 = CellTree(nodes,faces2)
+
+def test_multipoint():
+    tree = CellTree(nodes21, faces21)
+    points = np.array([ (4.2,  3.0),
+                        (7.7, 13.5),
+                        (3.4, 7.000000001),
+                        (7.0,  5.0), # out of bounds points
+                        (8.66, 10.99),
+                        (7.3, 0.74),
+                        (2.5, 5.5),
+                        (9.8, 12.3),
+                         ], dtype=np.float64)
+    correct_indexes = (1, 20, 7, -1, -1, -1, -1, -1)
+
+    ind = tree.multi_locate(points)
+    assert np.array_equal(ind, correct_indexes)
+
 
 if __name__ == "__main__":
     test_poly_lookup()

@@ -36,7 +36,7 @@ setup(
     license = "Public Domain",
     #keywords = "",
     ext_modules = cythonize(ext_modules),
-    packages = ["cell_tree2d",],
+    packages = ["cell_tree2d", "cell_tree2d/test"],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "License :: Public Domain",

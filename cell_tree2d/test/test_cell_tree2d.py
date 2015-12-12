@@ -171,8 +171,8 @@ def test_poly_lookup():
     faces = np.array([[0, 2, 3, 1],
                       [4, 6, 7, 5],
                      ], dtype = np.intc)
-    print faces
-    print faces.dtype
+    print(faces)
+    print(faces.dtype)
     tree = CellTree(nodes, faces, 2, 1)
     point = np.array([1.,1.]) #in triangle 1
     result = tree.find_poly(point)
@@ -190,7 +190,7 @@ def test_edge_cases():
                       [2.0,2.0],
                       [0.0,2.0],
                       [1.0,1.0]])
-    
+
     faces1 = np.array([[0,1,3],
                       [1,2,3]], dtype = np.intc)
     faces2 = np.array([[0,1,3],

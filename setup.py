@@ -3,7 +3,7 @@
 try:
     from setuptools import setup, Extension
 except ImportError:
-    print "You need setuptools to build this module"
+    print("You need setuptools to build this module.")
 
 from Cython.Build import cythonize
 

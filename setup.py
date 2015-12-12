@@ -2,6 +2,7 @@
 
 try:
     from setuptools import setup, Extension
+    from setuptools.command.test import test as TestCommand
 except ImportError:
     print("You need setuptools to build this module.")
 
@@ -9,6 +10,16 @@ from Cython.Build import cythonize
 
 import numpy as np #for the include dirs...
 import os, sys
+
+class PyTest(TestCommand):
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.verbose = True
+
+    def run_tests(self):
+        import pytest
+        errno = pytest.main(self.test_args)
+        sys.exit(errno)
 
 
 include_dirs = [np.get_include(),
@@ -37,6 +48,8 @@ setup(
     #keywords = "",
     ext_modules = cythonize(ext_modules),
     packages = ["cell_tree2d", "cell_tree2d/test"],
+    tests_require=['pytest'],
+    cmdclass=dict(test=PyTest),
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "License :: Public Domain",

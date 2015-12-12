@@ -201,15 +201,15 @@ def test_edge_cases():
 
 def test_multipoint():
     tree = CellTree(nodes21, faces21)
-    points = np.array([ (4.2,  3.0),
-                        (7.7, 13.5),
-                        (3.4, 7.000000001),
-                        (7.0,  5.0), # out of bounds points
-                        (8.66, 10.99),
-                        (7.3, 0.74),
-                        (2.5, 5.5),
-                        (9.8, 12.3),
-                         ], dtype=np.float64)
+    points = [ (4.2,  3.0),
+               (7.7, 13.5),
+               (3.4, 7.000000001),
+               (7.0,  5.0), # out of bounds points
+               (8.66, 10.99),
+               (7.3, 0.74),
+               (2.5, 5.5),
+               (9.8, 12.3),
+               ]
     correct_indexes = (1, 20, 7, -1, -1, -1, -1, -1)
 
     ind = tree.multi_locate(points)

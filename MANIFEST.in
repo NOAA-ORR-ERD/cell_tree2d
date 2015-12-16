@@ -1,0 +1,5 @@
+include README.md
+include src/*.h
+include src/*.cpp
+recursive-include cell_tree2d *.py
+include cell_tree2d/cell_tree2d.*

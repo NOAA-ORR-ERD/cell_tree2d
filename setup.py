@@ -14,6 +14,7 @@ import numpy as np  # For the include directory.
 
 
 class PyTest(TestCommand):
+
     def finalize_options(self):
         TestCommand.finalize_options(self)
         self.verbose = True
@@ -24,9 +25,9 @@ class PyTest(TestCommand):
         sys.exit(errno)
 
 
-with open('requirements.txt') as f:
-    require = f.readlines()
-install_requires = [r.strip() for r in require]
+install_requires = ['numpy',
+                    'cython',
+                    'setuptools']
 
 include_dirs = [np.get_include(),
                 os.path.join('.', 'src')]

@@ -43,15 +43,17 @@ cdef class CellTree:
         cdef int num_verts, num_faces, num_poly_vert
 
         # convert to numpy arrays:
-        verts = np.asarray(verts, dtype=np.float64)
+        verts = np.asarray(verts).astype(np.float64)
+        verts = np.ascontiguousarray(verts)
         if len(verts.shape) <> 2 or verts.shape[1] <> 2:
             raise ValueError("verts must be convertible to a Nx2 numpy array of float64")
         verts_arr = verts
 
-        faces = np.asarray(faces, dtype=np.intc)
+        faces = np.asarray(faces).astype(np.int32)
+        faces = np.ascontiguousarray(faces)
         if  len(faces.shape)<>2 or not (faces.shape[1] == 3 or faces.shape[1] == 4):
             raise ValueError("faces must be convertible to a Nx3 (for triangles)"
-                             "or Nx4 (for quads) numpy array of integers")
+                             "or Nx4 (for quads) numpy array of int32")
         faces_arr = faces
 
         ## a bit more error checking:

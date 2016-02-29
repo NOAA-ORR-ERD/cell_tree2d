@@ -25,10 +25,6 @@ class PyTest(TestCommand):
         sys.exit(errno)
 
 
-install_requires = ['numpy',
-                    'cython',
-                    'setuptools']
-
 include_dirs = [np.get_include(),
                 os.path.join('.', 'src')]
 
@@ -48,7 +44,7 @@ setup(
     name="cell_tree2d",
     version='0.1.1',
     description="Python wrappers around Cell-Tree 2D spatial index",
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read(),
     author="Jay Hennen",
     author_email="jay.hennen@noaa.gov",
     url="https://github.com/NOAA-ORR-ERD",
@@ -56,11 +52,12 @@ setup(
     # keywords = "",
     ext_modules=cythonize(ext_modules),
     packages=["cell_tree2d", "cell_tree2d/test"],
-    tests_require=['pytest'],
     cmdclass=dict(test=PyTest),
-    install_requires=install_requires,
+    install_requires=['numpy'],
+    setup_requires=['cython>0.23', 'setuptools'],
+    tests_require=['pytest'],    
     classifiers=[
-        "Development Status :: 2 - Pre-Alpha",
+        "Development Status :: 4 - Beta",
         "License :: Public Domain",
         "Intended Audience :: Developers",
         "Intended Audience :: Science/Research",

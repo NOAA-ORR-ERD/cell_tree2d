@@ -12,6 +12,8 @@ import os
 import sys
 import numpy as np  # For the include directory.
 
+rootpath = os.path.abspath(os.path.dirname(__file__))
+long_description = open(os.path.join(rootpath, 'README.rst')).read()
 
 class PyTest(TestCommand):
 
@@ -26,11 +28,11 @@ class PyTest(TestCommand):
 
 
 include_dirs = [np.get_include(),
-                os.path.join('.', 'src')]
+                os.path.join(rootpath, 'src')]
 
 # Need the stdint header for Windows (VS2008).
 if sys.platform.startswith('win') and sys.version_info.major <= 2:
-    include_dirs.append(os.path.join('.', 'src', 'win_headers'))
+    include_dirs.append(os.path.join('rootpath', 'src', 'win_headers'))
 
 
 ext_modules = [Extension("cell_tree2d.cell_tree2d",
@@ -40,11 +42,22 @@ ext_modules = [Extension("cell_tree2d.cell_tree2d",
                          language="c++",
                          )]
 
+def extract_version():
+    fname = os.path.join(rootpath, 'cell_tree2d', '__init__.py')
+    with open(fname) as f:
+        for line in f:
+            if (line.startswith('__version__')):
+                version = line.split('=')[1].strip().strip('"')
+                break
+        else:
+            raise ValueError("Couldn't find __version__ in %s"%fname)
+    return version
+
 setup(
     name="cell_tree2d",
-    version='0.1.1',
+    version=extract_version(),
     description="Python wrappers around Cell-Tree 2D spatial index",
-    long_description=open('README.rst').read(),
+    long_description=long_description,
     author="Jay Hennen",
     author_email="jay.hennen@noaa.gov",
     url="https://github.com/NOAA-ORR-ERD",
@@ -55,7 +68,7 @@ setup(
     cmdclass=dict(test=PyTest),
     install_requires=['numpy'],
     setup_requires=['cython>0.23', 'setuptools'],
-    tests_require=['pytest'],    
+    tests_require=['pytest'],
     classifiers=[
         "Development Status :: 4 - Beta",
         "License :: Public Domain",

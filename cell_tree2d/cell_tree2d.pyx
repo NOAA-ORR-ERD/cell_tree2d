@@ -9,6 +9,7 @@ cdef extern from "cell_tree2d.h" :
 
 cdef class CellTree:
 
+    cdef object verts, faces
     cdef CellTree2D* thisptr
 
     def __cinit__(self,

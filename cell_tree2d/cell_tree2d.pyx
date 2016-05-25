@@ -48,6 +48,7 @@ cdef class CellTree:
         if len(verts.shape) <> 2 or verts.shape[1] <> 2:
             raise ValueError("verts must be convertible to a Nx2 numpy array of float64")
         verts_arr = verts
+        self.verts=verts
 
         faces = np.asarray(faces).astype(np.int32)
         faces = np.ascontiguousarray(faces)
@@ -55,6 +56,7 @@ cdef class CellTree:
             raise ValueError("faces must be convertible to a Nx3 (for triangles)"
                              "or Nx4 (for quads) numpy array of int32")
         faces_arr = faces
+        self.faces=faces
 
         ## a bit more error checking:
         if num_buckets < 2:

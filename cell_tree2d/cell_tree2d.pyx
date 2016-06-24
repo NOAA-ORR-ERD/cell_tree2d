@@ -1,11 +1,36 @@
 import cython
 import numpy as np
 cimport numpy as cnp
+from libcpp.vector cimport vector
 
 cdef extern from "cell_tree2d.h" :
+
     cdef cppclass CellTree2D:
         CellTree2D(double*, int, int*, int, int, int, int) except +
         int FindBoxLeaf(double* point)
+        int size()
+        int num_buckets, boxes_per_leaf, poly, v_len, f_len
+        
+        cppclass node:
+            node()
+            int child
+            double Lmax
+            double Rmin
+            int ptr
+            int size
+            bint dim
+        
+        vector[node] nodes
+        vector[int] bb_indices
+        
+#     ctypedef struct CellTree2D.node:
+#         int child
+#         double Lmax
+#         double Rmin
+#         int ptr
+#         int size
+#         bint dim
+        
 
 cdef class CellTree:
 
@@ -78,6 +103,37 @@ cdef class CellTree:
 
     def __del__(self):
         del self.thisptr
+
+    @property
+    def size(self):
+        return self.thisptr.size()
+    
+    @property
+    def num_buckets(self):
+        return self.thisptr.num_buckets
+    
+    @property
+    def boxes_per_leaf(self):
+        return self.thisptr.boxes_per_leaf
+    
+    @property
+    def bb_indices(self):
+        l = []
+        for i in range(0, self.thisptr.f_len):
+            l.append(self.thisptr.bb_indices[i])
+        return l
+    
+    @property
+    def nodes(self):
+        l = []
+        for i in range(0,self.size):
+            l.append((self.thisptr.nodes[i].child,
+                      self.thisptr.nodes[i].Lmax,
+                      self.thisptr.nodes[i].Rmin,
+                      self.thisptr.nodes[i].ptr,
+                      self.thisptr.nodes[i].size,
+                      self.thisptr.nodes[i].dim))
+        return l
 
     def find_poly(self, point):
         """

@@ -8,19 +8,6 @@
 
 using namespace std;
 
-class CellTree2D::node {
-public:
-    node(int pt, int sz, int d):
-        child(-1), Lmax(-1), Rmin(-1), ptr(pt), size(sz), dim(d){};
-    ~node(){};
-    int child;          //index of left child...right child is child+1
-    double Lmax;
-    double Rmin;
-    int ptr;            //index into the bounding box index array
-    int size;           //number of bbs in this node
-    bool dim;           //false = 0 = x, true = 1 = y;
-};
-
 class CellTree2D::bucket {
 public:
     //range of the bucket

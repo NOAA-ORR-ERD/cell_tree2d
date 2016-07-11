@@ -57,7 +57,11 @@ CellTree2D::CellTree2D(double* vertices, int v_len, int* faces, int f_len, int p
         nodes.push_back(node(0,bb_indices.size(),0));
     }
     build(0,0);
+    for (int i = 0; i < dataset.size(); i++){
+        std::vector<double>(dataset[i]).swap(dataset[i]);
+    }
     dataset.clear();
+    std::vector<std::vector<double>>(dataset).swap(dataset);
     return;
 }
 

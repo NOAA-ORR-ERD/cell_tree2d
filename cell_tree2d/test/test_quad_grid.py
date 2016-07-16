@@ -44,7 +44,16 @@ def nodes_from_coords(x, y):
 
     return nodes, faces
 
+
 def test_build_tree_from_coords():
+    """
+    this tests using a structured grid with cell coordinates
+
+    converting it to a flattened grid with nodes and cells
+    defined as indexes to those nodes
+
+    as much as anything else, this surves as example code for how to do that.
+    """
 
     x, y = curv_grid(n_x=3,
                      n_y=3,
@@ -53,9 +62,6 @@ def test_build_tree_from_coords():
                      max_radius=18.0,
                      angle=np.pi / 4.0
                      )
-
-    print(x)
-    print(y)
 
     nodes, faces = nodes_from_coords(x, y)
 

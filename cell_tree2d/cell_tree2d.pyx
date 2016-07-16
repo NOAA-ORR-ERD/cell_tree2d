@@ -158,13 +158,20 @@ cdef class CellTree:
 
     @cython.boundscheck(False)
     def multi_locate(self, points_in):
+        """
+        find the cells that multiple points are in
+
+        :param points_in: The points to locate
+        :type points_in: (Nx2) numpy array of np.float64
+
+        """
         cdef int i = 0
         cdef int size
         cdef cnp.ndarray[int, ndim=1, mode="c"] locations
         
         # convert to memoryview:
         cdef double[:,:] points
-        points_in = np.asarray(points_in, dtype=np.float64)
+        points_in = np.ascontiguousarray(points_in, dtype=np.float64)
         if len(points_in.shape) <> 2 or points_in.shape[1] <> 2:
             raise ValueError("points must be convertible to a Nx2 numpy array of float64")
         points = points_in

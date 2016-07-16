@@ -61,7 +61,7 @@ CellTree2D::CellTree2D(double* vertices, int v_len, int* faces, int f_len, int p
         std::vector<double>(dataset[i]).swap(dataset[i]);
     }
     dataset.clear();
-    std::vector<std::vector<double>>(dataset).swap(dataset);
+    std::vector<std::vector<double> > (dataset).swap(dataset);
     return;
 }
 

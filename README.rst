@@ -2,11 +2,13 @@
 cell_tree2d
 ============
 
-A module that provides the CellTree data structure as described by Garth and Joy in their 2010 paper  
+A module that provides the CellTree data structure as described by Garth and Joy in their 2010 paper:
+
 http://graphics.cs.ucdavis.edu/~joy/NSF-IIS-0916289/Papers/GarthTVCG2011.pdf  
 
-This implementation is 2D specific and includes some additions useful to answering one question: 
-_"What is the index of the polygon that contains this point?"_
+This implementation is 2D specific and includes some additions useful to answering one question:
+
+"What is the index of the polygon that contains this point?"
 
 ===============
 Algorithm Notes
@@ -20,10 +22,10 @@ the tree increases (though this linearly increases build time).
 
 This is a 2D version of the algorithm that is oriented towards maximum lookup speed and immediate answer
 checking. The basic CellTree does not hold enough information to give conclusive point-in-polygon answers; 
-the best it can do is provide the (short) list of cells that contain the point. Since a point can be within
-the bounds of two different leaves, and it is very possible both children of a parent node will need to be 
-searched, implementing immediate point-in-polygon checks on each cell as they are encountered is highly
-beneficial, as an early success will avoid all further tree traversal.
+the best it can do is provide the (short) list of cell bounding boxes that contain the point. Since a point
+can be within the bounds of two different cells, and it is very possible both children of a parent node will 
+need to be searched, implementing immediate point-in-polygon checks on each cell as they are encountered is
+highly beneficial, as an early success will avoid all further tree traversal.
 
 =========== 
 Usage Notes

@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 
 """
-unit tests for BBtree
+unit tests for cell_tree_2d
 
 uses pytest
 
 to run:
 
-$py.test
+$ py.test
 
 in this dir.
 """
+
 import pytest
 import numpy as np
 

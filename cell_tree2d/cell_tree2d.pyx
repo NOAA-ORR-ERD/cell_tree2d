@@ -3,6 +3,7 @@ import numpy as np
 cimport numpy as cnp
 from libcpp.vector cimport vector
 
+
 cdef extern from "cell_tree2d.h" :
 
     cdef cppclass CellTree2D:
@@ -185,4 +186,5 @@ cdef class CellTree:
             i+=1
 
         return locations
+
 

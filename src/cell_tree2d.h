@@ -47,7 +47,7 @@ public:
 
     bool point_in_poly (int, double*);
     void build_BB_vector();
-    int FindBoxLeafHelper(double*, int);
+    int FindPointHelper(double*, int);
     void get_bounds(bucket&, int);
     void sort_bbs(std::vector<bucket>&, node&, int);
     double** vertices;

@@ -282,7 +282,11 @@ bool CellTree2D::point_in_poly (int bb, double* test){
     return c;
 }
 
-int CellTree2D::FindBoxLeafHelper(double* point, int node) {
+int CellTree2D::FindMultiPoints(double* pts)
+    root = nodes[0]
+    node_stack = CellTree2D::node[32];
+
+int CellTree2D::FindPointHelper(double* point, int node) {
     //where does point lie in this node's dimension?
     //if l && r, go both, otherwise go one or the other, or leave results empty
     CellTree2D::node& current = nodes[node];
@@ -319,8 +323,8 @@ int CellTree2D::FindBoxLeafHelper(double* point, int node) {
 }
 
 // returns the index of the triangle that contains pt
-int CellTree2D::FindBoxLeaf(double* pt) {
-    return FindBoxLeafHelper(pt, 0);
+int CellTree2D::FindPoint(double* pt) {
+    return FindPointHelper(pt, 0);
 }
 
 int CellTree2D::size() {

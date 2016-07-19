@@ -43,12 +43,12 @@ public:
     CellTree2D( double*,int, int*,int, int, int, int);
     void build(int, int);
 
-    int FindBoxLeaf(double*);
+    void locate_points(double*, int*, int);
     int size();
 
     bool point_in_poly (int, double*);
     void build_BB_vector();
-    int FindPointHelper(double*, int);
+    int locate_point_helper(double*, int);
     void get_bounds(bucket&, int);
     void sort_bbs(std::vector<bucket>&, node&, int);
     double** vertices;

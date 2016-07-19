@@ -61,7 +61,7 @@ CellTree2D::CellTree2D(double* vertices, int v_len, int* faces, int f_len, int p
         std::vector<double>(dataset[i]).swap(dataset[i]);
     }
     dataset.clear();
-    std::vector<std::vector<double>>(dataset).swap(dataset);
+    std::vector<std::vector<double> > (dataset).swap(dataset);
     return;
 }
 
@@ -282,11 +282,7 @@ bool CellTree2D::point_in_poly (int bb, double* test){
     return c;
 }
 
-int CellTree2D::FindMultiPoints(double* pts)
-    root = nodes[0]
-    node_stack = CellTree2D::node[32];
-
-int CellTree2D::FindPointHelper(double* point, int node) {
+int CellTree2D::locate_point_helper(double* point, int node) {
     //where does point lie in this node's dimension?
     //if l && r, go both, otherwise go one or the other, or leave results empty
     CellTree2D::node& current = nodes[node];
@@ -305,26 +301,28 @@ int CellTree2D::FindPointHelper(double* point, int node) {
     if (l && r) {
         if( current.Lmax-point[d] < point[d]-current.Rmin ){
             // go left first
-            ret = FindBoxLeafHelper(point,current.child);
+            ret = locate_point_helper(point,current.child);
             if(ret == -1)
-                return ret = FindBoxLeafHelper(point,current.child+1);
+                return ret = locate_point_helper(point,current.child+1);
         } else {
             // go right first
-            ret = FindBoxLeafHelper(point,current.child+1);
+            ret = locate_point_helper(point,current.child+1);
             if(ret == -1)
-                 return ret = FindBoxLeafHelper(point,current.child);
+                 return ret = locate_point_helper(point,current.child);
         }
     } else if (l) {
-        return ret = FindBoxLeafHelper(point,current.child);
+        return ret = locate_point_helper(point,current.child);
     } else if (r) {
-        return ret = FindBoxLeafHelper(point,current.child+1);
+        return ret = locate_point_helper(point,current.child+1);
     }
     return ret;
 }
 
-// returns the index of the triangle that contains pt
-int CellTree2D::FindPoint(double* pt) {
-    return FindPointHelper(pt, 0);
+// Finds the index of the triangle for every point in pts, storing result in res
+void CellTree2D::locate_points(double* pts, int* res, int len) {
+    for (int i = 0; i < len; i++) {
+        res[i] = locate_point_helper(&pts[2*i],0);
+    }
 }
 
 int CellTree2D::size() {

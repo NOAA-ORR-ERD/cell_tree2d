@@ -151,13 +151,13 @@ def test_bounds_errors():
 def test_triangle_lookup():
     tree = CellTree(nodes, faces, 2, 1)
     point = np.array([1., 1.])  # in triangle 1
-    result = tree.find_poly(point)
+    result = tree.locate(point)
     assert result == 0
     point[0] = 2.0  # tri 2
-    result = tree.find_poly(point)
+    result = tree.locate(point)
     assert result == 1
     point[0] = -1.0  # out of grid
-    result = tree.find_poly(point)
+    result = tree.locate(point)
     assert result == -1
 
 
@@ -180,13 +180,13 @@ def test_poly_lookup():
     print(faces.dtype)
     tree = CellTree(nodes, faces, 2, 1)
     point = np.array([1., 1.])  # in triangle 1
-    result = tree.find_poly(point)
+    result = tree.locate(point)
     assert result == 0
     point[0] = 5.0  # tri 2
-    result = tree.find_poly(point)
+    result = tree.locate(point)
     assert result == 1
     point[0] = -1.0  # out of grid
-    result = tree.find_poly(point)
+    result = tree.locate(point)
     assert result == -1
 
 
@@ -219,9 +219,10 @@ def test_multipoint():
               ]
     correct_indexes = (1, 20, 7, -1, -1, -1, -1, -1)
 
-    ind = tree.multi_locate(points)
+    ind = tree.locate(points)
     assert np.array_equal(ind, correct_indexes)
 
 
 if __name__ == "__main__":
     test_poly_lookup()
+    test_multipoint()

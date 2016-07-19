@@ -135,29 +135,7 @@ cdef class CellTree:
                       self.thisptr.nodes[i].dim))
         return l
 
-    def find_poly(self, point):
-        """
-        Find the index of the polygon containing point
-
-        :param point: Coordinates of the point of interest
-        :type point: 2x1 numpy array of float64, or something that can be turned into one
-        """
-        cdef int[1] result
-        cdef cnp.ndarray[double,ndim=1, mode="c"] point_arr
-
-
-        point_arr = np.array(point)
-        if point_arr.shape[0] <> 2:
-            raise ValueError("point must be convertible to a 2x1 numpy array of float64")
-
-        self.c_find_poly(&point_arr[0], &result[0])
-        return result[0]
-
-    cdef c_find_poly(self, double[2] point, int* result):
-        result[0] = self.thisptr.FindBoxLeaf(point)
-
-    @cython.boundscheck(False)
-    def multi_locate(self, points_in):
+    def locate(self, points_in):
         cdef int i = 0
         cdef int size
         cdef cnp.ndarray[int, ndim=1, mode="c"] locations
@@ -165,7 +143,9 @@ cdef class CellTree:
         # convert to memoryview:
         cdef double[:,:] points
         points_in = np.asarray(points_in, dtype=np.float64)
-        if len(points_in.shape) <> 2 or points_in.shape[1] <> 2:
+#         if len(points_in.shape) < 2: #single [x,y]
+#             np.expand_dims(points_in, axis=0)
+        if points_in.shape[1] <> 2:
             raise ValueError("points must be convertible to a Nx2 numpy array of float64")
         points = points_in
 

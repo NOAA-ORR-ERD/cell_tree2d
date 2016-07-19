@@ -135,6 +135,9 @@ cdef class CellTree:
                       self.thisptr.nodes[i].dim))
         return l
 
+    cdef c_find_poly(self, double[2] point, int* result):
+        result[0] = self.thisptr.FindBoxLeaf(point)
+
     def locate(self, points_in):
         cdef int i = 0
         cdef int size
@@ -143,8 +146,8 @@ cdef class CellTree:
         # convert to memoryview:
         cdef double[:,:] points
         points_in = np.asarray(points_in, dtype=np.float64)
-#         if len(points_in.shape) < 2: #single [x,y]
-#             np.expand_dims(points_in, axis=0)
+        if len(points_in.shape) < 2: #single [x,y]
+            points_in = np.expand_dims(points_in, axis=0)
         if points_in.shape[1] <> 2:
             raise ValueError("points must be convertible to a Nx2 numpy array of float64")
         points = points_in

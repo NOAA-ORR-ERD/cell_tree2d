@@ -144,7 +144,7 @@ cdef class CellTree:
         
         # convert to memoryview:
         cdef cnp.ndarray[double, ndim=2, mode="c"] points
-        points_in = np.asarray(points_in, dtype=np.float64)
+        points_in = np.ascontiguousarray(points_in, dtype=np.float64)
         if len(points_in.shape) < 2: #single [x,y]
             points_in = np.expand_dims(points_in, axis=0)
         if points_in.shape[1] <> 2:

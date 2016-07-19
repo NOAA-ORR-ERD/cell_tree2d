@@ -15,6 +15,7 @@
 #include <algorithm>
 #include <iterator>
 #include <vector>
+#include "grid_data.h"
 
 typedef std::vector<double> BB;
 

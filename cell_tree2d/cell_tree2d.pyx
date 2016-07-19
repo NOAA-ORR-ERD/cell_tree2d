@@ -7,7 +7,7 @@ cdef extern from "cell_tree2d.h" :
 
     cdef cppclass CellTree2D:
         CellTree2D(double*, int, int*, int, int, int, int) except +
-        int FindBoxLeaf(double* point)
+        int locate_points(double*, int*, int)
         int size()
         int num_buckets, boxes_per_leaf, poly, v_len, f_len
         
@@ -135,16 +135,15 @@ cdef class CellTree:
                       self.thisptr.nodes[i].dim))
         return l
 
-    cdef c_find_poly(self, double[2] point, int* result):
-        result[0] = self.thisptr.FindBoxLeaf(point)
+    cdef c_locate(self, double* points, int* results, int len):
+        self.thisptr.locate_points(points, results, len)
 
     def locate(self, points_in):
-        cdef int i = 0
         cdef int size
         cdef cnp.ndarray[int, ndim=1, mode="c"] locations
         
         # convert to memoryview:
-        cdef double[:,:] points
+        cdef cnp.ndarray[double, ndim=2, mode="c"] points
         points_in = np.asarray(points_in, dtype=np.float64)
         if len(points_in.shape) < 2: #single [x,y]
             points_in = np.expand_dims(points_in, axis=0)
@@ -156,9 +155,7 @@ cdef class CellTree:
         size = points.shape[0]
         locations = np.zeros((size,), dtype=np.intc)
 
-        while i < size:
-            self.c_find_poly(&points[i, 0], &locations[i])
-            i+=1
+        self.c_locate(&points[0, 0], &locations[0], size)
 
         return locations
 

@@ -225,3 +225,4 @@ def test_multipoint():
 
 if __name__ == "__main__":
     test_poly_lookup()
+    test_multipoint()

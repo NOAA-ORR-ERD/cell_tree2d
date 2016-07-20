@@ -7,7 +7,7 @@ cdef extern from "cell_tree2d.h" :
 
     cdef cppclass CellTree2D:
         CellTree2D(double*, int, int*, int, int, int, int) except +
-        int FindBoxLeaf(double* point)
+        int locate_points(double*, int*, int)
         int size()
         int num_buckets, boxes_per_leaf, poly, v_len, f_len
         
@@ -135,44 +135,19 @@ cdef class CellTree:
                       self.thisptr.nodes[i].dim))
         return l
 
-    def find_poly(self, point):
-        """
-        Find the index of the polygon containing point
+    cdef c_locate(self, double* points, int* results, int len):
+        self.thisptr.locate_points(points, results, len)
 
-        :param point: Coordinates of the point of interest
-        :type point: 2x1 numpy array of float64, or something that can be turned into one
-        """
-        cdef int[1] result
-        cdef cnp.ndarray[double,ndim=1, mode="c"] point_arr
-
-
-        point_arr = np.array(point)
-        if point_arr.shape[0] <> 2:
-            raise ValueError("point must be convertible to a 2x1 numpy array of float64")
-
-        self.c_find_poly(&point_arr[0], &result[0])
-        return result[0]
-
-    cdef c_find_poly(self, double[2] point, int* result):
-        result[0] = self.thisptr.FindBoxLeaf(point)
-
-    @cython.boundscheck(False)
-    def multi_locate(self, points_in):
-        """
-        find the cells that multiple points are in
-
-        :param points_in: The points to locate
-        :type points_in: (Nx2) numpy array of np.float64
-
-        """
-        cdef int i = 0
+    def locate(self, points_in):
         cdef int size
         cdef cnp.ndarray[int, ndim=1, mode="c"] locations
         
         # convert to memoryview:
-        cdef double[:,:] points
+        cdef cnp.ndarray[double, ndim=2, mode="c"] points
         points_in = np.ascontiguousarray(points_in, dtype=np.float64)
-        if len(points_in.shape) <> 2 or points_in.shape[1] <> 2:
+        if len(points_in.shape) < 2: #single [x,y]
+            points_in = np.expand_dims(points_in, axis=0)
+        if points_in.shape[1] <> 2:
             raise ValueError("points must be convertible to a Nx2 numpy array of float64")
         points = points_in
 
@@ -180,9 +155,7 @@ cdef class CellTree:
         size = points.shape[0]
         locations = np.zeros((size,), dtype=np.intc)
 
-        while i < size:
-            self.c_find_poly(&points[i, 0], &locations[i])
-            i+=1
+        self.c_locate(&points[0, 0], &locations[0], size)
 
         return locations
 

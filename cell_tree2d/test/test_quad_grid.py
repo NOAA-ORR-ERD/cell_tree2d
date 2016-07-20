@@ -10,6 +10,7 @@ import numpy as np
 
 from cell_tree2d import CellTree
 
+
 def curv_grid(n_x=4,
               n_y=12,
               center=(20.0, 30.0),
@@ -64,35 +65,33 @@ def test_build_tree_from_coords():
                      )
 
     nodes, faces = nodes_from_coords(x, y)
-
-    print(nodes.min(axis=0), nodes.max(axis=0))
-    # these range from  (6.36396103, 0.) to (18., 12.72792206)
+    # these range from (30.,  20.) to (31.1,  21.1)
 
     tree = CellTree(nodes, faces)
 
     # try to find some points
 
     # points outside the domain:
-    result = tree.multi_locate([(0.0, 0.0),
-                                (19.0, 5.0),
-                                (17.0, -1.0),
-                                (9.0, 10.0),
-                                ],
-                               )
+    result = tree.locate([(0.0, 0.0),
+                          (19.0, 5.0),
+                          (17.0, -1.0),
+                          (9.0, 10.0),
+                          ],
+                         )
     assert np.all(result == -1)
 
     # points inside the domain
-    result = tree.multi_locate([(10.0, 1.0),
-                                (9.0, 3.0),
-                                (8.0, 6.0),
-                                (13.0, 1.0),
-                                (12.0, 4.0),
-                                (11.0, 7.0),
-                                (16.0, 1.0),
-                                (15.0, 8.0),
-                                (13.0, 11.0),
-                                ]
-                               )
+    result = tree.locate([(10.0, 1.0),
+                          (9.0, 3.0),
+                          (8.0, 6.0),
+                          (13.0, 1.0),
+                          (12.0, 4.0),
+                          (11.0, 7.0),
+                          (16.0, 1.0),
+                          (15.0, 8.0),
+                          (13.0, 11.0),
+                          ]
+                         )
 
     assert np.array_equal(result, [0, 1, 2, 3, 4, 5, 6, 7, 8])
 

@@ -31,11 +31,22 @@ highly beneficial, as an early success will avoid all further tree traversal.
 Usage Notes
 ===========
 
-The tree needs certain information to be built:  
-1. 'verts' - A 2xV numpy array containing x/y coordinates of the V vertices   
-2. 'faces' - A PxN numpy array containing N arrays of P indices of vertices that describe one 'face' or polygon of degree P  
-3. 'num_buckets' - The # of buckets desired. Must be >= 2 The default is 4. Values higher than 8 begin to provide diminishing returns.  
-4. 'cells\_per\_leaf' - The # of polygons per leaf node. The default is 2. Using 1 is possible, but doubles memory footprint for only slightly.
-faster lookup. If memory is a concern, this value can be increased, but lookup performance will quickly be impacted  
+The tree needs certain information to be built:
 
-IMPORTANT: 'verts' and 'faces' MUST describe a *properly formed* unstructured grid. Assume that degenerate (0 area) or overlapping polygons WILL cause a build failure. If the construction of the tree causes a segfault, this is probably the cause.
+1. 'verts' - A 2xV numpy array containing x/y coordinates of the V vertices   
+
+2. 'faces' - A PxN numpy array containing N arrays of P indices of vertices that describe one
+   'face' or polygon of degree P  
+
+3. 'num_buckets' - The # of buckets desired. Must be >= 2 The default is 4. Values higher than
+   8 begin to provide diminishing returns.  
+
+4. 'cells\_per\_leaf' - The # of polygons per leaf node. The default is 2. Using 1 is possible,
+   but doubles memory footprint for only slightly. faster lookup. If memory is a concern, this
+   value can be increased, but lookup performance will quickly be impacted  
+
+**IMPORTANT:** 'verts' and 'faces' MUST describe a *properly formed* unstructured grid. Assume
+that degenerate (0 area) or overlapping polygons **will** cause a build failure. If the construction
+of the tree causes a segfault, this is probably the cause.
+
+

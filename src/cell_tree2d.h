@@ -15,11 +15,18 @@
 #include <algorithm>
 #include <iterator>
 #include <vector>
+#include <iostream>
 #include "grid_data.h"
 
 typedef std::vector<double> BB;
 
+struct poly{
+    int len;
+    int* verts_ptr;
+    bool contains_point(double*);
+    void bounding_box(double*);
 
+};
 
 class CellTree2D {
 public:
@@ -51,20 +58,27 @@ public:
     int locate_point_helper(double*, int);
     void get_bounds(bucket&, int);
     void sort_bbs(std::vector<bucket>&, node&, int);
-    double** vertices;
-    int** faces;
+
+    double* vertices;
+    unsigned int v_len;
+
+    int* poly_data
+    unsigned int len_poly_data
+
+    int* faces;
     int num_buckets;
     int boxes_per_leaf;
 //    std::vector<vertex>& vertices;
 //    std::vector<face>& faces;
-    int poly; // # of vertices per face (affects bounding box calculation)
-    int v_len;
     int f_len;
+    bool mixed_polys
+    int* n_verts; // # of vertices per face (affects bounding box calculation)
+    int max_verts
     std::vector<std::vector<double> > dataset;
     //bb_indices initially appears as : [0,1,2,3,...,dataset.size()-1]
     //as the tree is built, it will be partitioned and sub-partitioned, until the order of elements
     //represents the in-order traversal of every leaf node
-    std::vector<int> bb_indices;
+    std::vector<poly> polys;
     std::vector<node> nodes;
 };
 

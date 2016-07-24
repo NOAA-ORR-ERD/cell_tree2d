@@ -9,7 +9,7 @@ cdef extern from "cell_tree2d.h" :
         CellTree2D(double*, int, int*, int, int, int, int) except +
         int locate_points(double*, int*, int)
         int size()
-        int num_buckets, boxes_per_leaf, poly, v_len, f_len
+        int num_buckets, boxes_per_leaf, poly, v_len, n_polys
         
         cppclass node:
             node()
@@ -119,7 +119,7 @@ cdef class CellTree:
     @property
     def bb_indices(self):
         l = []
-        for i in range(0, self.thisptr.f_len):
+        for i in range(0, self.thisptr.n_polys):
             l.append(self.thisptr.bb_indices[i])
         return l
     

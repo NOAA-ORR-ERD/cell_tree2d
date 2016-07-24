@@ -39,7 +39,11 @@ public:
     ~CellTree2D();
     //the double* and int* are pointers to the first element of a 1D multidimensional array
     //inside it builds a pointer array to re-impose the multidimensional structure
-    CellTree2D( double*,int, int*,int, int, int, int);
+    CellTree2D();
+    CellTree2D( double*,unsigned int, int*, unsigned int, unsigned int, int, int);
+
+    void add_vertices(double*, unsigned int);
+    void add_polys(int*, unsigned int, unsigned int);
     void build(int, int);
 
     void locate_points(double*, int*, int);
@@ -51,14 +55,16 @@ public:
     void get_bounds(bucket&, int);
     void sort_bbs(std::vector<bucket>&, node&, int);
     double** vertices;
+    unsigned int v_len;
     int** faces;
+    unsigned int n_polys;
+    unsigned int n_verts; // # of vertices per face (affects bounding box calculation)
     int num_buckets;
     int boxes_per_leaf;
+    int* poly_data;
 //    std::vector<vertex>& vertices;
 //    std::vector<face>& faces;
-    int n_verts; // # of vertices per face (affects bounding box calculation)
-    int v_len;
-    int f_len;
+    bool mixed;
     std::vector<std::vector<double> > dataset;
     //bb_indices initially appears as : [0,1,2,3,...,dataset.size()-1]
     //as the tree is built, it will be partitioned and sub-partitioned, until the order of elements

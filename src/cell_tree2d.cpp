@@ -42,7 +42,6 @@ CellTree2D::CellTree2D() {
     this->n_verts = 0;
     this->poly_data = NULL;
     this->n_polys = 0;
-    this->mixed = false;
     this->num_buckets = 4;
     this->boxes_per_leaf = 2;
 
@@ -51,76 +50,68 @@ CellTree2D::CellTree2D() {
 void CellTree2D::add_vertices(double* verts, unsigned int v_len) {
     this->vertices = new double*[v_len];
     this->vertices[0] = verts;
-    for (int i = 1; i < v_len; i++)
+    for (unsigned int i = 1; i < v_len; i++)
         this->vertices[i] = this->vertices[i-1] + 2; //points always have 2 coordinates
     this->v_len = v_len;
 }
 
-void CellTree2D::add_polys(int* poly_data, unsigned int n_polys, unsigned int n_verts) {
+void CellTree2D::add_polys(int* poly_data, unsigned int n_polys, unsigned char n_verts) {
     this->faces = new int*[n_polys];
     this->faces[0] = poly_data;
-    for (int i = 1; i < n_polys; i++)
+    for (unsigned int i = 1; i < n_polys; i++)
         this->faces[i] = this->faces[i-1] + n_verts; //you can have n vertices in your polygon
     this->n_verts = n_verts;
+    this->max_n_verts = 0;
     this->n_polys = n_polys;
-
-    this->mixed = false;
 }
-//
-//void CellTree2D::add_polys(int* poly_data, unsigned int len_poly_data, unsigned int* n_verts_arr, unsigned int n_polys) {
-//    this->poly_data = poly_data;
-//    this->len_poly_data = len_poly_data;
-//    this->n_polys = n_polys;
-//    this->mixed = False;
-//    this->poly_arr[0].len = n_verts_arr[0];
-//    this->poly_arr[0].ptr = &poly_data[0];
-//    unsigned int checksum = this->poly_arr[0].len
-//    for (int i = 1; i < n_polys; i++) {
-//        if (!this->mixed && n_verts_arr[i] != n_verts_arr[0]) {
-//            this->mixed = True
-//        }
-//        this->poly_arr[i].len = n_verts_arr[i];
-//        this->poly_arr[i].index = i
-//        this->poly_arr[i].ptr = this->poly_arr[i-1].ptr + poly_arr[i-1].len];
-//        checksum += this->poly_arr[i].len;
-//    }
-//    if (checksum != len_poly_data) {
-//        std::stderr << "Sum of lines does not equal length of provided data!"
-//    }
-//}
-//
-//void CellTree2D::add_polys(int* poly_data, unsigned int len_poly_data, unsigned int max_n_verts, unsigned int n_polys) {
-//    this->poly_data = poly_data;
-//    this->len_poly_data = len_poly_data;
-//    this->n_polys = n_polys;
-//    this->mixed = False;
-//    for (int i = 0; i < n_polys; i++) {
-//            if (!this->mixed && n_verts_arr[i] != n_verts_arr[0]) {
-//                this->mixed = True
-//            }
-//            this->poly_arr[i].ptr = this->poly_data[max_n_verts * i];
-//            int* l = this->poly_arr[i];
-//            while (*l != -1) {
-//                l += 1
-//            }
-//            this->poly_arr[i].len = l - this->poly_arr[i].ptr;
-//            this->poly_arr[i].index = i
-//        }
-//}
 
-CellTree2D::CellTree2D(double* vertices, unsigned int v_len, int* faces, unsigned int n_polys, unsigned int n_verts, int n_buckets, int bb_per_leaf) {
+void CellTree2D::add_polys(int* poly_data, unsigned char* n_verts_arr, unsigned int n_polys) {
+    this->faces = new int*[n_polys];
+    this->faces[0] = poly_data;
+    for (unsigned int i = 1; i < n_polys; i++) {
+        this->faces[i] = this->faces[i-1] + n_verts_arr[i-1];
+    }
+    this->n_verts = 0;
+    this->max_n_verts = 0;
+    this->n_polys = n_polys;
+    this->n_verts_arr = n_verts_arr;
+}
+
+void CellTree2D::add_polys(int* poly_data, unsigned char max_n_verts, unsigned int n_polys) {
+    this->faces = new int*[n_polys];
+    this->faces[0] = poly_data;
+    for (unsigned int i = 1; i < n_polys; i++) {
+        this->faces[i] = this->faces[i-1] + max_n_verts;
+    }
+    this->n_verts = 0;
+    this->max_n_verts = max_n_verts;
+    this->n_polys = n_polys;
+    this->n_verts_arr = new unsigned char[n_polys];
+    for (unsigned int i = 0; i < n_polys; i++) {
+        int* poly = this->faces[i];
+        int* poly_end = poly;
+        while (*poly_end != -1 && poly_end != poly + max_n_verts) {
+            poly_end++;
+        }
+        cout << (int)(poly_end-poly) << endl;
+        this->n_verts_arr[i] = (unsigned char)(poly_end - poly);
+    }
+}
+
+CellTree2D::CellTree2D(double* vertices, unsigned int v_len, int* faces, unsigned int n_polys, unsigned char n_verts, int n_buckets, int bb_per_leaf) {
     //in comes the bounding box vector...this is the underlying data store
     //tree is built on top of it
     num_buckets = n_buckets;
     boxes_per_leaf = bb_per_leaf;
     this->add_vertices(vertices, v_len);
-    this->add_polys(faces, n_polys, n_verts);
+    this->add_polys(faces, n_verts, n_polys);
+//    this->add_polys(faces, n_polys, n_verts);
     build_BB_vector();
     if (nodes.size() == 0) { //special case for root node
         nodes.push_back(node(0,bb_indices.size(),0));
     }
     build(0,0);
-    for (int i = 0; i < dataset.size(); i++){
+    for (unsigned int i = 0; i < dataset.size(); i++){
         std::vector<double>(dataset[i]).swap(dataset[i]);
     }
     dataset.clear();
@@ -135,40 +126,31 @@ void CellTree2D::build_BB_vector() {
     bb_indices.resize(n_polys);
     dataset.resize(n_polys);
     double v[4];
-    switch(n_verts) {
-    case 3:
-    {
-        for (int i = 0; i < n_polys; i++) {
-            int* f = faces[i];
-            double* a = vertices[f[0]];
-            double* b = vertices[f[1]];
-            double* c = vertices[f[2]];
-            v[0] = min(a[0],min(b[0],c[0]));
-            v[1] = max(a[0],max(b[0],c[0]));
-            v[2] = min(a[1],min(b[1],c[1]));
-            v[3] = max(a[1],max(b[1],c[1]));
-            dataset[i] = vector<double>(v, v + sizeof v / sizeof v[0]);
-            bb_indices[i]=i;
+    for (unsigned int i = 0; i < n_polys; i++) {
+        int* poly = faces[i];
+        unsigned char poly_len = 0;
+        if (n_verts == 0) {
+            poly_len = this->n_verts_arr[i];
+        } else {
+            poly_len = n_verts;
         }
-        return;
-    }
-    case 4:
-    {
-        for (int i = 0; i < n_polys; i++) {
-            int* f = faces[i];
-            double* a = vertices[f[0]];
-            double* b = vertices[f[1]];
-            double* c = vertices[f[2]];
-            double* d = vertices[f[3]];
-            v[0] = min(a[0],min(b[0],min(c[0],d[0])));
-            v[1] = max(a[0],max(b[0],max(c[0],d[0])));
-            v[2] = min(a[1],min(b[1],min(c[1],d[1])));
-            v[3] = max(a[1],max(b[1],max(c[1],d[1])));
-            dataset[i] = vector<double>(v, v + sizeof v / sizeof v[0]);
-            bb_indices[i] = i;
+        double x_min, x_max, y_min, y_max;
+        double* vt = vertices[poly[0]];
+        x_min = x_max = v[0];
+        y_min = y_max = v[1];
+        for(unsigned char j = 1; j < poly_len; j++) {
+             vt = vertices[poly[j]];
+             x_min = min(x_min, vt[0]);
+             x_max = max(x_max, vt[0]);
+             y_min = min(y_min, vt[1]);
+             y_max = max(y_max, vt[1]);
         }
-        return;
-    }
+        v[0] = x_min;
+        v[1] = x_max;
+        v[2] = y_min;
+        v[3] = y_max;
+        dataset[i] = vector<double>(v, v + sizeof v / sizeof v[0]);
+        bb_indices[i]=i;
     }
 }
 
@@ -333,9 +315,10 @@ void CellTree2D::build(int root_ind, int dim) {
 //checking the point immediately is important....potentially saves a lot of traversal if found.
 bool CellTree2D::point_in_poly (int bb, double* test){
     int* f = faces[bb];
-    int i, j = 0;
+    unsigned char poly_len = n_verts_arr[bb];
+    unsigned char i, j = 0;
     bool c = 0; /*really need a bool here...*/
-    for (i = 0, j = n_verts-1; i < n_verts; j = i++) {
+    for (i = 0, j = poly_len-1; i < poly_len; j = i++) {
         double* v1 = vertices[f[i]];
         double* v2 = vertices[f[j]];
         if ( ((v1[1]>test[1]) != (v2[1]>test[1])) &&

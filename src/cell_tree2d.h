@@ -56,7 +56,7 @@ public:
     int boxes_per_leaf;
 //    std::vector<vertex>& vertices;
 //    std::vector<face>& faces;
-    int poly; // # of vertices per face (affects bounding box calculation)
+    int n_verts; // # of vertices per face (affects bounding box calculation)
     int v_len;
     int f_len;
     std::vector<std::vector<double> > dataset;

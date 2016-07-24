@@ -36,7 +36,7 @@ public:
         }
     };
 
-CellTree2D::CellTree2D(double* vertices, int v_len, int* faces, int f_len, int poly, int n_buckets, int bb_per_leaf) {
+CellTree2D::CellTree2D(double* vertices, int v_len, int* faces, int f_len, int n_verts, int n_buckets, int bb_per_leaf) {
     //in comes the bounding box vector...this is the underlying data store
     //tree is built on top of it
     num_buckets = n_buckets;
@@ -48,8 +48,8 @@ CellTree2D::CellTree2D(double* vertices, int v_len, int* faces, int f_len, int p
     this->faces = new int*[f_len];
     this->faces[0] = faces;
     for (int i = 1; i < f_len; i++)
-        this->faces[i] = this->faces[i-1] + poly; //you can have n vertices in your polygon
-    this->poly = poly;
+        this->faces[i] = this->faces[i-1] + n_verts; //you can have n vertices in your n_vertsgon
+    this->n_verts = n_verts;
     this->v_len = v_len;
     this->f_len = f_len;
     build_BB_vector();
@@ -72,7 +72,7 @@ void CellTree2D::build_BB_vector() {
     bb_indices.resize(f_len);
     dataset.resize(f_len);
     double v[4];
-    switch(poly) {
+    switch(n_verts) {
     case 3:
     {
         for (int i = 0; i < f_len; i++) {
@@ -272,7 +272,7 @@ bool CellTree2D::point_in_poly (int bb, double* test){
     int* f = faces[bb];
     int i, j = 0;
     bool c = 0; /*really need a bool here...*/
-    for (i = 0, j = poly-1; i < poly; j = i++) {
+    for (i = 0, j = n_verts-1; i < n_verts; j = i++) {
         double* v1 = vertices[f[i]];
         double* v2 = vertices[f[j]];
         if ( ((v1[1]>test[1]) != (v2[1]>test[1])) &&

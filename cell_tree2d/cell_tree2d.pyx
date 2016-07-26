@@ -6,10 +6,17 @@ from libcpp.vector cimport vector
 cdef extern from "cell_tree2d.h" :
 
     cdef cppclass CellTree2D:
-        CellTree2D(double*, int, int*, int, int, int, int) except +
+        CellTree2D() except +
+        void add_vertices(double*, unsigned int)
+        void add_polys(int*, unsigned int, unsigned char)
+        void add_polys(int*, unsigned char*, unsigned int)
+        void add_polys(int*, unsigned char, unsigned int)
+        void finalize(int, int)
         int locate_points(double*, int*, int)
         int size()
         int num_buckets, boxes_per_leaf, poly, v_len, n_polys
+        unsigned int n_verts
+        int* n_verts_arr
         
         cppclass node:
             node()
@@ -34,14 +41,13 @@ cdef extern from "cell_tree2d.h" :
 
 cdef class CellTree:
 
-    cdef object verts, faces
+    cdef object verts, faces, faces_len_arr
     cdef CellTree2D* thisptr
 
     def __cinit__(self,
                   verts,
                   faces,
-                  int num_buckets=4,
-                  int cells_per_leaf=2):
+                  **kwargs):
 
         """
         Initilize a CellTree
@@ -63,10 +69,24 @@ cdef class CellTree:
         :type cells_per_leaf: integer
         """
 
+        len_arr = None,
+        cdef int num_buckets = 4
+        cdef int cells_per_leaf = 2
+        if 'len_arr' in kwargs.keys():
+            len_arr = kwargs['len_arr']
+        if 'num_buckets' in kwargs.keys():
+            num_buckets = kwargs['num_buckets']
+        if 'cells_per_leaf' in kwargs.keys():
+            cells_per_leaf = kwargs['cells_per_leaf']
 
         cdef cnp.ndarray[double, ndim=2, mode="c"] verts_arr
-        cdef cnp.ndarray[int, ndim=2, mode="c"] faces_arr
-        cdef int num_verts, num_faces, num_poly_vert
+        cdef cnp.ndarray[int, ndim=2, mode="c"] faces_arr_2d
+        cdef cnp.ndarray[int, ndim=1, mode="c"] faces_arr_1d
+        cdef cnp.ndarray[unsigned char, ndim=1, mode="c"] faces_len_arr
+        cdef unsigned char max_n_verts, num_poly_vert
+        cdef unsigned int num_verts, num_faces
+
+        self.thisptr = new CellTree2D()
 
         # convert to numpy arrays:
         verts = np.asarray(verts).astype(np.float64)
@@ -75,31 +95,56 @@ cdef class CellTree:
             raise ValueError("verts must be convertible to a Nx2 numpy array of float64")
         verts_arr = verts
         self.verts=verts
+        num_verts = verts.shape[0]
+        
+        self.thisptr.add_vertices(&verts_arr[0,0],
+                                   num_verts)
 
         faces = np.asarray(faces).astype(np.int32)
         faces = np.ascontiguousarray(faces)
-        if  len(faces.shape)<>2 or not (faces.shape[1] == 3 or faces.shape[1] == 4):
-            raise ValueError("faces must be convertible to a Nx3 (for triangles)"
-                             "or Nx4 (for quads) numpy array of int32")
-        faces_arr = faces
-        self.faces=faces
-
+        if len(faces.shape) == 1:
+            if len_arr is None:
+                raise ValueError("cannot use 1-dim faces array without supplying polygon lengths")
+            len_arr = np.ascontiguousarray(len_arr, np.ubyte)
+            faces_len_arr = len_arr
+            self.faces_len_arr = len_arr
+            faces_arr_1d = faces
+            self.faces = faces
+            num_faces = len_arr.shape[0];
+            self.thisptr.add_polys(&faces_arr_1d[0],
+                                   &faces_len_arr[0],
+                                   num_faces)
+            
+        elif (len(faces.shape)==2):
+            if faces.shape[1] > 255:
+                raise ValueError("CellTree does not support polygons with more than 255 sides")
+            faces_arr_2d = faces
+            self.faces=faces
+            num_faces = faces.shape[0]
+            if -1 in faces:
+                max_n_verts = faces.shape[1]
+                num_poly_vert = 0
+                self.thisptr.add_polys(&faces_arr_2d[0,0],
+                                        max_n_verts,
+                                        num_faces
+                                        )
+            else:
+                num_poly_vert = faces.shape[1]
+                max_n_verts = 0
+                self.thisptr.add_polys(&faces_arr_2d[0,0],
+                                        num_faces,
+                                        num_poly_vert
+                                        )
+            
+        else:
+            raise ValueError('Faces array is of too high dimension')
+        
         ## a bit more error checking:
         if num_buckets < 2:
             raise ValueError("num_buckets must be an integer greater than 2")
         if cells_per_leaf < 1:
             raise ValueError("cells_per_leaf must be >= 1")
-
-        num_verts = verts.shape[0]
-        num_faces = faces.shape[0]
-        num_poly_vert = faces.shape[1]
-        self.thisptr = new CellTree2D(&verts_arr[0,0],
-                                      num_verts,
-                                      &faces_arr[0,0],
-                                      num_faces,
-                                      num_poly_vert,
-                                      num_buckets,
-                                      cells_per_leaf)
+        self.thisptr.finalize(num_buckets, cells_per_leaf)
 
     def __del__(self):
         del self.thisptr
@@ -123,6 +168,18 @@ cdef class CellTree:
             l.append(self.thisptr.bb_indices[i])
         return l
     
+    @property
+    def n_verts(self):
+        return self.thisptr.n_verts
+    
+    @property
+    def n_verts_arr(self):
+        l = []
+        if self.thisptr.n_verts_arr != NULL:
+            for i in range(0, self.thisptr.n_polys):
+                l.append(self.thisptr.n_verts_arr[i])
+        return l
+            
     @property
     def nodes(self):
         l = []

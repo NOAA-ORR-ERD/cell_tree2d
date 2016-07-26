@@ -15,7 +15,6 @@
 #include <algorithm>
 #include <iterator>
 #include <vector>
-#include <iostream>
 
 typedef std::vector<double> BB;
 
@@ -47,6 +46,7 @@ public:
     void add_polys(int*, unsigned int, unsigned char);
     void add_polys(int*, unsigned char*, unsigned int);
     void add_polys(int*, unsigned char, unsigned int);
+    void finalize(int, int);
     void build(int, int);
 
     void locate_points(double*, int*, int);

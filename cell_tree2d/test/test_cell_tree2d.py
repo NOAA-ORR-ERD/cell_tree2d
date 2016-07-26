@@ -84,11 +84,11 @@ def test_init():
     can  a tree be initialized
     """
 
-    # with everything specified
-    tree = CellTree(nodes, faces, 2, 1)
-
     # with defaults
     tree = CellTree(nodes, faces)
+
+    # with everything specified
+    tree = CellTree(nodes, faces, num_buckets=2, cells_per_leaf=1)
 
     # with num_buckets
     tree = CellTree(nodes, faces, num_buckets=4)
@@ -103,7 +103,7 @@ def test_lists():
     """
     python lists should get converted to numpy arrays
     """
-    tree = CellTree(nodes2, faces2, 2, 1)
+    tree = CellTree(nodes2, faces2)
     assert True
 
 
@@ -114,7 +114,7 @@ def test_types():
     nodes = np.array(nodes2, dtype=np.float32)
     faces = np.array(faces2, dtype=np.int64)
 
-    tree = CellTree(nodes, faces, 2, 1)
+    tree = CellTree(nodes, faces)
     assert True
 
 
@@ -128,16 +128,12 @@ def test_shape_error():
 
     with pytest.raises(ValueError):
         # nodes is wrong shape
-        tree = CellTree(nodes, faces, 2, 1)
+        tree = CellTree(nodes, faces)
 
-    with pytest.raises(ValueError):
-        # faces is wrong shape
-        tree = CellTree(nodes2, (2, 3, 4, 5), 2, 1)
+        tree = CellTree(nodes2, (2, 3, 4, 5))
 
-    with pytest.raises(ValueError):
-        # faces is wrong shape
         tree = CellTree(
-            nodes2, ((2, 3, 4, 5), (1, 2, 3, 4, 5), (1, 2, 3, 4, 5)), 2, 1)
+            nodes2, ((2, 3, 4, 5), (1, 2, 3, 4, 5), (1, 2, 3, 4, 5)))
 
 
 def test_bounds_errors():
@@ -149,7 +145,7 @@ def test_bounds_errors():
 
 
 def test_triangle_lookup():
-    tree = CellTree(nodes, faces, 2, 1)
+    tree = CellTree(nodes, faces)
     point = np.array([1., 1.])  # in triangle 1
     result = tree.locate(point)
     assert result == 0
@@ -159,7 +155,6 @@ def test_triangle_lookup():
     point[0] = -1.0  # out of grid
     result = tree.locate(point)
     assert result == -1
-
 
 def test_poly_lookup():
     # A simple quad grid
@@ -178,13 +173,91 @@ def test_poly_lookup():
                       ], dtype=np.intc)
     print(faces)
     print(faces.dtype)
-    tree = CellTree(nodes, faces, 2, 1)
+    tree = CellTree(nodes, faces, num_buckets = 2, cells_per_leaf = 1)
     point = np.array([1., 1.])  # in triangle 1
     result = tree.locate(point)
     assert result == 0
     point[0] = 5.0  # tri 2
     result = tree.locate(point)
     assert result == 1
+    point[0] = -1.0  # out of grid
+    result = tree.locate(point)
+    assert result == -1
+
+def test_multi_poly_lookup():
+    # A simple quad grid
+    nodes = np.array([[0.0, 0.0], #0
+                      [0.0, 2.0], #1
+                      [2.0, 0.0], #2
+                      [2.0, 2.0], #3
+                      [4.0, 0.0], #4
+                      [4.0, 2.0], #5
+                      [6.0, 0.0], #6
+                      [6.0, 2.0], #7
+                      [0.0,4.0], #8
+                      [2.0,4.0], #9
+                      [4.0,4.0], #10
+                      [6.0,4.0] #11
+                      ])
+
+    faces = np.array([[0, 8, 9, 5, 2],
+                      [9, 11, 7, 5, -1],
+                      [4, 7 ,6, -1, -1]
+                      ], dtype=np.intc)
+    print(faces)
+    print(faces.dtype)
+    tree = CellTree(nodes, faces, num_buckets = 2, cells_per_leaf = 1)
+    point = np.array([1., 1.])  # in POLY 1
+    result = tree.locate(point)
+    print result
+    assert result == 0
+    point[0] = 5.0  # tri 2
+    result = tree.locate(point)
+    assert result == 2
+
+    point[1] = 3.0
+    result = tree.locate(point)
+    assert result == 1
+
+    point[0] = -1.0  # out of grid
+    result = tree.locate(point)
+    assert result == -1
+
+def test_multi_poly_1D_lookup():
+    # A simple quad grid
+    nodes = np.array([[0.0, 0.0], #0
+                      [0.0, 2.0], #1
+                      [2.0, 0.0], #2
+                      [2.0, 2.0], #3
+                      [4.0, 0.0], #4
+                      [4.0, 2.0], #5
+                      [6.0, 0.0], #6
+                      [6.0, 2.0], #7
+                      [0.0,4.0], #8
+                      [2.0,4.0], #9
+                      [4.0,4.0], #10
+                      [6.0,4.0] #11
+                      ])
+
+    faces = np.array([0, 8, 9, 5, 2, 9, 11, 7, 5, 4, 7, 6]
+                      , dtype=np.intc)
+
+    n_verts_arr = np.array([5,4,3],dtype=np.ubyte)
+    print(faces)
+    print(faces.dtype)
+    tree = CellTree(nodes, faces, len_arr = n_verts_arr, num_buckets = 2, cells_per_leaf = 1)
+    point = np.array([1., 1.])  # in POLY 1
+    result = tree.locate(point)
+    print result
+    assert result == 0
+    point[0] = 5.0  # tri 2
+    result = tree.locate(point)
+    assert result == 2
+
+    point[1] = 3.0
+    result = tree.locate(point)
+    assert result == 1
+
     point[0] = -1.0  # out of grid
     result = tree.locate(point)
     assert result == -1
@@ -224,5 +297,7 @@ def test_multipoint():
 
 
 if __name__ == "__main__":
+    test_triangle_lookup()
+    test_multi_poly_lookup()
     test_poly_lookup()
     test_multipoint()

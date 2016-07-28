@@ -40,12 +40,12 @@ public:
     //the double* and int* are pointers to the first element of a 1D multidimensional array
     //inside it builds a pointer array to re-impose the multidimensional structure
     CellTree2D();
-    CellTree2D( double*,unsigned int, int*, unsigned int, unsigned char, int, int);
+    CellTree2D( double*,unsigned int, int*, unsigned int, unsigned short, int, int);
 
     void add_vertices(double*, unsigned int);
-    void add_polys(int*, unsigned int, unsigned char);
-    void add_polys(int*, unsigned char*, unsigned int);
-    void add_polys(int*, unsigned char, unsigned int);
+    void add_polys(int*, unsigned int, unsigned short);
+    void add_polys(int*, unsigned short*, unsigned int);
+    void add_polys(int*, unsigned short, unsigned int);
     void finalize(int, int);
     void build(int, int);
 
@@ -61,9 +61,9 @@ public:
     unsigned int v_len;
     int** faces;
     unsigned int n_polys;
-    unsigned char n_verts; // # of vertices per face (affects bounding box calculation)
-    unsigned char* n_verts_arr;
-    unsigned char max_n_verts;
+    unsigned short n_verts; // # of vertices per face (affects bounding box calculation)
+    unsigned short* n_verts_arr;
+    unsigned short max_n_verts;
     int num_buckets;
     int boxes_per_leaf;
     int* poly_data;

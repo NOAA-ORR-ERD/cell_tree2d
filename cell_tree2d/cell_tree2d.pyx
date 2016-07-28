@@ -8,9 +8,9 @@ cdef extern from "cell_tree2d.h" :
     cdef cppclass CellTree2D:
         CellTree2D() except +
         void add_vertices(double*, unsigned int)
-        void add_polys(int*, unsigned int, unsigned char)
-        void add_polys(int*, unsigned char*, unsigned int)
-        void add_polys(int*, unsigned char, unsigned int)
+        void add_polys(int*, unsigned int, unsigned short)
+        void add_polys(int*, unsigned short*, unsigned int)
+        void add_polys(int*, unsigned short, unsigned int)
         void finalize(int, int)
         int locate_points(double*, int*, int)
         int size()
@@ -82,8 +82,8 @@ cdef class CellTree:
         cdef cnp.ndarray[double, ndim=2, mode="c"] verts_arr
         cdef cnp.ndarray[int, ndim=2, mode="c"] faces_arr_2d
         cdef cnp.ndarray[int, ndim=1, mode="c"] faces_arr_1d
-        cdef cnp.ndarray[unsigned char, ndim=1, mode="c"] faces_len_arr
-        cdef unsigned char max_n_verts, num_poly_vert
+        cdef cnp.ndarray[unsigned short, ndim=1, mode="c"] faces_len_arr
+        cdef unsigned short max_n_verts, num_poly_vert
         cdef unsigned int num_verts, num_faces
 
         self.thisptr = new CellTree2D()
@@ -102,10 +102,12 @@ cdef class CellTree:
 
         faces = np.asarray(faces).astype(np.int32)
         faces = np.ascontiguousarray(faces)
+        
+        #1D faces array. This is assumed to be a mixed set of polygons, so a lengths array is required
         if len(faces.shape) == 1:
             if len_arr is None:
                 raise ValueError("cannot use 1-dim faces array without supplying polygon lengths")
-            len_arr = np.ascontiguousarray(len_arr, np.ubyte)
+            len_arr = np.ascontiguousarray(len_arr, np.uint16)
             faces_len_arr = len_arr
             self.faces_len_arr = len_arr
             faces_arr_1d = faces
@@ -114,7 +116,10 @@ cdef class CellTree:
             self.thisptr.add_polys(&faces_arr_1d[0],
                                    &faces_len_arr[0],
                                    num_faces)
-            
+        
+        #2D faces array. This may or may not be a mixed set of polygons. If it is mixed, the 'masked'
+        #indices must be represented with the value -1. If no 'masked' incides are found, it is assumed all
+        #the polgyons have the same number of sides
         elif (len(faces.shape)==2):
             if faces.shape[1] > 255:
                 raise ValueError("CellTree does not support polygons with more than 255 sides")

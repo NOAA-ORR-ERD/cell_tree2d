@@ -158,30 +158,50 @@ def test_triangle_lookup():
 
 def test_poly_lookup():
     # A simple quad grid
-    nodes = np.array([[0.0, 0.0],
-                      [0.0, 2.0],
-                      [2.0, 0.0],
-                      [2.0, 2.0],
-                      [4.0, 0.0],
-                      [4.0, 2.0],
-                      [6.0, 0.0],
-                      [6.0, 2.0]
+    nodes = np.array([[0.0, 0.0], #0
+                      [0.0, 2.0], #1
+                      [2.0, 0.0], #2
+                      [2.0, 2.0], #3
+                      [4.0, 0.0], #4
+                      [4.0, 2.0], #5
+                      [6.0, 0.0], #6
+                      [6.0, 2.0], #7
+                      [0.0,4.0], #8
+                      [2.0,4.0], #9
+                      [4.0,4.0], #10
+                      [6.0,4.0] #11
                       ])
 
-    faces = np.array([[0, 2, 3, 1],
+    #quads
+    faces1 = np.array([[0, 2, 3, 1],
                       [4, 6, 7, 5],
+                      ], dtype=np.intc)
+    #Pentas
+    faces2 = np.array([[0, 8, 9, 5, 2],
+                      [9, 11, 6, 2, 5],
                       ], dtype=np.intc)
     print(faces)
     print(faces.dtype)
-    tree = CellTree(nodes, faces, num_buckets = 2, cells_per_leaf = 1)
+    tree1 = CellTree(nodes, faces1, num_buckets = 2, cells_per_leaf = 1)
     point = np.array([1., 1.])  # in triangle 1
-    result = tree.locate(point)
+    result = tree1.locate(point)
     assert result == 0
     point[0] = 5.0  # tri 2
-    result = tree.locate(point)
+    result = tree1.locate(point)
     assert result == 1
     point[0] = -1.0  # out of grid
-    result = tree.locate(point)
+    result = tree1.locate(point)
+    assert result == -1
+
+    tree2 = CellTree(nodes, faces2, num_buckets=2, cells_per_leaf=1)
+    point = np.array([1., 2.])  # in triangle 1
+    result = tree2.locate(point)
+    assert result == 0
+    point[0] = 5.0  # tri 2
+    result = tree2.locate(point)
+    assert result == 1
+    point[0] = -1.0  # out of grid
+    result = tree2.locate(point)
     assert result == -1
 
 def test_multi_poly_lookup():
@@ -243,12 +263,9 @@ def test_multi_poly_1D_lookup():
                       , dtype=np.intc)
 
     n_verts_arr = np.array([5,4,3],dtype=np.ubyte)
-    print(faces)
-    print(faces.dtype)
     tree = CellTree(nodes, faces, len_arr = n_verts_arr, num_buckets = 2, cells_per_leaf = 1)
     point = np.array([1., 1.])  # in POLY 1
     result = tree.locate(point)
-    print result
     assert result == 0
     point[0] = 5.0  # tri 2
     result = tree.locate(point)

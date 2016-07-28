@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 
 """
-unit tests for BBtree
+unit tests for cell_tree_2d
 
 uses pytest
 
 to run:
 
-$py.test
+$ py.test
 
 in this dir.
 """
+
 import pytest
 import numpy as np
 
@@ -180,8 +181,6 @@ def test_poly_lookup():
     faces2 = np.array([[0, 8, 9, 5, 2],
                       [9, 11, 6, 2, 5],
                       ], dtype=np.intc)
-    print(faces)
-    print(faces.dtype)
     tree1 = CellTree(nodes, faces1, num_buckets = 2, cells_per_leaf = 1)
     point = np.array([1., 1.])  # in triangle 1
     result = tree1.locate(point)

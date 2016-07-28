@@ -1,14 +1,14 @@
 # Conda recipe example.
 package:
     name: cell_tree2d
-    version: "0.3.1"
+    version: "0.3.0"
 
 source:
     git_url: https://github.com/NOAA-ORR-ERD/cell_tree2d
-    git_tag: v0.3.1
+    git_tag: v0.3.0
 
 build:
-    number: 0
+    number: 1
 
 requirements:
   build:

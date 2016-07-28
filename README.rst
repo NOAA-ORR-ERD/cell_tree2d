@@ -10,9 +10,9 @@ This implementation is 2D specific and includes some additions useful to answeri
 
 "What is the index of the polygon that contains this point?"
 
-===============
+
 Algorithm Notes
-===============
+---------------
 
 There are two major benefits to this algorithm over other types of BVHs. First is that overlaps in volumes
 bounded by nodes do not create duplicates, decreasing the memory footprint. Secondly, the tree is balanced
@@ -27,9 +27,8 @@ can be within the bounds of two different cells, and it is very possible both ch
 need to be searched, implementing immediate point-in-polygon checks on each cell as they are encountered is
 highly beneficial, as an early success will avoid all further tree traversal.
 
-=========== 
 Usage Notes
-===========
+-----------
 
 The tree needs certain information to be built:
 

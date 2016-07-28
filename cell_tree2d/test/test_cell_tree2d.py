@@ -223,12 +223,9 @@ def test_multi_poly_lookup():
                       [9, 11, 7, 5, -1],
                       [4, 7 ,6, -1, -1]
                       ], dtype=np.intc)
-    print(faces)
-    print(faces.dtype)
     tree = CellTree(nodes, faces, num_buckets = 2, cells_per_leaf = 1)
     point = np.array([1., 1.])  # in POLY 1
     result = tree.locate(point)
-    print result
     assert result == 0
     point[0] = 5.0  # tri 2
     result = tree.locate(point)

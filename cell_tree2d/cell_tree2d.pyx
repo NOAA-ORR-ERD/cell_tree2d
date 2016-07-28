@@ -48,7 +48,9 @@ cdef class CellTree:
     def __cinit__(self,
                   verts,
                   faces,
-                  **kwargs):
+                  num_buckets=4,
+                  cells_per_leaf=2,
+                  len_arr=None):
 
         """
         Initilize a CellTree
@@ -68,17 +70,10 @@ cdef class CellTree:
                                  results  in a smaller tree (less memory), but then it takes
                                  longer to find which cell you are in at the end.
         :type cells_per_leaf: integer
+        
+        :param len_arr: Array of number of sides of the polygons
+        :type len_arr: N numpy array of polygon lengths. Max number of sides is 65535
         """
-
-        len_arr = None,
-        cdef int num_buckets = 4
-        cdef int cells_per_leaf = 2
-        if 'len_arr' in kwargs.keys():
-            len_arr = kwargs['len_arr']
-        if 'num_buckets' in kwargs.keys():
-            num_buckets = kwargs['num_buckets']
-        if 'cells_per_leaf' in kwargs.keys():
-            cells_per_leaf = kwargs['cells_per_leaf']
 
         cdef cnp.ndarray[double, ndim=2, mode="c"] verts_arr
         cdef cnp.ndarray[int, ndim=2, mode="c"] faces_arr_2d

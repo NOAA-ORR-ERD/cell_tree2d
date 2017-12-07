@@ -10,6 +10,30 @@ This implementation is 2D specific and includes some additions useful to answeri
 
 "What is the index of the polygon that contains this point?"
 
+Installation
+------------
+
+cell_tree2d should be buildable on any system with a properly set up compiler to work with python with the usual::
+
+    python setup.py build
+    python setup.py install
+
+
+It is also available on PyPi::
+
+    pip install cell_tree2d
+
+But only as source, so the same compiler setup will be required.
+
+
+conda packages
+..............
+
+For people using the Anaconda or miniconda python distributions, there are pre-built conda packges available on the conda-forge channel::
+
+    conda install -c conda-forge cell_tree2d
+
+
 
 Algorithm Notes
 ---------------

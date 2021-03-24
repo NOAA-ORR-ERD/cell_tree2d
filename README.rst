@@ -2,11 +2,10 @@
 cell_tree2d
 ============
 
-A module that provides the CellTree data structure as described by Garth and Joy in their 2010 paper:
+A module that provides the CellTree data structure as described by Garth and Joy in their 2010 paper "[Fast, Memory-Efficient Cell Location in
+Unstructured Grids for Visualization](https://escholarship.org/content/qt0vq7q87f/qt0vq7q87f_noSplash_0c92ab6003058527970f342e4101a108.pdf)". 
 
-http://graphics.cs.ucdavis.edu/~joy/NSF-IIS-0916289/Papers/GarthTVCG2011.pdf  
-
-This implementation is 2D specific and includes some additions useful to answering one question:
+The implementation here is 2D specific and includes some additions useful to answering one question:
 
 "What is the index of the polygon that contains this point?"
 

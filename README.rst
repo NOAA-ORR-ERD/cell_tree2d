@@ -4,7 +4,7 @@ cell_tree2d
 
 A module that provides the CellTree data structure as described by Garth and Joy in their 2010 paper:
 
-http://graphics.cs.ucdavis.edu/~joy/NSF-IIS-0916289/Papers/GarthTVCG2011.pdf  
+https://ieeexplore.ieee.org/document/5613496
 
 This implementation is 2D specific and includes some additions useful to answering one question:
 

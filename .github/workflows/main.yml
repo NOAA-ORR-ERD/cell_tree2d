@@ -105,7 +105,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python -m pytest --cov cell_tree2d --cov-report term-missing -v tests/
-          python -m coveralls --service=github
+        # python -m coveralls --service=github
 
       - name: Build sdist
         run: |
@@ -129,7 +129,7 @@ jobs:
 
       - name: Publish to Test PyPI
         # only if working on main
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__

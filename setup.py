@@ -16,6 +16,7 @@ CY_MODULES = [
         ],
         include_dirs=[np.get_include(), os.path.join("src", "cell_tree2d_cpp")],
         define_macros=[("NPY_NO_DEPRECATED_API", "NPY_1_7_API_VERSION")],
+        language="c++",
     )
 ]
 

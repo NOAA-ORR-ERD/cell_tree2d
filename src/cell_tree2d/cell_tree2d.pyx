@@ -1,4 +1,3 @@
-# distutils: language = c++
 import numpy as np
 cimport numpy as cnp
 from libcpp.vector cimport vector

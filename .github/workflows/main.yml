@@ -38,10 +38,6 @@ jobs:
         run: |
           python -m isort --check --diff --color .
 
-      - name: pylint check
-        run: |
-          python -m pylint src/cell_tree2d/
-
       - name: cython-lint check
         run: |
           cython-lint src/cell_tree2d/

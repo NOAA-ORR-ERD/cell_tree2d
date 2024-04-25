@@ -2,6 +2,7 @@
 *.pyc
 .cache/
 *.egg-info
+*.so
 dist/
 build/
 

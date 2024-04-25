@@ -4,3 +4,6 @@
 *.egg-info
 dist/
 build/
+
+src/cell_tree2d/cell_tree2d.cpp
+src/cell_tree2d/_version.py

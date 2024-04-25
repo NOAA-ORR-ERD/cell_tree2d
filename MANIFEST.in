@@ -1,5 +1,6 @@
-include README.md
-include src/*.h
-include src/*.cpp
-recursive-include cell_tree2d *.py
-include cell_tree2d/cell_tree2d.*
+prune **
+include src/cell_tree2d_cpp/cell_tree2d.h
+include src/cell_tree2d_cpp/cell_tree2d.cpp
+recursive-include tests *.py
+recursive-include src/cell_tree2d *.py *.pyx
+include LICENSE README.md pyproject.toml setup.py

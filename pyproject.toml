@@ -1,0 +1,110 @@
+[build-system]
+requires = [
+    "setuptools>=64",
+    "setuptools_scm>=7",
+    "numpy>=2.0.0rc1,<2.3; python_version >= '3.9'",
+    "oldest-supported-numpy; python_version < '3.9'",
+    "Cython>=3.0.10,<3.1.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">=3.8"
+name = "cell_tree2d"
+authors = [{name = "Jay Hennen", email = "jay.hennen@noaa.gov"}]
+readme = "README.rst"
+license = {text = "Public Domain"}
+dynamic = ["version"]
+description = "Python wrappers around Cell-Tree 2D spatial index."
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: C++",
+    "Programming Language :: Cython",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Utilities",
+]
+dependencies = ["numpy>=1.20.0"]
+
+[project.optional-dependencies]
+test = ["pytest-cov>=3"]
+check = [
+  "black>=24,<25",
+  "isort[colors]",
+  "pylint",
+  "cython-lint",
+]
+
+[project.urls]
+Homepage = "https://github.com/NOAA-ORR-ERD/cell_tree2d"
+Documentation = "https://github.com/NOAA-ORR-ERD/cell_tree2d"
+Source = "https://github.com/NOAA-ORR-ERD/cell_tree2d"
+Tracker = "https://github.com/NOAA-ORR-ERD/cell_tree2d/issues"
+Changelog = "https://github.com/NOAA-ORR-ERD/cell_tree2d/blob/main/CHANGELOG.md"
+Conda-Forge = "https://anaconda.org/conda-forge/cell_tree2d"
+
+[tool.setuptools]
+license-files = ["LICENSE"]
+
+[tool.setuptools_scm]
+write_to = "src/cell_tree2d/_version.py"
+write_to_template = "__version__ = '{version}'"
+local_scheme = "no-local-version"
+fallback_version = "0.0.0.dev0"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.black]
+target-version = [
+    "py38",
+    "py39",
+    "py310",
+    "py311",
+    "py312",
+]
+
+[tool.cython-lint]
+max-line-length = 120
+
+[tool.coverage]
+    [tool.coverage.run]
+    source = ["cell_tree2d"]
+    omit = [
+        "*docs*",
+        "*examples*",
+        "*tests*",
+        "*paper*",
+    ]
+
+    [tool.coverage.report]
+    exclude_lines = [
+        "pragma: no cover",
+        "def __repr__",
+        "def __str__",
+    ]
+
+[tool.cibuildwheel]
+# Switch to using build
+build-frontend = "build"
+# Disable building PyPy wheels on all platforms, 32bit builds, py3.6, py3.7
+skip = ["cp36-*", "cp37-*", "pp*", "*-win32", "*-manylinux_i686", "*-musllinux_*"]
+# Run the package tests using `pytest`
+test-extras = "test"
+test-command = "pytest -v {package}/tests"
+# Skip trying to test arm64 builds on Intel Macs
+test-skip = "*-macosx_arm64 *-macosx_universal2:arm64"

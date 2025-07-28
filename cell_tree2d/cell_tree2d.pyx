@@ -4,7 +4,7 @@ cimport numpy as cnp
 from libcpp.vector cimport vector
 
 
-cdef extern from "cell_tree2d.h" :
+cdef extern from "cell_tree2d_c.h" :
 
     cdef cppclass CellTree2D:
         CellTree2D() except +

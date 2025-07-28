@@ -4,7 +4,7 @@
  *  Created on: Aug 20, 2015
  *      Author: jay.hennen
  */
-#include "cell_tree2d.h"
+#include "cell_tree2d_c.h"
 
 using namespace std;
 

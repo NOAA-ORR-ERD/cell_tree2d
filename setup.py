@@ -2,7 +2,7 @@
 
 try:
     from setuptools import setup, Extension
-#    from setuptools.command.test import test as TestCommand
+    from setuptools.command.test import test as TestCommand
 except ImportError:
     print("You need setuptools to build this module.")
 
@@ -15,16 +15,16 @@ import numpy as np  # For the include directory.
 rootpath = os.path.abspath(os.path.dirname(__file__))
 long_description = open(os.path.join(rootpath, 'README.rst')).read()
 
-# class PyTest(TestCommand):
+class PyTest(TestCommand):
 
-#     def finalize_options(self):
-#         TestCommand.finalize_options(self)
-#         self.verbose = True
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.verbose = True
 
-#     def run_tests(self):
-#         import pytest
-#         errno = pytest.main(self.test_args)
-#         sys.exit(errno)
+    def run_tests(self):
+        import pytest
+        errno = pytest.main(self.test_args)
+        sys.exit(errno)
 
 
 include_dirs = [np.get_include(),
@@ -65,12 +65,13 @@ setup(
     # keywords = "",
     ext_modules=cythonize(ext_modules),
     packages=["cell_tree2d", "cell_tree2d/test"],
-#    cmdclass=dict(test=PyTest),
+    cmdclass=dict(test=PyTest),
     install_requires=['numpy'],
-    setup_requires=['cython>0.23', 'setuptools', 'cython'],
-#    tests_require=['pytest'],
+    setup_requires=['cython>0.23', 'setuptools'],
+    tests_require=['pytest'],
     classifiers=[
         "Development Status :: 4 - Beta",
+        "License :: Public Domain",
         "Intended Audience :: Developers",
         "Intended Audience :: Science/Research",
         "Operating System :: OS Independent",

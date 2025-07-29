@@ -11,15 +11,16 @@ license = "CC0-1.0"
 license-files = ["LICENSE.txt"]
 authors = [
     { name = "Jay Hennen", email = "jay.hennen@noaa.gov" },
+    { name = "Chris Barker", email = "chris.barker@noaa.gov" },
 ]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status ::  6 - Mature",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
     "Operating System :: OS Independent",
     "Programming Language :: C++",
     "Programming Language :: Cython",
-    "Programming Language :: Python :: 2 :: Only",
+    "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: Implementation :: CPython",
     "Topic :: Scientific/Engineering",
     "Topic :: Scientific/Engineering :: Visualization",
@@ -42,17 +43,15 @@ build-dir = "build"
 
 [tool.scikit-build.metadata.version]
 provider = "scikit_build_core.metadata.regex"
-input = "cell_tree2d/__init__.py"
+input = "src/cell_tree2d/__init__.py"
 
 [tool.cibuildwheel]
 build-frontend = "build[uv]"
 test-groups = ["test"]
-test-command = "pytest --pyargs cell-tree2d"
-skip = ["*musl*"]
-linux.before-all = [
-   "dnf install -y gd-devel",
-]
-macos.config-settings = { "cmake.define.BUILD_DEPS" = "ON"}
+test-command = "pytest --pyargs cell_tree2d"
+# skip = ["*musl*"]
+
+# macos.config-settings = { "cmake.define.BUILD_DEPS" = "ON"}
 macos.environment.MACOSX_DEPLOYMENT_TARGET = "13"
 
 # Use delvewheel on windows

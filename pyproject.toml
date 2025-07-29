@@ -47,6 +47,7 @@ input = "src/cell_tree2d/__init__.py"
 
 [tool.cython-lint]
 max-line-length = 100
+ignore = ['E741']
 # ignore = ['E503', 'E504']
 # exclude = 'my_project/excluded_cython_file.pyx'
 

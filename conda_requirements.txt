@@ -1,0 +1,11 @@
+# requirements for building cell-tree2d
+
+cython
+cython-cmake
+cython-lint
+numpy
+ninja
+pip
+pytest
+python-build
+scikit-build-core

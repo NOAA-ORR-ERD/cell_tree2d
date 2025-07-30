@@ -4,6 +4,4 @@
 *.egg-info
 dist/
 build/
-cell_tree2d/cell_tree2d.cpp
-cell_tree2d/cell_tree2d.so
-cell_tree2d/test/.ipynb_checkpoints/
+.ipynb_checkpoints

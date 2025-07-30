@@ -48,25 +48,10 @@ input = "src/cell_tree2d/__init__.py"
 [tool.cython-lint]
 max-line-length = 100
 ignore = ['E741']
-# ignore = ['E503', 'E504']
-# exclude = 'my_project/excluded_cython_file.pyx'
 
 [tool.cibuildwheel]
 build-frontend = "build[uv]"
 test-groups = ["test"]
 test-command = "pytest --pyargs cell_tree2d"
-# skip = ["*musl*"]
 
-# macos.config-settings = { "cmake.define.BUILD_DEPS" = "ON"}
 macos.environment.MACOSX_DEPLOYMENT_TARGET = "13"
-
-# Use delvewheel on windows
-#  is this required? no third party libs
-# [tool.cibuildwheel.windows]
-# before-build = [
-#     "pip install delvewheel",
-#     "pwd",
-#     "ls -a"
-# ]
-# repair-wheel-command = "delvewheel repair -w {dest_dir} {wheel}"
-

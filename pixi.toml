@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Chris Barker <chris.barker@noaa.gov>"]
+channels = ["conda-forge"]
+name = "cell_tree2d"
+platforms = ["osx-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+numpy = ">=2.3.2,<3"

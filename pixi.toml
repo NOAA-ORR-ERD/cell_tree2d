@@ -9,3 +9,8 @@ version = "0.1.0"
 
 [dependencies]
 numpy = ">=2.3.2,<3"
+
+[pypi-dependencies]
+cell-tree2d = { path = "./", editable = true }
+
+

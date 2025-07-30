@@ -53,7 +53,7 @@ cdef class CellTree:
                   len_arr=None):
 
         """
-        Initilize a CellTree
+        Initialize a CellTree
 
         :param verts: The vertices of the nodes of the mesh
         :type verts: Nx2 numpy array of float64, or something that can be turned into one

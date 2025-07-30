@@ -3,7 +3,7 @@
 from __future__ import absolute_import
 
 # Just bring in the CellTree into this namespace.
-from .cell_tree2d import CellTree
+from .cell_tree2d import CellTree as CellTree
 
 __version__ = "1.0.0dev"
 

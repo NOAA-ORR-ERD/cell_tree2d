@@ -51,6 +51,10 @@ ignore = ['E741']
 # ignore = ['E503', 'E504']
 # exclude = 'my_project/excluded_cython_file.pyx'
 
+[tool.ruff.lint.extend-per-file-ignores]
+# Ignore F841 Local variable is assigned to but never used in test files
+"test_*.py" = ["F841"]
+
 [tool.cibuildwheel]
 build-frontend = "build[uv]"
 test-groups = ["test"]

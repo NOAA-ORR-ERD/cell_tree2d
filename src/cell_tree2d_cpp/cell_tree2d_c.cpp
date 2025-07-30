@@ -314,7 +314,7 @@ void CellTree2D::build(int root_ind, int dim) {
         }
     }
 
-    for (int pl = plane; pl < buks.size(); pl++){
+    for (unsigned int pl = plane; pl < buks.size(); pl++){
         if (buks.at(pl).Rmin < root.Rmin) {
             root.Rmin = buks.at(pl).Rmin;
         }

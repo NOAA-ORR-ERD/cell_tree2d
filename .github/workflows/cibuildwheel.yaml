@@ -38,7 +38,7 @@ jobs:
           - ubuntu-latest
           - ubuntu-24.04-arm
           - windows-latest
-          - windows-11-arm
+          # - windows-11-arm  -- failing in windows arm (can't install numpy?)
           - macos-13  # "currently intel"
           - macos-latest  # should be arm
 

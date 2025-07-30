@@ -85,8 +85,7 @@ cdef class CellTree:
         self.thisptr = new CellTree2D()
 
         # convert to numpy arrays:
-        verts = np.asarray(verts).astype(np.float64)
-        verts = np.ascontiguousarray(verts)
+        verts = np.ascontiguousarray(verts, dtype=np.float64)
         if len(verts.shape) != 2 or verts.shape[1] != 2:
             raise ValueError("verts must be convertible to a Nx2 numpy array of float64")
         verts_arr = verts
@@ -96,8 +95,7 @@ cdef class CellTree:
         self.thisptr.add_vertices(&verts_arr[0, 0],
                                   num_verts)
 
-        faces = np.asarray(faces).astype(np.int32)
-        faces = np.ascontiguousarray(faces)
+        faces = np.ascontiguousarray(faces, dtype=np.int32)
 
         # 1D faces array. This is assumed to be a mixed set of polygons,
         #   so a lengths array is required

@@ -4,7 +4,7 @@
  *  Created on: Aug 20, 2015
  *      Author: jay.hennen
  */
-#include "cell_tree2d.h"
+#include "cell_tree2d_c.h"
 
 using namespace std;
 
@@ -306,14 +306,14 @@ void CellTree2D::build(int root_ind, int dim) {
     double Rmin = std::numeric_limits<double>::max();
 
     for (unsigned int b = 0; b < plane; b++) {
-        buk = buks.at(b);
+        bucket& buk = buks.at(b);
         if (buk.Lmax < Lmax) {
             Lmax = buk.Lmax;
         }
     }
 
     for (unsigned int b = plane; b < buks.size(); b++) {
-        buk = buks.at(b);
+        bucket& buk = buks.at(b);
         if (buk.Rmin < Rmin) {
             Rmin= buk.Rmin;
         }

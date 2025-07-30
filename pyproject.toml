@@ -1,0 +1,72 @@
+[build-system]
+requires = ["scikit-build-core", "cython", "numpy", "cython-cmake"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "cell-tree2d"
+dynamic = ["version"]
+description = "Python wrappers around Cell-Tree 2D spatial index"
+readme = "README.rst"
+license = "CC0-1.0"
+license-files = ["LICENSE.txt"]
+authors = [
+    { name = "Jay Hennen", email = "jay.hennen@noaa.gov" },
+    { name = "Chris Barker", email = "chris.barker@noaa.gov" },
+]
+classifiers = [
+    "Development Status ::  6 - Mature",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: C++",
+    "Programming Language :: Cython",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "numpy",
+]
+
+[project.urls]
+Homepage = "https://github.com/NOAA-ORR-ERD"
+
+[dependency-groups]
+test = ["pytest"]
+build = ["scikit-build-core", "cython", "numpy", "cython-cmake"]
+dev = [{ include-group = "test" }, { include-group = "build"}, "build"]
+
+[tool.scikit-build]
+build-dir = "build"
+
+[tool.scikit-build.metadata.version]
+provider = "scikit_build_core.metadata.regex"
+input = "src/cell_tree2d/__init__.py"
+
+[tool.cython-lint]
+max-line-length = 100
+ignore = ['E741']
+# ignore = ['E503', 'E504']
+# exclude = 'my_project/excluded_cython_file.pyx'
+
+[tool.cibuildwheel]
+build-frontend = "build[uv]"
+test-groups = ["test"]
+test-command = "pytest --pyargs cell_tree2d"
+# skip = ["*musl*"]
+
+# macos.config-settings = { "cmake.define.BUILD_DEPS" = "ON"}
+macos.environment.MACOSX_DEPLOYMENT_TARGET = "13"
+
+# Use delvewheel on windows
+#  is this required? no third party libs
+# [tool.cibuildwheel.windows]
+# before-build = [
+#     "pip install delvewheel",
+#     "pwd",
+#     "ls -a"
+# ]
+# repair-wheel-command = "delvewheel repair -w {dest_dir} {wheel}"
+

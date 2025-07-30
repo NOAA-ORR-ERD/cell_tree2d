@@ -302,25 +302,24 @@ void CellTree2D::build(int root_ind, int dim) {
     int right_size = root.ptr + root.size - right_index;
     int left_index = root.ptr;
     int left_size = root.size - right_size;
-    double Lmax = std::numeric_limits<double>::min();
-    double Rmin = std::numeric_limits<double>::max();
+    root.Lmax = buks.at(plane-1).Lmax; 
+    root.Rmin = buks.at(plane).Rmin;
 
-    for (unsigned int b = 0; b < plane; b++) {
-        bucket& buk = buks.at(b);
-        if (buk.Lmax < Lmax) {
-            Lmax = buk.Lmax;
+    //in cases where the range of the buckets at plane-1 or plane are eclipsed by a 
+    //previous or subsequent bucket respectively we need to ensure that the
+    //Lmax and Rmin encompass those buckets properly.
+    for (int pl = plane-1; pl >= 0; pl--){
+        if (buks.at(pl).Lmax > root.Lmax) {
+            root.Lmax = buks.at(pl).Lmax;
         }
     }
 
-    for (unsigned int b = plane; b < buks.size(); b++) {
-        bucket& buk = buks.at(b);
-        if (buk.Rmin < Rmin) {
-            Rmin= buk.Rmin;
+    for (int pl = plane; pl < buks.size(); pl++){
+        if (buks.at(pl).Rmin < root.Rmin) {
+            root.Rmin = buks.at(pl).Rmin;
         }
     }
 
-    root.Lmax = Lmax;
-    root.Rmin = Rmin;
     node left_child(left_index, left_size, !dim);
     node right_child(right_index, right_size, !dim);
     root.child = nodes.size();

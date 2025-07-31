@@ -1,4 +1,4 @@
-# import cython
+import warnings
 import numpy as np
 cimport numpy as cnp
 from libcpp.vector cimport vector
@@ -38,6 +38,23 @@ cdef extern from "cell_tree2d_c.h" :
 #         int ptr
 #         int size
 #         bint dim
+
+
+cpdef sanity_check(cnp.ndarray[double, ndim=2, mode="c"] verts):
+    """
+    checks to see if the grid seems reasonable.
+    """
+#    cdef cnp.ndarray[double, ndim=2, mode="c"] verts
+    cdef cnp.ndarray[double, ndim=2, mode="c"] unique_verts
+
+    # check for duplicate nodes
+    unique_verts = np.unique(verts, axis=0)
+
+    cdef unsigned int n = verts.shape[0]
+    cdef unsigned int unique_n= unique_verts.shape[0]
+
+    if n != unique_n:
+        warnings.warn(f"There are {n - unique_n} duplicate nodes")
 
 
 cdef class CellTree:

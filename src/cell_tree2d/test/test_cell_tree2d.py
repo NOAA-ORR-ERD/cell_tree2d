@@ -5,11 +5,12 @@ unit tests for cell_tree_2d
 
 uses pytest
 """
+import warnings
 
 import pytest
 import numpy as np
 
-from cell_tree2d import CellTree
+from cell_tree2d import CellTree, sanity_check
 
 # some very simple test data:
 # two triangles:
@@ -351,8 +352,24 @@ def test_bad_grid():
     assert False
 
 
-if __name__ == "__main__":
-    test_triangle_lookup()
-    test_multi_poly_lookup()
-    test_poly_lookup()
-    test_multipoint()
+def test_sanity_check_good():
+    nodes = np.array([[0.0, 0.0],
+                      [2.0, 0.0],
+                      [2.0, 2.0],
+                      [0.0, 2.0],
+                      [1.0, 1.0]])
+    with warnings.catch_warnings():
+        warnings.simplefilter("error")
+        sanity_check(nodes)
+
+
+def test_sanity_check_duplicate_node():
+    nodes = np.array([[0.0, 0.0],
+                      [2.0, 0.0],
+                      [2.0, 2.0],
+                      [0.0, 2.0],
+                      [1.0, 1.0],
+                      [0.0, 0.0]])
+    with pytest.warns(UserWarning, match="duplicate nodes"):
+        sanity_check(nodes)
+

@@ -66,7 +66,7 @@ cpdef sanity_check(cnp.ndarray[double, ndim=2, mode="c"] verts,
 
 cdef class CellTree:
 
-    cdef object verts, faces, faces_len_arr
+    cdef object verts, faces, faces_len_arr, check_inputs
     cdef CellTree2D* thisptr
 
     def __cinit__(self,
@@ -75,7 +75,7 @@ cdef class CellTree:
                   num_buckets=4,
                   cells_per_leaf=2,
                   len_arr=None,
-                  check_inputs=False):
+                  check_inputs='warn'):
 
         """
         Initialize a CellTree
@@ -100,8 +100,9 @@ cdef class CellTree:
         :type len_arr: N numpy array of polygon lengths. Max number of sides is 65535
 
         :param check_inputs=False: Flag to turn on input checking.
-                                   It doesn't do much now, but might some day.
-                                   This could be expensive, so off by default.
+                                   False: no error checking
+                                   'warn': raise a warning on issues
+                                   'raise': raise an error on an issue
         :type check_inputs: Bool
         """
 
@@ -127,10 +128,10 @@ cdef class CellTree:
 
         faces = np.ascontiguousarray(faces, dtype=np.int32)
 
-        # note: need to add more here!
-        # it will always do it, and warn in any case
-        #  we may want to change this if we hve more expensive checks
-        sanity_check(verts, error=check_inputs)
+        if check_inputs == 'warn':
+            sanity_check(verts, error=False)
+        elif check_inputs == 'raise':
+            sanity_check(verts, error=True)
 
         # 1D faces array. This is assumed to be a mixed set of polygons,
         #   so a lengths array is required

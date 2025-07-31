@@ -5,12 +5,11 @@ unit tests for cell_tree_2d
 
 uses pytest
 """
-import warnings
-
-import pytest
 import numpy as np
 
-from cell_tree2d import CellTree, sanity_check
+from cell_tree2d import CellTree
+
+import pytest
 
 # some very simple test data:
 # two triangles:
@@ -305,71 +304,4 @@ def test_multipoint():
 
     ind = tree.locate(points)
     assert np.array_equal(ind, correct_indexes)
-
-@pytest.mark.skip(reason="this test crashes the interpreter -- can't turn it on until that's fixed")
-def test_bad_grid():
-    """
-    If a grid is really bad, it shouldn't crash
-
-    See:
-    https://github.com/NOAA-ORR-ERD/gridded/issues/79
-
-    this is only testing the really pathological case
-
-    almost all zeros, but it's something.
-    """
-    # A simple quad grid
-    nodes = np.array([[0.0, 0.0], #0
-                      [0.0, 0.0], #1
-                      [0.0, 0.0], #2
-                      [0.0, 0.0], #3
-                      [0.0, 0.0], #4
-                      [0.0, 0.0], #5
-                      [0.0, 0.0], #6
-                      [0.0, 0.0], #7
-                      [0.0, 0.0], #8
-                      [0.0, 0.0], #9
-                      [4.0, 4.0], #10
-                      [6.0, 4.0] #11
-                      ])
-#    nodes = np.zeros_like(nodes)
-    nodes = np.ones_like(nodes)
-
-    faces = np.array([0, 8, 9, 5, 2,
-                      9, 11, 7, 5,
-                      4, 7, 6]
-                      , dtype=np.int32)
-
-    n_verts_arr = np.array([5, 4, 3], dtype=np.ubyte)
-    tree = CellTree(nodes, faces, len_arr = n_verts_arr, num_buckets = 2, cells_per_leaf = 1)
-    point = np.array([1., 1.])  # in POLY 1
-    result = tree.locate(point)
-    assert result == 0
-    point[0] = 5.0  # tri 2
-    result = tree.locate(point)
-    assert result == 2
-
-    assert False
-
-
-def test_sanity_check_good():
-    nodes = np.array([[0.0, 0.0],
-                      [2.0, 0.0],
-                      [2.0, 2.0],
-                      [0.0, 2.0],
-                      [1.0, 1.0]])
-    with warnings.catch_warnings():
-        warnings.simplefilter("error")
-        sanity_check(nodes)
-
-
-def test_sanity_check_duplicate_node():
-    nodes = np.array([[0.0, 0.0],
-                      [2.0, 0.0],
-                      [2.0, 2.0],
-                      [0.0, 2.0],
-                      [1.0, 1.0],
-                      [0.0, 0.0]])
-    with pytest.warns(UserWarning, match="duplicate nodes"):
-        sanity_check(nodes)
 

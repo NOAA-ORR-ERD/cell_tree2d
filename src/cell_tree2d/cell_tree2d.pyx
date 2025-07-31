@@ -40,9 +40,12 @@ cdef extern from "cell_tree2d_c.h" :
 #         bint dim
 
 
-cpdef sanity_check(cnp.ndarray[double, ndim=2, mode="c"] verts):
+cpdef sanity_check(cnp.ndarray[double, ndim=2, mode="c"] verts,
+                   bint error=False):
     """
-    checks to see if the grid seems reasonable.
+    Checks to see if the grid seems reasonable.
+
+    Currently only checks for duplicate nodes/vertices
     """
 #    cdef cnp.ndarray[double, ndim=2, mode="c"] verts
     cdef cnp.ndarray[double, ndim=2, mode="c"] unique_verts
@@ -54,7 +57,11 @@ cpdef sanity_check(cnp.ndarray[double, ndim=2, mode="c"] verts):
     cdef unsigned int unique_n= unique_verts.shape[0]
 
     if n != unique_n:
-        warnings.warn(f"There are {n - unique_n} duplicate nodes")
+        msg = f"There are {n - unique_n} duplicate nodes"
+        if error:
+            raise ValueError(msg)
+        else:
+            warnings.warn(msg)
 
 
 cdef class CellTree:
@@ -67,7 +74,8 @@ cdef class CellTree:
                   faces,
                   num_buckets=4,
                   cells_per_leaf=2,
-                  len_arr=None):
+                  len_arr=None,
+                  check_inputs=False):
 
         """
         Initialize a CellTree
@@ -90,6 +98,11 @@ cdef class CellTree:
 
         :param len_arr: Array of number of sides of the polygons
         :type len_arr: N numpy array of polygon lengths. Max number of sides is 65535
+
+        :param check_inputs=False: Flag to turn on input checking.
+                                   It doesn't do much now, but might some day.
+                                   This could be expensive, so off by default.
+        :type check_inputs: Bool
         """
 
         cdef cnp.ndarray[double, ndim=2, mode="c"] verts_arr
@@ -113,6 +126,11 @@ cdef class CellTree:
                                   num_verts)
 
         faces = np.ascontiguousarray(faces, dtype=np.int32)
+
+        # note: need to add more here!
+        # it will always do it, and warn in any case
+        #  we may want to change this if we hve more expensive checks
+        sanity_check(verts, error=check_inputs)
 
         # 1D faces array. This is assumed to be a mixed set of polygons,
         #   so a lengths array is required

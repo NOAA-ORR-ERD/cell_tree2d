@@ -33,15 +33,13 @@ def test_sanity_check_duplicate_node():
     with pytest.raises(ValueError):
         sanity_check(nodes, error='error')
 
-# @pytest.mark.skip(reason="this test crashes the interpreter -- can't turn it on until that's fixed")
-def test_bad_grid_warn():
+@pytest.mark.filterwarnings("ignore:There are 11 duplicate nodes")
+def test_zero_size_bb():
     """
-    If a grid is really bad, it shouldn't crash
+    If a grid has zero-size bounding boxes, it shouldn't build,
+    and should raise an Error instead.
 
-    See:
-    https://github.com/NOAA-ORR-ERD/gridded/issues/79
-
-    this is only testing the really pathological case
+    This is only testing the really pathological case
 
     almost all zeros, but it's something.
     """
@@ -57,7 +55,7 @@ def test_bad_grid_warn():
                       [0.0, 0.0], #8
                       [0.0, 0.0], #9
                       [4.0, 4.0], #10
-                      [6.0, 4.0] #11
+                      [6.0, 4.0]  #11
                       ])
 #    nodes = np.zeros_like(nodes)
     nodes = np.ones_like(nodes)

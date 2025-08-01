@@ -150,7 +150,7 @@ void CellTree2D::build_BB_vector() {
              y_max = max(y_max, vt[1]);
         }
         if (x_min == x_max || y_min == y_max) {
-            throw std::invalid_argument("zero-size bounding box detected");
+            throw std::runtime_error("zero-size bounding box detected");
         }
         v[0] = x_min;
         v[1] = x_max;

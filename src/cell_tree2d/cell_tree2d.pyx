@@ -185,7 +185,7 @@ cdef class CellTree:
             raise ValueError("cells_per_leaf must be >= 1")
         try:
             self.thisptr.finalize(num_buckets, cells_per_leaf)
-        except ValueError as err:
+        except RuntimeError as err:
             raise ValueError(f"There was a problem building the CellTree:\n{str(err)}.\n"
                              "Try setting check_inputs=True for more info"
                              ) from err

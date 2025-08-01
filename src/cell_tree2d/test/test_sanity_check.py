@@ -33,7 +33,7 @@ def test_sanity_check_duplicate_node():
     with pytest.raises(ValueError):
         sanity_check(nodes, error='error')
 
-@pytest.mark.skip(reason="this test crashes the interpreter -- can't turn it on until that's fixed")
+# @pytest.mark.skip(reason="this test crashes the interpreter -- can't turn it on until that's fixed")
 def test_bad_grid_warn():
     """
     If a grid is really bad, it shouldn't crash
@@ -69,7 +69,7 @@ def test_bad_grid_warn():
 
     n_verts_arr = np.array([5, 4, 3], dtype=np.ubyte)
 
-    with pytest.warns(UserWarning, match="duplicate nodes"):
+    with pytest.raises(ValueError):
         tree = CellTree(nodes,
                         faces,
                         len_arr=n_verts_arr,

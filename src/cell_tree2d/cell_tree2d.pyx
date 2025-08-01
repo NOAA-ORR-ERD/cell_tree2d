@@ -12,7 +12,7 @@ cdef extern from "cell_tree2d_c.h" :
         void add_polys(int*, unsigned int, unsigned short)
         void add_polys(int*, unsigned short*, unsigned int)
         void add_polys(int*, unsigned short, unsigned int)
-        void finalize(int, int)
+        void finalize(int, int) except +
         int locate_points(double*, int*, int)
         int size()
         int num_buckets, boxes_per_leaf, poly, v_len, n_polys
@@ -178,10 +178,17 @@ cdef class CellTree:
 
         # a bit more error checking:
         if num_buckets < 2:
+            # fixme: this should be a more meaningful error to end users.
             raise ValueError("num_buckets must be an integer greater than 2")
         if cells_per_leaf < 1:
+            # fixme: this should be a more meaningful error to end users.
             raise ValueError("cells_per_leaf must be >= 1")
-        self.thisptr.finalize(num_buckets, cells_per_leaf)
+        try:
+            self.thisptr.finalize(num_buckets, cells_per_leaf)
+        except ValueError as err:
+            raise ValueError(f"There was a problem building the CellTree:\n{str(err)}.\n"
+                             "Try setting check_inputs=True for more info"
+                             ) from err
 
     def __del__(self):
         del self.thisptr

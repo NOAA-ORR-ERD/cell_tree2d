@@ -124,7 +124,8 @@ CellTree2D::CellTree2D(double* vertices, unsigned int v_len, int* faces, unsigne
 
 CellTree2D::~CellTree2D() {delete[] faces; delete[] vertices;}
 
-//finds the bounding box of each triangle and inserts it into the dataset and adds it's index to bb_indices
+// finds the bounding box of each triangle and inserts it into
+// the dataset and adds its index to bb_indices
 void CellTree2D::build_BB_vector() {
     bb_indices.resize(n_polys);
     dataset.resize(n_polys);
@@ -147,6 +148,9 @@ void CellTree2D::build_BB_vector() {
              x_max = max(x_max, vt[0]);
              y_min = min(y_min, vt[1]);
              y_max = max(y_max, vt[1]);
+        }
+        if (x_min == x_max || y_min == y_max) {
+            throw invalid_argument("zero-size bounding box detected");
         }
         v[0] = x_min;
         v[1] = x_max;

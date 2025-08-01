@@ -15,6 +15,7 @@
 #include <algorithm>
 #include <iterator>
 #include <vector>
+#include <stdexcept>
 
 typedef std::vector<double> BB;
 

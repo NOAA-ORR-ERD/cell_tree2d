@@ -5,6 +5,7 @@ build-backend = "scikit_build_core.build"
 [project]
 name = "cell-tree2d"
 dynamic = ["version"]
+requires-python = ">=3.12"
 description = "Python wrappers around Cell-Tree 2D spatial index"
 readme = "README.rst"
 license = "CC0-1.0"

@@ -54,6 +54,6 @@ test314 = [ "py313", "test", "build" ]
 [tasks]
 build_wheel = {cmd = "python -m build --skip-dependency-check --no-isolation ./", default-environment = "build"}
 
-install = { cmd = "pip install --root-user-action=ignore --force-reinstall --no-index --find-links=./dist/  gnome", depends-on = ["build_wheel"]}
+install = { cmd = "pip install --no-deps --root-user-action=ignore --force-reinstall --no-index --only-binary=:all: --find-links=./dist/  cell_tree2d", depends-on = ["build_wheel"]}
 
-test = { cmd = "pytest --runslow tests/unit_tests/", depends-on = ["install"]}
+test = { cmd = "pytest --pyargs cell_tree2d", depends-on = ["install"]}

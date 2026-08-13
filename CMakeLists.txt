@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.24...4.0)
+cmake_minimum_required(VERSION 4.3)
 project(${SKBUILD_PROJECT_NAME} LANGUAGES CXX)
 
 option(BUILD_DEPS OFF)

@@ -15,6 +15,7 @@ import numpy as np
 
 from cell_tree2d import CellTree
 
+
 def voronoi_grid():
     vertices = np.array(
         [

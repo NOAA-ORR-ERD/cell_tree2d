@@ -2,12 +2,13 @@
 Tests of the sanity checking code.
 """
 
-import numpy as np
 import warnings
+
+import numpy as np
+import pytest
 
 from cell_tree2d import CellTree, sanity_check
 
-import pytest
 
 def test_sanity_check_good():
     nodes = np.array([[0.0, 0.0],

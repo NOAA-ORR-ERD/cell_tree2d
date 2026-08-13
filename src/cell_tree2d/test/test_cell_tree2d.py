@@ -1,15 +1,12 @@
-#!/usr/bin/env python
-
 """
 unit tests for cell_tree_2d
 
 uses pytest
 """
 import numpy as np
+import pytest
 
 from cell_tree2d import CellTree
-
-import pytest
 
 # some very simple test data:
 # two triangles:

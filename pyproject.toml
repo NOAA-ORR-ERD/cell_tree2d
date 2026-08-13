@@ -50,17 +50,8 @@ dev = [{ include-group = "test" }, { include-group = "build"}, "build"]
 # sdist.include = ["tests/unit_tests"]
 build-dir = "build"
 sdist.include = ["src/cell_tree2d/_version.py"]
-<<<<<<< HEAD
-# sdist.exclude = [
-=======
-# sdist.exclude = ["scripts",
-#                  "tests/", # until we can figure out how to exclude the downloaded data files.
->>>>>>> ab2964f (pixi setup)
-#                  "gnome/cy_gnome/*.cpp"
-#                  ]
 
 [tool.setuptools_scm]
-# root = ".."
 version_file = "src/cell_tree2d/_version.py"
 
 [tool.cython-lint]

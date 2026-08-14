@@ -6,5 +6,21 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      # Check for updates to GitHub Actions every week
-      interval: "weekly"
+      interval: "daily"
+    labels:
+      - "Bot"
+    groups:
+      github-actions:
+        patterns:
+          - '*'
+    cooldown:
+      default-days: 7
+
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "Bot"
+    cooldown:
+      default-days: 7

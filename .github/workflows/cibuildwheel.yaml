@@ -12,48 +12,105 @@ on:
   pull_request:
   push:
 
+permissions:
+  contents: read
+
 jobs:
   make_sdist:
     name: Make SDist
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Build SDist
         run: pipx run build --sdist
 
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
         with:
-          name: cibw-sdist
-          path: dist/*.tar.gz
-
+          name: pypi-artifacts
+          path: ${{ github.workspace }}/dist/*.tar.gz
+    permissions:
+      actions: write
 
   build_wheels:
-    name: Wheel on ${{ matrix.os }}
+    name: "Wheel on ${{ matrix.os }} (${{ matrix.cibw_platform }}-${{ matrix.arch }}) wheels"
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - ubuntu-latest
-          - ubuntu-24.04-arm
-          - windows-latest
-          # - windows-11-arm  -- failing in windows arm (can't install numpy?)
-          - macos-13  # "currently intel"
-          - macos-latest  # should be arm
+        include:
+          - name: Linux
+            os: ubuntu-22.04
+            arch: x86_64
+            cibw_platform: linux
+          - name: Linux-arm
+            os: ubuntu-24.04-arm
+            arch: aarch64
+            cibw_platform: linux
+          - name: Windows
+            os: windows-2022
+            arch: AMD64
+            cibw_platform: windows
+          - name: macOS-arm
+            os: macos-15
+            arch: arm64
+            cibw_platform: macos
+          - name: macOS-intel
+            os: macos-15-intel
+            arch: x86_64
+            cibw_platform: macos
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
           fetch-depth: 0
           submodules: true
+          persist-credentials: false
 
-      - uses: astral-sh/setup-uv@v7
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d  # v10.0.1
 
-      - uses: pypa/cibuildwheel@v3.3
+      - name: "Building ${{ matrix.os }} (${{ matrix.arch }}) wheels"
+        uses: pypa/cibuildwheel@1828c10ab37f080699c7b81cea34097c684a7074  # v4.2.0
+        env:
+          CIBW_PLATFORM: ${{ matrix.cibw_platform }}
+          CIBW_SKIP: "*-musllinux*"
+          CIBW_BUILD: "cp311-* cp312-* cp313-* cp314-*"
+          CIBW_ARCHS: ${{ matrix.arch }}
+          CIBW_BUILD_FRONTEND: uv
+          CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28
+          CIBW_TEST_REQUIRES: pytest
+          CIBW_TEST_COMMAND: >
+            python -c "import cell_tree2d; print(f'cell_tree2d v{cell_tree2d.__version__}')" &&
+            python -m pytest --pyargs cell_tree2d
 
       - name: Upload wheels
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
         with:
-          name: cibw-wheels-${{ matrix.os }}
-          path: wheelhouse/*.whl
+          name: pypi-artifacts-${{ matrix.os }}-${{ matrix.arch }}
+          path: ${{ github.workspace }}/wheelhouse/*.whl
+    permissions:
+      actions: write
+
+  publish-artifacts-pypi:
+    needs: [make_sdist, build_wheels]
+    name: "Publish to PyPI"
+    runs-on: ubuntu-22.04
+    # upload to PyPI for every tag starting with 'v'
+    if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/v')
+    steps:
+    - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
+      with:
+        pattern: pypi-artifacts*
+        path: ${{ github.workspace }}/dist
+        merge-multiple: true
+
+    - name: Publish package distributions to PyPI
+      uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33  # v1.14.2
+    environment:
+      name: release
+      url: https://pypi.org/p/cell_tree2d
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing

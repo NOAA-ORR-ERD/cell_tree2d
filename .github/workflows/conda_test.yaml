@@ -15,8 +15,8 @@ jobs:
             os: ["ubuntu-latest", "windows-latest", "macos-latest"]
             pyver: ["3.10", "3.11", "3.12", "3.13"]
     steps:
-      - uses: actions/checkout@v6
-      - uses: conda-incubator/setup-miniconda@v3
+      - uses: actions/checkout@v7
+      - uses: conda-incubator/setup-miniconda@v4
         with:
           auto-update-conda: true
           miniforge-version: latest
@@ -42,8 +42,8 @@ jobs:
     name: cython-lint linting
     runs-on: "ubuntu-latest"
     steps:
-      - uses: actions/checkout@v6
-      - uses: conda-incubator/setup-miniconda@v3
+      - uses: actions/checkout@v7
+      - uses: conda-incubator/setup-miniconda@v4
         with:
           auto-update-conda: true
           miniforge-version: latest

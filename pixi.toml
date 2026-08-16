@@ -2,7 +2,7 @@
 authors = ["Chris Barker <Chris.Barker@noaa.gov>"]
 channels = ["conda-forge"]
 name = "cell_tree2d"
-platforms = ["osx-64"]
+platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
 version = "0.1.0"
 
 [dependencies]

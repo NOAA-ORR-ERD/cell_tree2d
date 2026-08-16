@@ -22,7 +22,6 @@ jobs:
       uses: prefix-dev/setup-pixi@v0.10.0
       with:
         cache: true
-#        manifest-path: pixi.toml
         environments: ${{ matrix.environment }}
 
     - name: Run Tests

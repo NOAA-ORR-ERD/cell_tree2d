@@ -7,5 +7,4 @@ from __future__ import absolute_import
 from .cell_tree2d import CellTree as CellTree
 from .cell_tree2d import sanity_check as sanity_check
 
-
-__version__ = "1.0.0dev"
+from ._version import __version__

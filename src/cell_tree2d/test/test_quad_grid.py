@@ -10,6 +10,7 @@ import numpy as np
 
 from cell_tree2d import CellTree
 
+
 def curv_grid(n_x=4,
               n_y=12,
               center=(20.0, 30.0),
@@ -39,7 +40,7 @@ def nodes_from_coords(x, y):
                                                   y[:].reshape(-1)))).astype(np.float64)
     y_size, x_size = x.shape
     faces = np.array([np.array([[x, x + 1, x + x_size + 1, x + x_size]
-                                for x in range(0, x_size - 1, 1)]) + y * x_size for y in range(0, y_size - 1)])
+                                for x in range(0, x_size - 1, 1)]) + y * x_size for y in range(y_size - 1)])
     faces = np.ascontiguousarray(faces.reshape(-1, 4).astype(np.int32))
 
     return nodes, faces

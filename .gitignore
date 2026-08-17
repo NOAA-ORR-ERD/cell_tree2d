@@ -5,3 +5,8 @@
 dist/
 build/
 .ipynb_checkpoints
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+src/cell_tree2d/_version.py

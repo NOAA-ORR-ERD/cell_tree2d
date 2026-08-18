@@ -44,8 +44,7 @@ build = ["scikit-build-core", "cython", "numpy", "cython-cmake"]
 dev = [{ include-group = "test" }, { include-group = "build"}, "build"]
 
 [tool.scikit-build]
-# when we get the stable ABI build working.
-# wheel.py-api = "cp312"
+wheel.py-api = "cp312"
 # wheel.py-api = "py3"  # dont want to hardcode this -- scikit build can figure it out
 # sdist.include = ["tests/unit_tests"]
 build-dir = "build"

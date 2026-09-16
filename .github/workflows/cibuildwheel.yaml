@@ -77,7 +77,7 @@ jobs:
         env:
           CIBW_PLATFORM: ${{ matrix.cibw_platform }}
           CIBW_SKIP: "*-musllinux*"
-          CIBW_BUILD: "cp312-* cp314-*"
+          CIBW_BUILD: "cp312-* cp315-*"
           CIBW_ARCHS: ${{ matrix.arch }}
           CIBW_BUILD_FRONTEND: uv
           CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28

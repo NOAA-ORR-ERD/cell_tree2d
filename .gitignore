@@ -8,5 +8,6 @@ build/
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+pixi.lock
 
 src/cell_tree2d/_version.py

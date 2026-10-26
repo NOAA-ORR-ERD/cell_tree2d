@@ -37,6 +37,9 @@ python = "~=3.13.0"
 [feature.py314.dependencies]
 python = "~=3.14.0"
 
+[feature.py315.dependencies]
+python = "~=3.15.0"
+
 
 [environments]
 default = { features = ["py312", "dev", "test", "build"], solve-group = "default" }
@@ -44,15 +47,18 @@ default = { features = ["py312", "dev", "test", "build"], solve-group = "default
 dev312 = ["py312", "dev", "test", "build"]
 dev313 = ["py313", "dev", "test", "build"]
 dev314 = ["py314", "dev", "test", "build"]
+dev315 = ["py315", "dev", "test", "build"]
 build312 = ["py312", "build"]
 build313 = ["py313", "build"]
 build314 = ["py314", "build"]
+build315 = ["py315", "build"]
 test312 = [ "py312", "test", "build" ]
 test313 = [ "py313", "test", "build" ]
-test314 = [ "py313", "test", "build" ]
+test314 = [ "py314", "test", "build" ]
+test315 = [ "py315", "test", "build" ]
 
 [tasks]
-build_wheel = {cmd = "python -m build --skip-dependency-check --no-isolation ./", default-environment = "build"}
+build_wheel = { cmd = "python -m build --skip-dependency-check --no-isolation ./"}
 
 install = { cmd = "pip install --no-deps --root-user-action=ignore --force-reinstall --no-index --only-binary=:all: --find-links=./dist/  cell_tree2d", depends-on = ["build_wheel"]}
 
